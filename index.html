@@ -12,12 +12,9 @@
         .neon {
             color: #ff0000; /* Bright red color */
             text-shadow: 
-                0 0 5px #ff0000,  /* Outer glow */
-                0 0 10px #ff0000,
-                0 0 15px #ff0000,
-                0 0 20px #ff4d4d, /* Lighter red for a stronger glow */
-                0 0 30px #ff4d4d,
-                0 0 40px #ff4d4d; /* Spread out the glow */
+                0 0 3px #ff0000,  /* Reduced size */
+                0 0 5px #ff0000,
+                0 0 10px #ff4d4d; /* Lighter red for a glow */
         }
 
         /* Button styling */
@@ -29,60 +26,73 @@
             border-radius: 5px;
             cursor: pointer;
             box-shadow: 
-                0 0 5px #ff0000, 
-                0 0 10px #ff0000,
-                0 0 20px #ff4d4d;
+                0 0 3px #ff0000, 
+                0 0 5px #ff0000,
+                0 0 10px #ff4d4d; /* Lighter glow */
             transition: 0.3s; /* Smooth transition */
         }
 
         button:hover {
             box-shadow: 
-                0 0 10px #ff0000, 
-                0 0 20px #ff4d4d;
+                0 0 5px #ff0000, 
+                0 0 10px #ff4d4d;
+        }
+
+        /* Navigation links */
+        nav a {
+            color: #ff0000; /* Link color */
+            text-decoration: none; /* Remove underline */
+            transition: 0.3s; /* Smooth transition */
+        }
+
+        nav a:hover {
+            text-shadow: 
+                0 0 3px #ff0000, 
+                0 0 5px #ff0000,
+                0 0 10px #ff4d4d; /* Glow effect on hover */
         }
     </style>
 </head>
 <body>
     <header>
         <div class="logo-container">
-            <!-- Corrected logo path -->
             <img src="images/logo.png" alt="Elite Modz Logo" class="logo"> 
         </div>
         <h1 class="neon">Welcome to Elite Modz, home of the best GTA 5 modded accounts.</h1>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#accounts">Accounts</a></li> <!-- Updated href to match the section -->
-                <li><a href="#why-us">Why Us?</a></li> <!-- Updated href to match the section -->
+                <li><a class="neon" href="#home">Home</a></li>
+                <li><a class="neon" href="#accounts">Accounts</a></li>
+                <li><a class="neon" href="#why-us">Why Us?</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="home">
-        <h2>Home Section</h2>
+        <h2 class="neon">Home Section</h2>
         <p>This is the homepage of Elite Modz.</p>
     </section>
 
     <section id="about">
-        <h2>About Us</h2>
+        <h2 class="neon">About Us</h2>
         <p>Why should you buy our accounts?
-            Our mission is to create a successful website and make your GTA experience great. We have a range of different packages you can buy so everyone can have some fun. We are reliable, modern, and new.</p> <!-- Fixed some typos -->
+            Our mission is to create a successful website and make your GTA experience great. We have a range of different packages you can buy so everyone can have some fun. We are reliable, modern, and new.</p>
     </section>
 
     <section id="contact">
-        <h2>Contact</h2>
+        <h2 class="neon">Contact</h2>
         <form>
-            <input type="text" placeholder="Your Name" required> <!-- Added required attribute -->
-            <input type="email" placeholder="Your Email" required> <!-- Added required attribute -->
-            <textarea placeholder="Your Message" required></textarea> <!-- Added required attribute -->
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
             <button type="submit" class="neon">Send</button>
         </form>
     </section>
 
     <footer>
-        <p>&copy; 2024 Elite Modz. Unregistered. We are not responsible if you get banned.</p> <!-- Fixed some typos -->
+        <p class="neon">&copy; 2024 Elite Modz. Unregistered. We are not responsible if you get banned.</p>
     </footer>
 
-    <script src="script.js"></script> <!-- Link to your JavaScript file if you have one -->
+    <script src="script.js"></script>
 </body>
 </html>
