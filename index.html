@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Modz</title> <!-- Updated title -->
+    <title>Elite Modz</title>
     
     <!-- Link to your favicon (using favicon.png as requested) -->
     <link rel="icon" href="images/favicon.png" type="image/png">
@@ -53,6 +53,19 @@
                 0 0 20px #ff0000,
                 0 0 30px #ff0000; /* Stronger red glow effect on hover */
         }
+
+        /* Cart styling */
+        .cart-link {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            color: white;
+            font-size: 1.5em;
+            text-shadow: 
+                0 0 10px #ff0000, 
+                0 0 20px #ff0000,
+                0 0 30px #ff0000;
+        }
     </style>
 </head>
 <body>
@@ -60,7 +73,12 @@
         <div class="logo-container">
             <img src="images/logo.png" alt="Elite Modz Logo" class="logo"> 
         </div>
+
         <h1 class="neon">Welcome to Elite Modz, home of the best GTA 5 modded accounts.</h1>
+        
+        <!-- Cart link at the top -->
+        <a href="cart.html" class="cart-link neon">🛒 Cart (<span id="cart-count">0</span>)</a>
+
         <nav>
             <ul>
                 <li><a class="neon" href="#home">Home</a></li>
@@ -74,6 +92,29 @@
     <section id="home">
         <h2 class="neon">Home Section</h2>
         <p>This is the homepage of Elite Modz.</p>
+    </section>
+
+    <section id="accounts">
+        <h2 class="neon">Modded Accounts for Sale</h2>
+
+        <!-- Example of product listings -->
+        <div class="product">
+            <h3 class="neon">Modded Account Level 100</h3>
+            <p>Price: $50</p>
+            <button class="neon" onclick="addToCart('Modded Account Level 100', 50)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <h3 class="neon">Modded Account Level 200</h3>
+            <p>Price: $75</p>
+            <button class="neon" onclick="addToCart('Modded Account Level 200', 75)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <h3 class="neon">Modded Account Level 500</h3>
+            <p>Price: $150</p>
+            <button class="neon" onclick="addToCart('Modded Account Level 500', 150)">Add to Cart</button>
+        </div>
     </section>
 
     <section id="about">
@@ -93,14 +134,15 @@
         </form>
     </section>
 
-    <section id="Custom Accounts">
-        <h2 class="neon">Create your own account up to your liking.</h2>
-        </section>
-
     <footer>
         <p class="neon">&copy; 2024 Elite Modz. Unregistered. We are not responsible if you get banned.</p>
     </footer>
 
-    <script src="script.js"></script>
-</body>
-</html>
+    <script>
+        let cart = [];
+
+        function addToCart(productName, productPrice) {
+            cart.push({ name: productName, price: productPrice });
+            updateCartCount();
+        }
+
