@@ -1,78 +1,74 @@
-/* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #121212; /* Dark background */
+    margin: 0;
     padding: 20px;
+    color: #e0e0e0; /* Light text color for contrast */
 }
 
-/* Header */
 header {
-    background: #333;
-    color: white;
-    padding: 20px 0;
+    background: linear-gradient(135deg, #1f1f1f, #333); /* Dark gradient background */
+    color: #fff;
+    padding: 20px 0; /* Increased padding for a bolder header */
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Darker shadow for depth */
 }
 
-header nav ul {
+nav ul {
     list-style: none;
-    display: flex;
-    justify-content: center;
+    padding: 0;
 }
 
-header nav ul li {
-    margin: 0 15px;
+nav ul li {
+    display: inline;
+    margin: 0 20px; /* Increased margin for more spacing */
 }
 
-header nav ul li a {
-    color: white;
-    text-decoration: none;
+nav ul li a {
+    color: #ffdd57; /* Yellow color for links */
+    text-decoration: none; /* Removed underline */
+    transition: color 0.3s; /* Added smooth color transition */
 }
 
-/* Sections */
+nav ul li a:hover {
+    color: #fff; /* Change color on hover */
+}
+
 section {
-    margin: 20px 0;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-section#home {
-    background-color: #f0f0f0;
+    background: #1e1e1e; /* Darker section background */
+    margin: 20px 0; /* Increased margin for better separation */
+    padding: 20px; /* Increased padding for more space */
+    border-radius: 10px; /* More pronounced rounded corners */
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); /* Light shadow for depth */
 }
 
 form input, form textarea {
-    display: block;
     width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    padding: 12px; /* Increased padding for better usability */
+    margin-bottom: 15px; /* Increased margin for spacing */
+    border: 1px solid #555; /* Darker border */
+    border-radius: 5px; /* Rounded corners on inputs */
+    background-color: #333; /* Dark background for inputs */
+    color: #e0e0e0; /* Light text color for inputs */
+    transition: border 0.3s; /* Added transition for smoother focus effect */
+}
+
+form input:focus, form textarea:focus {
+    border-color: #ffdd57; /* Change border color on focus */
+    outline: none; /* Remove default outline */
 }
 
 button {
-    background-color: #333;
-    color: white;
+    background: #ffdd57; /* Yellow button */
+    color: #121212; /* Dark text color for contrast */
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 12px; /* Increased padding for better usability */
+    border-radius: 5px; /* Rounded corners on buttons */
     cursor: pointer;
+    transition: background 0.3s; /* Added transition for smoother hover effect */
 }
 
 button:hover {
-    background-color: #555;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    margin-top: 20px;
+    background: #f0c34a; /* Lighter yellow on hover */
 }
