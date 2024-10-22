@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customize Account</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon link -->
+    <title>Elite Modz - Cart</title>
+    <link rel="icon" href="https://github.com/EliteModz/Elite-Modz/raw/refs/heads/main/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,61 +19,13 @@
         </nav>
     </header>
     
-    <section id="customize">
-        <h2 class="neon">Customize Your Account</h2>
-        
-        <form id="customization-form">
-            <label>
-                <input type="checkbox" name="moddedOutfits" value="10"> Modded outfits (+$10)
-            </label><br>
-            <label>
-                <input type="checkbox" name="moddedCars" value="20"> Modded cars (+$20)
-            </label><br>
-            <label>
-                <input type="checkbox" name="bunkerResearch" value="2"> All bunker research (+$2)
-            </label><br>
-            <label>
-                <input type="checkbox" name="allWeapons" value="4"> All weapons (+$4)
-            </label><br>
-            <label>
-                <input type="checkbox" name="unlockAll" value="50"> Unlock all (everything in the game) (+$50)
-            </label><br>
-            <label>
-                Desired Level: <input type="number" name="desiredLevel" placeholder="Enter level" min="1" max="8000" required>
-            </label><br>
-            <button type="button" class="neon" onclick="addCustomizationToCart()">Add to Cart</button>
-        </form>
+    <section id="cart">
+        <h2 class="neon">Your Cart</h2>
+        <div id="cart-items"></div>
+        <h3 class="neon">Total: $<span id="total-cost">0</span></h3>
+        <button class="neon" id="checkout-btn">Checkout</button>
     </section>
-
-    <footer>
-        <p class="neon">&copy; 2024 Elite Modz. All rights reserved.</p>
-    </footer>
-
-    <script>
-        function addCustomizationToCart() {
-            const form = document.getElementById('customization-form');
-            const checkboxes = form.querySelectorAll('input[type="checkbox"]:checked');
-            let total = 0;
-            let customizationDetails = "Customizations: ";
-
-            checkboxes.forEach(checkbox => {
-                total += parseInt(checkbox.value);
-                customizationDetails += `${checkbox.parentNode.textContent.trim()}, `;
-            });
-
-            const desiredLevel = form.desiredLevel.value;
-            if (desiredLevel) {
-                const levelCost = Math.floor(desiredLevel / 100) * 2; // Calculate cost for desired level
-                total += levelCost; // Add level cost to total
-                customizationDetails += `Desired Level: ${desiredLevel} (+$${levelCost})`;
-            }
-
-            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-            cartItems.push({ name: customizationDetails, price: total });
-            localStorage.setItem('cartItems', JSON.stringify(cartItems));
-
-            alert('Customizations added to cart!');
-        }
-    </script>
+    
+    <script src="cart.js"></script>
 </body>
 </html>
