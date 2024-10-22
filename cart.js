@@ -1,29 +1,30 @@
-let cart = [];
+let cartItems = []; // Array to hold items in the cart
 
-function addToCart(productName, productPrice) {
-    cart.push({ name: productName, price: productPrice });
-    updateCartCount();
-    localStorage.setItem('cart', JSON.stringify(cart));
+// Function to add items to the cart
+function addToCart(name, price) {
+    cartItems.push({ name, price });
+    updateCart();
 }
 
-function updateCartCount() {
-    document.getElementById('cart-count').innerText = cart.length;
-}
+// Function to update the cart display
+function updateCart() {
+    const cartItemsContainer = document.getElementById('cart-items');
+    const totalCostElement = document.getElementById('total-cost');
+    const cartCountElement = document.getElementById('cart-count');
 
-function displayCartItems() {
-    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-    let cartTotal = 0;
-    const cartElement = document.getElementById('cart-items');
+    cartItemsContainer.innerHTML = ''; // Clear previous items
+    let totalCost = 0;
 
     cartItems.forEach(item => {
-        cartElement.innerHTML += `<p>${item.name} - $${item.price}</p>`;
-        cartTotal += item.price;
+        const itemElement = document.createElement('div');
+        itemElement.innerHTML = `${item.name}: $${item.price}`;
+        cartItemsContainer.appendChild(itemElement);
+        totalCost += item.price; // Add item price to total
     });
 
-    document.getElementById('cart-total').innerText = cartTotal;
+    totalCostElement.textContent = totalCost.toFixed(2); // Update total cost
+    cartCountElement.textContent = cartItems.length; // Update cart count
 }
 
-// Call on cart.html
-if (document.getElementById('cart-items')) {
-    displayCartItems();
-}
+// Call this function when you want to add an item to the cart, e.g. in your shop page
+// Example: addToCart('Basic: Level 300 and 150 Million', 20);
