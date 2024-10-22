@@ -132,7 +132,8 @@
             margin-bottom: 20px;
         }
 
-        input, textarea {
+        input,
+        textarea {
             width: 80%;
             padding: 10px;
             margin: 10px 0;
@@ -241,40 +242,13 @@
     <!-- Contact Form Section -->
     <section class="contact-section" id="contact">
         <h2>Contact Us</h2>
-        <form action="index.php#contact" method="POST">
+        <form action="send_email.php" method="POST">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
             <button type="submit" class="submit">Send Message</button>
         </form>
-        <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            // Collect and sanitize input data
-            $name = htmlspecialchars(trim($_POST['name']));
-            $email = htmlspecialchars(trim($_POST['email']));
-            $message = htmlspecialchars(trim($_POST['message']));
-
-            // Recipient email
-            $to = "elitemodz1321@gmail.com"; // Your email address
-            $subject = "New Contact Form Submission";
-
-            // Email content
-            $body = "Name: $name\n";
-            $body .= "Email: $email\n";
-            $body .= "Message:\n$message\n";
-
-            // Email headers
-            $headers = "From: $name <$email>\r\n";
-            $headers .= "Reply-To: $email\r\n";
-
-            // Send email
-            if (mail($to, $subject, $body, $headers)) {
-                echo "<p style='color: green;'>Message sent successfully!</p>";
-            } else {
-                echo "<p style='color: red;'>Failed to send message.</p>";
-            }
-        }
-        ?>
+        <div id="form-message"></div> <!-- Div for displaying success or error messages -->
     </section>
 
     <footer>
