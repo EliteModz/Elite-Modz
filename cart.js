@@ -24,16 +24,23 @@ function updateCart() {
 
     totalCostElement.textContent = totalCost.toFixed(2); // Update total cost
     cartCountElement.textContent = cartItems.length; // Update cart count
+    localStorage.setItem('cartCount', cartItems.length); // Save cart count to local storage
 }
 
 // Initialize cart on page load
 document.addEventListener('DOMContentLoaded', () => {
     // Load cart items from local storage if needed
     const savedCart = JSON.parse(localStorage.getItem('cartItems'));
+    const savedCartCount = localStorage.getItem('cartCount');
+
     if (savedCart) {
         cartItems = savedCart;
         updateCart();
     }
+
+    // Update cart count on load
+    const cartCountElement = document.getElementById('cart-count');
+    cartCountElement.textContent = savedCartCount || 0;
 });
 
 // Save cart items to local storage on unload
