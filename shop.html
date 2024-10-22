@@ -54,7 +54,7 @@
         <div class="product">
             <h3 class="neon">Custom</h3>
             <p>Price: $20 - $250</p>
-            <button class="neon" onclick="addToCart('Custom Account', 250)">Customize</button>
+            <button class="neon" onclick="window.location.href='customize.html'">Customize</button>
         </div>
     </section>
 
@@ -62,13 +62,6 @@
         <p class="neon">&copy; 2024 Elite Modz. All rights reserved.</p>
     </footer>
 
-    <script src="cart.js"></script> <!-- Ensure this is included -->
-    <script>
-        // Ensure cart count is updated on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            const cartCount = document.getElementById('cart-count');
-            cartCount.innerText = localStorage.getItem('cartCount') || 0; // Load cart count from localStorage
-        });
-    </script>
+    <script src="cart.js"></script>
 </body>
 </html>
