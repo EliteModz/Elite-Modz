@@ -1,1 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customize Your Account - Elite Modz</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212; /* Black background */
+            color: #e0e0e0; /* Light gray text */
+        }
+
+        header {
+            background-color: #1e1e1e;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid red;
+        }
+
+        header .logo img {
+            width: 150px;
+        }
+
+        header .logo-text {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ff2d2d; /* Red logo text */
+        }
+
+        .product-section {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .product-section h2 {
+            color: #ff2d2d;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        .checkbox-group {
+            text-align: left;
+            display: inline-block;
+            margin: 0 auto;
+            color: #e0e0e0;
+        }
+
+        .checkbox-group label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        .submit-button {
+            background-color: #ff2d2d;
+            border: none;
+            padding: 10px 20px;
+            color: #121212;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .submit-button:hover {
+            background-color: #ff1a1a;
+        }
+
+        footer {
+            background-color: #1e1e1e;
+            padding: 20px;
+            text-align: center;
+            color: #e0e0e0;
+            margin-top: 40px;
+            border-top: 2px solid red;
+        }
+
+        footer a {
+            color: #ff2d2d;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ff1a1a;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="C:\Users\sbmur\OneDrive\Desktop\logo" alt="Elite Modz Logo">
+        </div>
+        <div class="logo-text">Elite Modz</div>
+    </header>
+
+    <section class="product-section">
+        <h2>Customize Your Account</h2>
+        <form id="customizationForm">
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" name="moddedOutfits" value="5-10">
+                    Modded outfits (+$5-10)
+                </label>
+                <label>
+                    <input type="checkbox" name="moddedCars" value="20-50">
+                    Modded cars (+$20-50)
+                </label>
+                <label>
+                    <input type="checkbox" name="allBunkerResearch" value="2">
+                    All bunker research (+$2)
+                </label>
+                <label>
+                    <input type="checkbox" name="allWeapons" value="4">
+                    All weapons (+$4)
+                </label>
+                <label>
+                    <input type="checkbox" name="unlockAll" value="50">
+                    Unlock all (everything in the game) (+$50)
+                </label>
+            </div>
+            <div>
+                <label for="desiredLevel">What level do you want?</label>
+                <input type="text" id="desiredLevel" name="desiredLevel" placeholder="Enter desired level">
+            </div>
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Elite Modz. All rights reserved.</p>
+        <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
+    </footer>
+
+</body>
+
+</html>
 
