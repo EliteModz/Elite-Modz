@@ -12,19 +12,25 @@ function updateCart() {
     const totalCostElement = document.getElementById('total-cost');
     const cartCountElement = document.getElementById('cart-count');
 
-    cartItemsContainer.innerHTML = ''; // Clear previous items
-    let totalCost = 0;
+    if (cartItemsContainer) {
+        cartItemsContainer.innerHTML = ''; // Clear previous items
+        let totalCost = 0;
 
-    cartItems.forEach(item => {
-        const itemElement = document.createElement('div');
-        itemElement.innerHTML = `${item.name}: $${item.price.toFixed(2)}`;
-        cartItemsContainer.appendChild(itemElement);
-        totalCost += item.price; // Add item price to total
-    });
+        cartItems.forEach(item => {
+            const itemElement = document.createElement('div');
+            itemElement.innerHTML = `${item.name}: $${item.price.toFixed(2)}`;
+            cartItemsContainer.appendChild(itemElement);
+            totalCost += item.price; // Add item price to total
+        });
 
-    totalCostElement.textContent = totalCost.toFixed(2); // Update total cost
-    cartCountElement.textContent = cartItems.length; // Update cart count
-    localStorage.setItem('cartCount', cartItems.length); // Save cart count to local storage
+        totalCostElement.textContent = totalCost.toFixed(2); // Update total cost
+    }
+
+    const totalCount = cartItems.length;
+    if (cartCountElement) {
+        cartCountElement.textContent = totalCount; // Update cart count
+    }
+    localStorage.setItem('cartCount', totalCount); // Save cart count to local storage
 }
 
 // Initialize cart on page load
@@ -40,7 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Update cart count on load
     const cartCountElement = document.getElementById('cart-count');
-    cartCountElement.textContent = savedCartCount || 0;
+    if (cartCountElement) {
+        cartCountElement.textContent = savedCartCount || 0;
+    }
 });
 
 // Save cart items to local storage on unload
