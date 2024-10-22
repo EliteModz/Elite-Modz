@@ -1,142 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customize Your Account - Elite Modz</title>
+    <title>Customize Account</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #121212; /* Black background */
-            color: #e0e0e0; /* Light gray text */
-        }
-
-        header {
-            background-color: #1e1e1e;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 3px solid red;
-        }
-
-        header .logo img {
-            width: 150px;
-        }
-
-        header .logo-text {
-            font-size: 2.5em;
-            font-weight: bold;
-            color: #ff2d2d; /* Red logo text */
-        }
-
-        .product-section {
-            padding: 40px;
-            text-align: center;
-        }
-
-        .product-section h2 {
-            color: #ff2d2d;
-            margin-bottom: 30px;
-            font-size: 2.5em;
-        }
-
-        .checkbox-group {
-            text-align: left;
-            display: inline-block;
-            margin: 0 auto;
-            color: #e0e0e0;
-        }
-
-        .checkbox-group label {
-            display: block;
-            margin: 10px 0;
-        }
-
-        .submit-button {
-            background-color: #ff2d2d;
-            border: none;
-            padding: 10px 20px;
-            color: #121212;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-
-        .submit-button:hover {
-            background-color: #ff1a1a;
-        }
-
-        footer {
-            background-color: #1e1e1e;
-            padding: 20px;
-            text-align: center;
-            color: #e0e0e0;
-            margin-top: 40px;
-            border-top: 2px solid red;
-        }
-
-        footer a {
-            color: #ff2d2d;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: #ff1a1a;
-        }
-    </style>
 </head>
-
 <body>
-
     <header>
-        <div class="logo">
-            <img src="C:\Users\sbmur\OneDrive\Desktop\logo" alt="Elite Modz Logo">
-        </div>
-        <div class="logo-text">Elite Modz</div>
+        <a href="index.html" class="neon">Elite Modz</a>
+        <a href="cart.html" class="cart-link neon">🛒 Cart (<span id="cart-count">0</span>)</a>
     </header>
-
-    <section class="product-section">
-        <h2>Customize Your Account</h2>
-        <form id="customizationForm">
-            <div class="checkbox-group">
-                <label>
-                    <input type="checkbox" name="moddedOutfits" value="5-10">
-                    Modded outfits (+$5-10)
-                </label>
-                <label>
-                    <input type="checkbox" name="moddedCars" value="20-50">
-                    Modded cars (+$20-50)
-                </label>
-                <label>
-                    <input type="checkbox" name="allBunkerResearch" value="2">
-                    All bunker research (+$2)
-                </label>
-                <label>
-                    <input type="checkbox" name="allWeapons" value="4">
-                    All weapons (+$4)
-                </label>
-                <label>
-                    <input type="checkbox" name="unlockAll" value="50">
-                    Unlock all (everything in the game) (+$50)
-                </label>
-            </div>
-            <div>
-                <label for="desiredLevel">What level do you want?</label>
-                <input type="text" id="desiredLevel" name="desiredLevel" placeholder="Enter desired level">
-            </div>
-            <button type="submit" class="submit-button">Submit</button>
+    
+    <section id="customize">
+        <h2 class="neon">Customize Your Account</h2>
+        
+        <form id="customization-form">
+            <label>
+                <input type="checkbox" name="moddedOutfits" value="10"> Modded outfits (+$10)
+            </label><br>
+            <label>
+                <input type="checkbox" name="moddedCars" value="20"> Modded cars (+$20)
+            </label><br>
+            <label>
+                <input type="checkbox" name="bunkerResearch" value="2"> All bunker research (+$2)
+            </label><br>
+            <label>
+                <input type="checkbox" name="allWeapons" value="4"> All weapons (+$4)
+            </label><br>
+            <label>
+                <input type="checkbox" name="unlockAll" value="50"> Unlock all (everything in the game) (+$50)
+            </label><br>
+            <label>
+                Desired Level: <input type="number" name="desiredLevel" placeholder="Enter level" required>
+            </label><br>
+            <button type="button" class="neon" onclick="addCustomizationToCart()">Add to Cart</button>
         </form>
     </section>
 
     <footer>
-        <p>&copy; 2024 Elite Modz. All rights reserved.</p>
-        <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
+        <p class="neon">&copy; 2024 Elite Modz. All rights reserved.</p>
     </footer>
 
+    <script>
+        function addCustomizationToCart() {
+            const form = document.getElementById('customization-form');
+            const checkboxes = form.querySelectorAll('input[type="checkbox"]:checked');
+            let total = 0;
+            let customizationDetails = "Customizations: ";
+
+            checkboxes.forEach(checkbox => {
+                total += parseInt(checkbox.value);
+                customizationDetails += `${checkbox.parentNode.textContent.trim()}, `;
+            });
+
+            const desiredLevel = form.desiredLevel.value;
+            if (desiredLevel) {
+                customizationDetails += `Desired Level: ${desiredLevel}`;
+            }
+
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            cartItems.push({ name: customizationDetails, price: total });
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+            alert('Customizations added to cart!');
+        }
+    </script>
 </body>
-
 </html>
-
