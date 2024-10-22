@@ -26,11 +26,17 @@ function updateCart() {
     cartCountElement.textContent = cartItems.length; // Update cart count
 }
 
-// This function is just for demonstration. You can remove or replace it with actual calls from your shop page.
-function testCart() {
-    addToCart('Basic: Level 300 and 150 Million', 20);
-    addToCart('Regular: Level 450 and 250 Million', 35);
-}
+// Initialize cart on page load
+document.addEventListener('DOMContentLoaded', () => {
+    // Load cart items from local storage if needed
+    const savedCart = JSON.parse(localStorage.getItem('cartItems'));
+    if (savedCart) {
+        cartItems = savedCart;
+        updateCart();
+    }
+});
 
-// Call this function to test the cart (remove or comment out when not needed).
-testCart();
+// Save cart items to local storage on unload
+window.addEventListener('beforeunload', () => {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+});
