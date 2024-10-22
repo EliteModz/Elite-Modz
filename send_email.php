@@ -20,16 +20,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Send email
     if (mail($to, $subject, $body, $headers)) {
-        // Redirect back to index.html with a success message
+        // Redirect back to the form with a success message
         header("Location: index.html?success=1");
     } else {
-        // Redirect back to index.html with an error message
+        // Redirect back to the form with an error message
         header("Location: index.html?error=1");
     }
 } else {
-    // Redirect to the index page if the request method is not POST
+    // Redirect back to the form if the request method is not POST
     header("Location: index.html");
     exit();
 }
 ?>
-
