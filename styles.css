@@ -1,47 +1,75 @@
+/* Base Styles */
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background-color: #121212; /* Dark background */
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0d0d0d; /* Dark background */
+    color: #fff; /* White text */
     margin: 0;
-    padding: 20px;
-    color: #e0e0e0; /* Light text color for contrast */
-}
-
-header {
-    background: linear-gradient(135deg, #1f1f1f, #333); /* Dark gradient background */
-    color: #fff;
-    padding: 20px 0; /* Increased padding for a bolder header */
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Darker shadow for depth */
-}
-
-header h1 {
-    color: #ff2d2d; /* Set text color to neon red */
-    text-shadow: 
-        0 0 10px #ff2d2d, 
-        0 0 20px #ff2d2d,
-        0 0 30px #ff2d2d; /* Bright red glow */
-}
-
-nav ul {
-    list-style: none;
     padding: 0;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 20px; /* Increased margin for more spacing */
+/* Header Styling */
+header {
+    background-color: #1a1a1a;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
 }
 
-nav ul li a {
-    color: #ff2d2d; /* Neon bold red for links */
-    text-decoration: none; /* Removed underline */
-    font-weight: bold; /* Bold text */
-    transition: color 0.3s; /* Added smooth color transition */
+header a {
+    color: #ff2d2d;
+    font-size: 2em;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-    color: #ff1a1a; /* Darker neon red on hover */
+header a:hover {
+    color: #ff1a1a;
 }
 
-/* ... rest of your CSS ... */
+/* Neon Button Effect */
+button.neon {
+    background-color: #ff2d2d;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 45, 45, 0.7), 0 0 20px rgba(255, 45, 45, 0.6);
+    transition: all 0.3s ease;
+}
+
+button.neon:hover {
+    background-color: #ff1a1a;
+    box-shadow: 0 0 15px rgba(255, 26, 26, 1), 0 0 30px rgba(255, 26, 26, 0.8);
+}
+
+/* Product Section */
+.product {
+    background-color: #1a1a1a;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.product h3 {
+    color: #ff2d2d;
+    margin-bottom: 10px;
+}
+
+/* Cart Icon */
+.cart-link {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    box-shadow: inset 0 -2px 0 red;
+}
+
+.cart-link:hover {
+    color: #ff1a1a;
+    box-shadow: inset 0 -4px 0 red;
+}
