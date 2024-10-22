@@ -81,12 +81,12 @@ button:hover {
     right: 20px;
     top: 20px;
     color: white; /* Keep the text color white */
-    text-decoration: none; /* Remove default underline */
     font-size: 1.5em;
-    box-shadow: inset 0 -2px 0 red; /* Add red underline using box-shadow */
+    text-decoration: underline; /* Apply underline */
+    text-decoration-color: red; /* Set underline color to red */
 }
 
 .cart-link:hover {
     color: white; /* Keep text white on hover */
-    box-shadow: inset 0 -4px 0 red; /* Make underline thicker on hover */
+    text-decoration-color: darkred; /* Darken underline on hover */
 }
