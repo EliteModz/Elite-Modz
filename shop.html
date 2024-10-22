@@ -13,13 +13,21 @@
 
         /* Make "Elite Modz" text neon red with a glowing effect */
         .neon {
-            color: #ff2d2d !important; /* Use important to override other styles */
+            color: #ff2d2d; /* Red color */
             text-shadow: 
                 0 0 10px #ff2d2d, 
                 0 0 20px #ff2d2d, 
-                0 0 30px #ff2d2d; /* Keep the glow */
+                0 0 30px #ff2d2d; /* Glowing effect */
             text-decoration: none; /* Remove underline */
             font-size: 2em; /* Increase size if needed */
+        }
+
+        /* Ensure "Elite Modz" is red in all states */
+        .neon:hover,
+        .neon:active,
+        .neon:focus {
+            color: #ff2d2d; /* Keep red on hover, active, and focus */
+            outline: none; /* Remove outline on focus */
         }
 
         /* Cart link styling */
