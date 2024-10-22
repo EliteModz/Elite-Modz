@@ -26,6 +26,11 @@ function updateCart() {
     cartCountElement.textContent = cartItems.length; // Update cart count
 }
 
-// Example function call to add items (you should replace this with actual calls from your shop page)
-addToCart('Basic: Level 300 and 150 Million', 20);
-addToCart('Regular: Level 450 and 250 Million', 35);
+// This function is just for demonstration. You can remove or replace it with actual calls from your shop page.
+function testCart() {
+    addToCart('Basic: Level 300 and 150 Million', 20);
+    addToCart('Regular: Level 450 and 250 Million', 35);
+}
+
+// Call this function to test the cart (remove or comment out when not needed).
+testCart();
