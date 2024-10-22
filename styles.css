@@ -15,6 +15,14 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Darker shadow for depth */
 }
 
+header h1 {
+    color: #ff2d2d; /* Set text color to neon red */
+    text-shadow: 
+        0 0 10px #ff2d2d, 
+        0 0 20px #ff2d2d,
+        0 0 30px #ff2d2d; /* Bright red glow */
+}
+
 nav ul {
     list-style: none;
     padding: 0;
@@ -36,57 +44,4 @@ nav ul li a:hover {
     color: #ff1a1a; /* Darker neon red on hover */
 }
 
-section {
-    background: #1e1e1e; /* Darker section background */
-    margin: 20px 0; /* Increased margin for better separation */
-    padding: 20px; /* Increased padding for more space */
-    border-radius: 10px; /* More pronounced rounded corners */
-    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); /* Light shadow for depth */
-}
-
-form input, form textarea {
-    width: 100%;
-    padding: 12px; /* Increased padding for better usability */
-    margin-bottom: 15px; /* Increased margin for spacing */
-    border: 1px solid #555; /* Darker border */
-    border-radius: 5px; /* Rounded corners on inputs */
-    background-color: #333; /* Dark background for inputs */
-    color: #e0e0e0; /* Light text color for inputs */
-    transition: border 0.3s; /* Added transition for smoother focus effect */
-}
-
-form input:focus, form textarea:focus {
-    border-color: #ff2d2d; /* Change border color to neon red on focus */
-    outline: none; /* Remove default outline */
-}
-
-button {
-    background: #ff2d2d; /* Neon bold red button */
-    color: #121212; /* Dark text color for contrast */
-    border: none;
-    padding: 12px; /* Increased padding for better usability */
-    border-radius: 5px; /* Rounded corners on buttons */
-    cursor: pointer;
-    font-weight: bold; /* Bold button text */
-    transition: background 0.3s; /* Added transition for smoother hover effect */
-}
-
-button:hover {
-    background: #ff1a1a; /* Darker neon red on hover */
-}
-
-/* Cart link with red underline effect */
-.cart-link {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    color: white; /* Keep the text color white */
-    font-size: 1.5em;
-    text-decoration: underline; /* Apply underline */
-    text-decoration-color: red; /* Set underline color to red */
-}
-
-.cart-link:hover {
-    color: white; /* Keep text white on hover */
-    text-decoration-color: darkred; /* Darken underline on hover */
-}
+/* ... rest of your CSS ... */
