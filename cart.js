@@ -17,7 +17,7 @@ function updateCart() {
 
     cartItems.forEach(item => {
         const itemElement = document.createElement('div');
-        itemElement.innerHTML = `${item.name}: $${item.price}`;
+        itemElement.innerHTML = `${item.name}: $${item.price.toFixed(2)}`;
         cartItemsContainer.appendChild(itemElement);
         totalCost += item.price; // Add item price to total
     });
@@ -26,5 +26,6 @@ function updateCart() {
     cartCountElement.textContent = cartItems.length; // Update cart count
 }
 
-// Call this function when you want to add an item to the cart, e.g. in your shop page
-// Example: addToCart('Basic: Level 300 and 150 Million', 20);
+// Example function call to add items (you should replace this with actual calls from your shop page)
+addToCart('Basic: Level 300 and 150 Million', 20);
+addToCart('Regular: Level 450 and 250 Million', 35);
