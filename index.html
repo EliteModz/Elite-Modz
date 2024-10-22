@@ -1,36 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Modz - Home</title>
+    <title>Elite Modz - Modded Accounts & Services</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212; /* Black background */
+            color: #e0e0e0; /* Light gray text */
+        }
+
+        /* Header and Navigation Bar */
+        header {
+            background-color: #1e1e1e;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid red;
+        }
+
+        header .logo img {
+            width: 150px;
+        }
+
+        header .logo-text {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ff2d2d; /* Red logo text */
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #1e1e1e;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-size: 1.2em;
+            color: white;
+            padding: 10px 15px;
+        }
+
+        nav ul li a:hover {
+            color: #ff2d2d; /* Neon red hover effect */
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('images/banner.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            color: #ff2d2d;
+            text-shadow: 0 0 15px #ff0000;
+        }
+
+        /* Product Section */
+        .product-section {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .product-section h2 {
+            color: #ff2d2d;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        .product {
+            display: inline-block;
+            background-color: #1e1e1e;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .product h3 {
+            color: #ff2d2d;
+        }
+
+        .product p {
+            color: #e0e0e0;
+        }
+
+        .product button {
+            background-color: #ff2d2d;
+            border: none;
+            padding: 10px 20px;
+            color: #121212;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .product button:hover {
+            background-color: #ff1a1a;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e1e1e;
+            padding: 20px;
+            text-align: center;
+            color: #e0e0e0;
+            margin-top: 40px;
+            border-top: 2px solid red;
+        }
+
+        footer a {
+            color: #ff2d2d;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ff1a1a;
+        }
+    </style>
 </head>
+
 <body>
+
     <header>
-        <div class="logo-container">
-            <img src="images/logo.png" alt="Elite Modz Logo" class="logo">
+        <div class="logo">
+            <img src="C:\Users\sbmur\OneDrive\Desktop\logo" alt="Elite Modz Logo">
         </div>
-        <h1 class="neon">Welcome to Elite Modz, home of the best GTA 5 modded accounts.</h1>
-        <a href="cart.html" class="cart-link neon">🛒 Cart (<span id="cart-count">0</span>)</a>
+        <div class="logo-text">Elite Modz</div>
         <nav>
             <ul>
-                <li><a class="neon" href="index.html">Home</a></li>
-                <li><a class="neon" href="shop.html">Shop</a></li>
-                <li><a class="neon" href="custom-account.html">Custom Accounts</a></li>
-                <li><a class="neon" href="about.html">About</a></li>
-                <li><a class="neon" href="contact.html">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <section id="home">
-        <h2 class="neon">Home Section</h2>
-        <p>Welcome to Elite Modz! Get the best modded GTA 5 accounts or customize your own!</p>
-        <a href="shop.html"><button class="neon">Shop Now</button></a>
+
+    <section class="hero">
+        <h1>Modded Accounts & Services</h1>
     </section>
+
+    <section class="product-section">
+        <h2>Our Products</h2>
+        <div class="product">
+            <h3>Basic: Level 300 and 150 Million</h3>
+            <p>Price: $20</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <h3>Regular: Level 450 and 250 Million</h3>
+            <p>Price: $40</p>
+            <button>Add to Cart</button>
+        </div>
+        <!-- Add more products here -->
+    </section>
+
     <footer>
-        <p class="neon">&copy; 2024 Elite Modz. All rights reserved. We are not responsible for account bans.</p>
+        <p>&copy; 2024 Elite Modz. All rights reserved.</p>
+        <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
     </footer>
-    <script src="cart.js"></script>
+
 </body>
+
 </html>
