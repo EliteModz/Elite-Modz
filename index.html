@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elite Modz - Modded Accounts & Services</title>
-   <link rel="icon" href="https://github.com/EliteModz/Elite-Modz/raw/refs/heads/main/favicon.ico" type="image/x-icon">
+    <!-- Favicon link -->
+    <link rel="icon" href="https://github.com/EliteModz/Elite-Modz/raw/refs/heads/main/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -59,7 +60,7 @@
 
         /* Hero Section */
         .hero {
-            background-image: url('Images/banner.jpg'); /* Make sure this path is correct */
+            background-image: url('images/banner.jpg');
             background-size: cover;
             background-position: center;
             height: 500px;
@@ -182,7 +183,7 @@
 
     <header>
         <div class="logo">
-            <img src="Images/logo.png" alt="Elite Modz Logo"> <!-- Update this if necessary -->
+            <img src="C:\Users\sbmur\OneDrive\Desktop\logo.png" alt="Elite Modz Logo">
         </div>
         <div class="logo-text">Elite Modz</div>
         <nav>
@@ -270,28 +271,18 @@
 
             // Send email
             if (mail($to, $subject, $body, $headers)) {
-                echo "<p style='color: green;'>Message sent successfully!</p>";
+                echo "<p>Thank you for your message, $name! We'll get back to you soon.</p>";
             } else {
-                echo "<p style='color: red;'>Failed to send message.</p>";
+                echo "<p>Sorry, there was an error sending your message. Please try again later.</p>";
             }
         }
         ?>
     </section>
 
     <footer>
-        <p>&copy; 2024 Elite Modz. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        <p>&copy; 2024 Elite Modz. All rights reserved.</p>
+        <p>Follow us on <a href="#">Social Media</a></p>
     </footer>
-
-    <script>
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar').innerHTML = data;
-            })
-            .catch(error => {
-                console.error('Error loading navbar:', error);
-            });
-    </script>
 
 </body>
 
