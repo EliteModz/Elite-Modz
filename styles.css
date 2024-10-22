@@ -44,6 +44,21 @@ button.neon:hover {
     box-shadow: 0 0 15px rgba(255, 26, 26, 1), 0 0 30px rgba(255, 26, 26, 0.8);
 }
 
+/* Remove Button Styling */
+.remove-button {
+    background-color: black; /* Black background */
+    color: white; /* White text */
+    border: 2px solid red; /* Red outline */
+    padding: 5px 10px; /* Padding for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, color 0.3s; /* Transition effects */
+}
+
+.remove-button:hover {
+    background-color: red; /* Change background on hover */
+    color: black; /* Change text color on hover */
+}
+
 /* Product Section */
 .product {
     background-color: #1a1a1a;
