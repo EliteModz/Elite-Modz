@@ -5,99 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elite Modz</title>
     
-    <!-- Link to your favicon (using favicon.png as requested) -->
     <link rel="icon" href="images/favicon.png" type="image/png">
-
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS -->
+    <link rel="stylesheet" href="styles.css">
     <style>
-        /* Neon effect styles */
+        /* Neon effect */
         .neon {
-            color: white; /* White text color */
-            text-shadow: 
-                0 0 10px #ff0000,  /* Stronger red outer glow */
-                0 0 20px #ff0000,
-                0 0 30px #ff0000; /* Keep it deep red */
+            color: white;
+            text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
         }
 
-        /* Button styling */
+        /* Button Styling */
         button {
-            background-color: #ff0000; /* Button color */
-            color: white; /* White text color */
+            background-color: #ff0000;
+            color: white;
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
-            box-shadow: 
-                0 0 10px #ff0000, 
-                0 0 20px #ff0000,
-                0 0 30px #ff0000; /* Stronger pure red glow */
-            transition: 0.3s; /* Smooth transition */
+            transition: 0.3s;
         }
 
         button:hover {
-            box-shadow: 
-                0 0 20px #ff0000, 
-                0 0 40px #ff0000; /* More intense red glow on hover */
+            box-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000;
         }
 
-        /* Navigation links */
+        /* Nav Bar */
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            padding: 0;
+        }
+
         nav a {
-            color: white; /* White text color */
-            text-decoration: none; /* Remove underline */
-            transition: 0.3s; /* Smooth transition */
+            color: white;
+            text-decoration: none;
+            padding: 10px;
         }
 
         nav a:hover {
-            text-shadow: 
-                0 0 10px #ff0000, 
-                0 0 20px #ff0000,
-                0 0 30px #ff0000; /* Stronger red glow effect on hover */
+            text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
         }
 
-        /* Cart styling */
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo-container img {
+                width: 50%;
+            }
+        }
+
+        /* Cart link */
         .cart-link {
             position: absolute;
             right: 20px;
             top: 20px;
             color: white;
             font-size: 1.5em;
-            text-shadow: 
-                0 0 10px #ff0000, 
-                0 0 20px #ff0000,
-                0 0 30px #ff0000;
+        }
+
+        /* General styling for sections */
+        section {
+            padding: 20px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <header>
         <div class="logo-container">
-            <img src="images/logo.png" alt="Elite Modz Logo" class="logo"> 
+            <img src="images/logo.png" alt="Elite Modz Logo" class="logo">
         </div>
 
         <h1 class="neon">Welcome to Elite Modz, home of the best GTA 5 modded accounts.</h1>
-        
-        <!-- Cart link at the top -->
+
         <a href="cart.html" class="cart-link neon">🛒 Cart (<span id="cart-count">0</span>)</a>
 
         <nav>
             <ul>
                 <li><a class="neon" href="#home">Home</a></li>
-                <li><a class="neon" href="#accounts">Accounts</a></li>
-                <li><a class="neon" href="#why-us">Why Us?</a></li>
-                <li><a class="neon" href="#custom accounts">Custom Account</a></li>
+                <li><a class="neon" href="shop.html">Shop</a></li>
+                <li><a class="neon" href="custom-account.html">Custom Accounts</a></li>
+                <li><a class="neon" href="about.html">About</a></li>
+                <li><a class="neon" href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="home">
         <h2 class="neon">Home Section</h2>
-        <p>This is the homepage of Elite Modz.</p>
+        <p>Get the best modded GTA 5 accounts right here at Elite Modz. Browse our selection or customize your own!</p>
+        <a href="shop.html"><button class="neon">Shop Now</button></a>
     </section>
 
     <section id="accounts">
         <h2 class="neon">Modded Accounts for Sale</h2>
 
-        <!-- Example of product listings -->
         <div class="product">
             <h3 class="neon">Modded Account Level 100</h3>
             <p>Price: $50</p>
@@ -118,24 +120,12 @@
     </section>
 
     <section id="about">
-        <h2 class="neon">About Us</h2>
-        <p>Why should you buy our accounts?
-            Our mission is to create a successful website and make your GTA experience great. We have a range of different packages you can buy so everyone can have some fun. 
-            We are reliable, modern, and new. We have great service we answer all questions within 24 hours. We also have custom accounts if you want to try something new!</p>
-    </section>
-
-    <section id="contact">
-        <h2 class="neon">Contact</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit" class="neon">Send</button>
-        </form>
+        <h2 class="neon">Why Choose Elite Modz?</h2>
+        <p>Elite Modz offers the most reliable modded accounts for GTA 5, ensuring high levels, money, and unique features without compromising security.</p>
     </section>
 
     <footer>
-        <p class="neon">&copy; 2024 Elite Modz. Unregistered. We are not responsible if you get banned.</p>
+        <p class="neon">&copy; 2024 Elite Modz. All rights reserved. We are not responsible for account bans.</p>
     </footer>
 
     <script>
@@ -146,3 +136,9 @@
             updateCartCount();
         }
 
+        function updateCartCount() {
+            document.getElementById('cart-count').innerText = cart.length;
+        }
+    </script>
+</body>
+</html>
