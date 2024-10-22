@@ -23,6 +23,8 @@
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            max-width: 400px;
+            margin: auto;
         }
 
         input, textarea {
@@ -42,14 +44,16 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            width: 100%;
         }
 
         button:hover {
             background-color: #e63939; /* Darker red on hover */
         }
 
-        .success, .error {
+        .message {
             margin-top: 20px;
+            text-align: center;
         }
     </style>
 </head>
@@ -57,7 +61,6 @@
 <body>
 
 <h2>Contact Us</h2>
-
 <form action="contact.php" method="POST">
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="email" placeholder="Your Email" required>
@@ -87,13 +90,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Send email
     if (mail($to, $subject, $body, $headers)) {
-        echo "<p class='success'>Message sent successfully!</p>";
+        echo "<div class='message' style='color: green;'>Message sent successfully!</div>";
     } else {
-        echo "<p class='error'>Failed to send message.</p>";
+        echo "<div class='message' style='color: red;'>Failed to send message.</div>";
     }
 }
 ?>
 
 </body>
 </html>
-
