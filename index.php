@@ -1,3 +1,6 @@
+Sure! Here’s the complete code with the specified email address included. Save this as `index.php` on your server.
+
+```php
 <!DOCTYPE html>
 <html lang="en">
 
@@ -254,7 +257,7 @@
             $message = htmlspecialchars(trim($_POST['message']));
 
             // Recipient email
-            $to = "elitemodz1321@gmail.com"; // Replace with your email address
+            $to = "elitemodz1321@gmail.com"; // Your email address
             $subject = "New Contact Form Submission";
 
             // Email content
@@ -277,10 +280,4 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 Elite Modz. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-    </footer>
-
-</body>
-
-</html>
-
+        <p>&copy; 2024 Elite Modz. All rights reserved. | <a href="#">Privacy Policy</a
