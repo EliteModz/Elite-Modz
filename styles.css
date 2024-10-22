@@ -13,6 +13,7 @@ header {
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    position: relative; /* Positioning for cart icon */
 }
 
 header a {
@@ -25,6 +26,33 @@ header a {
 
 header a:hover {
     color: #ff1a1a;
+}
+
+/* Navbar Styling */
+nav {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+nav ul {
+    list-style: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+}
+
+nav ul li {
+    display: inline; /* Align items horizontally */
+    margin: 0 15px; /* Spacing between items */
+}
+
+nav ul li a {
+    color: #ff2d2d; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.2em; /* Adjust font size */
+}
+
+nav ul li a:hover {
+    color: #ff1a1a; /* Change color on hover */
 }
 
 /* Neon Button Effect */
