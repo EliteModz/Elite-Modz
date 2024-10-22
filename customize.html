@@ -39,9 +39,10 @@
                 <input type="checkbox" name="unlockAll" value="50"> Unlock all (everything in the game) (+$50)
             </label><br>
             <label>
-                Desired Level: <input type="number" name="desiredLevel" placeholder="Enter level" min="1" max="8000" required>
+                Desired Level: <input type="number" name="desiredLevel" placeholder="Enter level" required>
             </label><br>
             <button type="button" class="neon" onclick="addCustomizationToCart()">Add to Cart</button>
+            <p id="error-message" style="color: red;"></p> <!-- Error message -->
         </form>
     </section>
 
@@ -55,14 +56,20 @@
             const checkboxes = form.querySelectorAll('input[type="checkbox"]:checked');
             let total = 0;
             let customizationDetails = "Customizations: ";
+            let errorMessage = document.getElementById('error-message');
+            errorMessage.textContent = ''; // Clear previous error message
 
             checkboxes.forEach(checkbox => {
                 total += parseInt(checkbox.value);
                 customizationDetails += `${checkbox.parentNode.textContent.trim()}, `;
             });
 
-            const desiredLevel = form.desiredLevel.value;
+            const desiredLevel = parseInt(form.desiredLevel.value);
             if (desiredLevel) {
+                if (desiredLevel < 1 || desiredLevel > 8000) { // Check level range
+                    errorMessage.textContent = "Error: Desired level must be between 1 and 8000.";
+                    return; // Stop execution
+                }
                 const levelCost = Math.floor(desiredLevel / 100) * 2; // Calculate cost for desired level
                 total += levelCost; // Add level cost to total
                 customizationDetails += `Desired Level: ${desiredLevel} (+$${levelCost})`;
