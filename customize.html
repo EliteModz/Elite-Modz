@@ -56,7 +56,9 @@
 
             const desiredLevel = form.desiredLevel.value;
             if (desiredLevel) {
-                customizationDetails += `Desired Level: ${desiredLevel}`;
+                const levelCost = Math.floor(desiredLevel / 100) * 2; // Calculate cost for desired level
+                total += levelCost; // Add level cost to total
+                customizationDetails += `Desired Level: ${desiredLevel} (+$${levelCost})`;
             }
 
             const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
