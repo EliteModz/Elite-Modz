@@ -1,5 +1,5 @@
 <?php
-$servername = "localhost"; // Your database server
+$servernme = "localhost"; // Your database server
 $username = "root"; // Your database username
 $password = ""; // Your database password
 $dbname = "your_database"; // Your database name
