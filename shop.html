@@ -6,11 +6,64 @@
     <title>Elite Modz - Shop</title>
     <link rel="icon" href="https://github.com/EliteModz/Elite-Modz/raw/refs/heads/main/favicon.ico" type="image/x-icon"> <!-- Favicon link -->
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212; /* Black background */
+            color: #e0e0e0; /* Light gray text */
+        }
+
+        /* Header and Navigation Bar */
+        header {
+            background-color: #1e1e1e;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid red;
+        }
+
+        header .logo-text {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ff2d2d; /* Red logo text */
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #1e1e1e;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-size: 1.2em;
+            color: white;
+            padding: 10px 15px;
+        }
+
+        nav ul li a:hover {
+            color: #ff2d2d; /* Neon red hover effect */
+        }
+    </style>
 </head>
 <body>
     <header>
-        </div>
-        <div id="navbar"></div> <!-- Navbar will be loaded here -->
+        <div class="logo-text">Elite Modz</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="socials.html">Socials</a></li>
+                <li><a href="cart.html" class="cart-link neon">🛒 Cart (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
     </header>
 
     <section class="hero">
@@ -65,16 +118,5 @@
     </footer>
 
     <script src="cart.js"></script>
-    <script>
-        // Load the navbar from external file
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar').innerHTML = data;
-            })
-            .catch(error => {
-                console.error('Error loading navbar:', error);
-            });
-    </script>
 </body>
 </html>
