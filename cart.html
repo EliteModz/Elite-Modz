@@ -3,29 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Modz - Cart</title>
-    <link rel="icon" href="https://github.com/EliteModz/Elite-Modz/raw/refs/heads/main/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css">
+    <title>Checkout Payment</title>
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .checkout-container {
+            background-color: #1c1c1c;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            width: 350px;
+            text-align: center;
+        }
+        .checkout-container h2 {
+            margin-bottom: 20px;
+            color: #ff3333;
+        }
+        .checkout-container input[type="text"],
+        .checkout-container input[type="email"],
+        .checkout-container input[type="tel"],
+        .checkout-container input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 4px;
+            background-color: #333333;
+            color: #ffffff;
+            font-size: 15px;
+        }
+        .checkout-container input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #ff3333;
+            color: #ffffff;
+            font-size: 15px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .checkout-container input[type="submit"]:hover {
+            background-color: #cc0000;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="socials.html">Socials</a></li>
-                <li><a href="cart.html" class="cart-link neon">🛒 Cart (<span id="cart-count">0</span>)</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section id="cart">
-        <h2 class="neon">Your Cart</h2>
-        <div id="cart-items"></div>
-        <h3 class="neon">Total: $<span id="total-cost">0</span></h3>
-        <button class="neon" id="checkout-btn">Checkout</button>
-    </section>
-    
-    <script src="cart.js"></script>
+    <div class="checkout-container">
+        <h2>Checkout Payment</h2>
+        <form action="/checkout" method="post">
+            <input type="text" name="card_name" placeholder="Name on Card" required>
+            <input type="text" name="card_number" placeholder="Card Number" required>
+            <input type="text" name="exp_date" placeholder="Expiry Date (MM/YY)" required>
+            <input type="text" name="cvv" placeholder="CVV" required>
+            <input type="text" name="billing_address" placeholder="Billing Address" required>
+            <input type="text" name="city" placeholder="City" required>
+            <input type="text" name="state" placeholder="State/Province" required>
+            <input type="text" name="zip" placeholder="ZIP/Postal Code" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="submit" value="Pay Now">
+        </form>
+    </div>
 </body>
 </html>
