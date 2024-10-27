@@ -1,163 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cart</title>
-<style>
-.cart-container {
-    background-color: #1c1c1c;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    width: 280px;
-    text-align: center;
-    margin: auto;
-    color: #ffffff;
-}
-
-.cart-container h2 {
-    color: #ff3333;
-    font-size: 18px;
-}
-
-.cart-item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    font-size: 14px;
-}
-
-.cart-item button {
-    background-color: #cc0000;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 2px 6px;
-    cursor: pointer;
-}
-
-.total {
-    font-size: 16px;
-    margin: 10px 0;
-}
-
-.checkout-button,
-.cart-container input[type="submit"] {
-    width: 100%;
-    background-color: #ff3333;
-    color: #ffffff;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.checkout-button:hover,
-.cart-container input[type="submit"]:hover {
-    background-color: #cc0000;
-}
-
-.payment-method-fields {
-    display: none;
-}
-</style>
-
-<script>
-// Sample cart items for demonstration
-let cartItems = [
-    { name: "Modded Account Basic", price: 20 },
-    { name: "Modded Account Elite", price: 75 },
-];
-
-function renderCart() {
-    const cartContainer = document.getElementById("cart-items");
-    cartContainer.innerHTML = ""; // Clear previous items
-
-    let total = 0;
-    cartItems.forEach((item, index) => {
-        total += item.price;
-        cartContainer.innerHTML += `
-            <div class="cart-item">
-                <span>${item.name}</span>
-                <span>$${item.price}</span>
-                <button onclick="removeItem(${index})">Remove</button>
-            </div>
-        `;
-    });
-
-    document.getElementById("total").textContent = "Total: $" + total;
-}
-
-function removeItem(index) {
-    cartItems.splice(index, 1);
-    renderCart();
-}
-
-function showPaymentOptions() {
-    document.getElementById("checkout-section").style.display = "block";
-}
-
-function showPaymentFields() {
-    var paymentMethod = document.getElementById("payment-method").value;
-    document.querySelectorAll(".payment-method-fields").forEach(field => {
-        field.style.display = "none";
-    });
-
-    if (paymentMethod) {
-        document.getElementById(paymentMethod + "-fields").style.display = "block";
-    }
-}
-
-window.onload = renderCart;
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Modz - Cart</title>
+    <link rel="icon" href="https://github.com/EliteModz/Elite-Modz/raw/refs/heads/main/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <title>Checkout Payment</title>
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .checkout-container {
+            background-color: #1c1c1c;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            width: 350px;
+            text-align: center;
+        }
+        .checkout-container h2 {
+            margin-bottom: 20px;
+            color: #ff3333;
+        }
+        .checkout-container input[type="text"],
+        .checkout-container input[type="email"],
+        .checkout-container input[type="tel"],
+        .checkout-container input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 4px;
+            background-color: #333333;
+            color: #ffffff;
+            font-size: 15px;
+        }
+        .checkout-container input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #ff3333;
+            color: #ffffff;
+            font-size: 15px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .checkout-container input[type="submit"]:hover {
+            background-color: #cc0000;
+        }
+    </style>
 </head>
 <body>
-<div class="cart-container">
-    <h2>Your Cart</h2>
-    <div id="cart-items"></div>
-    <div class="total" id="total"></div>
-
-    <button class="checkout-button" onclick="showPaymentOptions()">Checkout</button>
-
-    <div id="checkout-section" style="display:none;">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="socials.html">Socials</a></li>
+                <li><a href="cart.html" class="cart-link neon">🛒 Cart (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="cart">
+        <h2 class="neon">Your Cart</h2>
+        <div id="cart-items"></div>
+        <h3 class="neon">Total: $<span id="total-cost">0</span></h3>
+        <button class="neon" id="checkout-btn">Checkout</button>
+    </section>
+    
+    <script src="cart.js"></script>
+    <div class="checkout-container">
+        <h2>Checkout Payment</h2>
         <form action="/checkout" method="post">
-            <h2>Payment Details</h2>
+            <input type="text" name="card_name" placeholder="Name on Card" required>
+            <input type="text" name="card_number" placeholder="Card Number" required>
+            <input type="text" name="exp_date" placeholder="Expiry Date (MM/YY)" required>
+            <input type="text" name="cvv" placeholder="CVV" required>
             <input type="text" name="billing_address" placeholder="Billing Address" required>
             <input type="text" name="city" placeholder="City" required>
             <input type="text" name="state" placeholder="State/Province" required>
-
-            <select id="payment-method" onchange="showPaymentFields()" required>
-                <option value="" disabled selected>Select Payment Method</option>
-                <option value="paypal">PayPal</option>
-                <option value="credit-card">Credit Card</option>
-                <option value="apple-pay">Apple Pay</option>
-                <option value="google-pay">Google Pay</option>
-            </select>
-
-            <div id="credit-card-fields" class="payment-method-fields">
-                <input type="text" name="card_name" placeholder="Name on Card" required>
-                <input type="text" name="card_number" placeholder="Card Number" required>
-                <input type="text" name="exp_date" placeholder="Expiry Date (MM/YY)" required>
-                <input type="text" name="cvv" placeholder="CVV" required>
-            </div>
-
-            <div id="paypal-fields" class="payment-method-fields">
-                <input type="email" name="paypal_email" placeholder="PayPal Email" required>
-            </div>
-
-            <div id="apple-pay-fields" class="payment-method-fields">
-                <p>Proceed with Apple Pay on your device.</p>
-            </div>
-
-            <div id="google-pay-fields" class="payment-method-fields">
-                <p>Proceed with Google Pay on your device.</p>
-            </div>
-
-            <input type="submit" value="Complete Purchase">
+            <input type="text" name="zip" placeholder="ZIP/Postal Code" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="submit" value="Pay Now">
         </form>
     </div>
-</div>
 </body>
 </html>
