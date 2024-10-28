@@ -1,66 +1,174 @@
-    <DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    </nav>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Modz - Your Cart</title>
+    <!-- Favicon link -->
+    <link rel="icon" href="https://github.com/EliteModz/Elite-Modz/raw/refs/heads/main/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Header and Navigation Bar */
+        header {
+            background-color: #1e1e1e;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid red;
+        }
+
+        header .logo-text {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ff2d2d;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #1e1e1e;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-size: 1.2em;
+            color: white;
+            padding: 10px 15px;
+        }
+
+        nav ul li a:hover {
+            color: #ff2d2d;
+        }
+
+        /* Cart Section */
+        #cart {
+            text-align: center;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        #cart h2 {
+            color: #ff2d2d;
+        }
+
+        #cart-items {
+            margin-top: 20px;
+            text-align: left;
+            color: #e0e0e0;
+        }
+
+        .neon {
+            color: #ff2d2d;
+            text-shadow: 0 0 5px #ff2d2d, 0 0 10px #ff2d2d;
+        }
+
+        button.neon {
+            background-color: #333;
+            color: #ff2d2d;
+            border: 2px solid #ff2d2d;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        button.neon:hover {
+            background-color: #444;
+        }
+
+        footer {
+            background-color: #1e1e1e;
+            padding: 20px;
+            text-align: center;
+            color: #e0e0e0;
+            border-top: 2px solid red;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #ff2d2d;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ff1a1a;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-text">Elite Modz</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="socials.html">Socials</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="cart.html" class="cart-link neon">🛒 Cart (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section id="customize">
-        <h2 class="neon">Customize Your Account</h2>
-        
-        <form id="customization-form">
-            <label>
-                <input type="checkbox" name="moddedOutfits" value="10"> Modded outfits (+$10)
-            </label><br>
-            <label>
-                <input type="checkbox" name="moddedCars" value="20"> Modded cars (+$20)
-            </label><br>
-            <label>
-                <input type="checkbox" name="bunkerResearch" value="2"> All bunker research (+$2)
-            </label><br>
-            <label>
-                <input type="checkbox" name="allWeapons" value="4"> All weapons (+$4)
-            </label><br>
-            <label>
-                <input type="checkbox" name="unlockAll" value="50"> Unlock all (everything in the game) (+$50)
-            </label><br>
-            <label>
-                Desired Level: <input type="number" name="desiredLevel" placeholder="Enter level" min="1" max="8000" required>
-            </label><br>
-            <button type="button" class="neon" onclick="addCustomizationToCart()">Add to Cart</button>
-        </form>
     <section id="cart">
         <h2 class="neon">Your Cart</h2>
         <div id="cart-items"></div>
         <h3 class="neon">Total: $<span id="total-cost">0</span></h3>
         <button class="neon" id="checkout-btn">Checkout</button>
     </section>
+
     <footer>
-        <p class="neon">&copy; 2024 Elite Modz. All rights reserved.</p>
+        <p>&copy; 2024 Elite Modz. All rights reserved.</p>
+        <p>Follow us on <a href="#">Social Media</a></p>
     </footer>
+
     <script>
-        function addCustomizationToCart() {
-            const form = document.getElementById('customization-form');
-            const checkboxes = form.querySelectorAll('input[type="checkbox"]:checked');
-            let total = 0;
-            let customizationDetails = "Customizations: ";
-            checkboxes.forEach(checkbox => {
-                total += parseInt(checkbox.value);
-                customizationDetails += `${checkbox.parentNode.textContent.trim()}, `;
-            });
-            const desiredLevel = form.desiredLevel.value;
-            if (desiredLevel) {
-                const levelCost = Math.floor(desiredLevel / 100) * 2; // Calculate cost for desired level
-                total += levelCost; // Add level cost to total
-                customizationDetails += `Desired Level: ${desiredLevel} (+$${levelCost})`;
-            }
+        function loadCart() {
             const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-            cartItems.push({ name: customizationDetails, price: total });
-            localStorage.setItem('cartItems', JSON.stringify(cartItems));
-            alert('Customizations added to cart!');
+            const cartItemsDiv = document.getElementById('cart-items');
+            const totalCostSpan = document.getElementById('total-cost');
+            let total = 0;
+
+            cartItemsDiv.innerHTML = "";
+            cartItems.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('cart-item');
+                itemDiv.innerText = `${item.name} - $${item.price}`;
+                cartItemsDiv.appendChild(itemDiv);
+                total += item.price;
+            });
+
+            totalCostSpan.innerText = total;
+            document.getElementById('cart-count').innerText = cartItems.length;
         }
+
+        document.getElementById('checkout-btn').addEventListener('click', () => {
+            alert("Proceeding to checkout...");
+            localStorage.removeItem('cartItems');
+            loadCart();
+        });
+
+        window.addEventListener('load', loadCart);
     </script>
-    
-    <script src="cart.js"></script>
+
 </body>
+
 </html>
