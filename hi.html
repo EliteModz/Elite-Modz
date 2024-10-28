@@ -1,1 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Modz Shopping Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000; /* Black background */
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .item {
+            background-color: #444;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .remove-button {
+            background-color: #3b0a0a; /* Very dark red */
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .remove-button:hover {
+            background-color: #5e0f0f; /* Slightly lighter dark red */
+        }
+        #cart-summary {
+            margin-top: 20px;
+            background-color: #333;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Elite Modz Shopping Cart</h1>
+</header>
+
+<div id="cart-items"></div>
+
+<div id="cart-summary">
+    <h2>Cart Summary</h2>
+    <p>Total Cost: $<span id="total-cost">0.00</span></p>
+    <p>Items in Cart: <span id="cart-count">0</span></p>
+</div>
+
+<footer>
+    <p>&copy; 2024 Elite Modz. All rights reserved.</p>
+</footer>
+
+<script>
+    let cartItems = []; // Array to hold items in the cart
+
+    // Function to add items to the cart
+    function addToCart(name, price) {
+        cartItems.push({ name, price });
+        updateCart();
+    }
+
+    // Function to remove items from the cart
+    function removeFromCart(index) {
+        cartItems.splice(index, 1); // Remove the item at the specified index
+        updateCart(); // Update the cart display
+    }
+
+    // Function to update the cart display
+    function updateCart() {
+        const cartItemsContainer = document.getElementById('cart-items');
+        const totalCostElement = document.getElementById('total-cost');
+        const cartCountElement = document.getElementById('cart-count');
+
+        if (cartItemsContainer) {
+            cartItemsContainer.innerHTML = ''; // Clear previous items
+            let totalCost = 0;
+
+            cartItems.forEach((item, index) => {
+                const itemElement = document.createElement('div');
+                itemElement.className = 'item';
+                itemElement.innerHTML = `${item.name}: $${item.price.toFixed(2)} 
+                <button onclick="removeFromCart(${index})" class="remove-button">Remove</button>`;
+                cartItemsContainer.appendChild(itemElement);
+                totalCost += item.price; // Add item price to total
+            });
+
+            totalCostElement.textContent = totalCost.toFixed(2); // Update total cost
+        }
+
+        const totalCount = cartItems.length;
+        if (cartCountElement) {
+            cartCountElement.textContent = totalCount; // Update cart count
+        }
+        localStorage.setItem('cartCount', totalCount); // Save cart count to local storage
+        localStorage.setItem('cartItems', JSON.stringify(cartItems)); // Save updated cart items to local storage
+    }
+
+    // Initialize cart on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        // Load cart items from local storage if needed
+        const savedCart = JSON.parse(localStorage.getItem('cartItems'));
+        const savedCartCount = localStorage.getItem('cartCount');
+
+        if (savedCart) {
+            cartItems = savedCart;
+            updateCart();
+        }
+
+        // Update cart count on load
+        const cartCountElement = document.getElementById('cart-count');
+        if (cartCountElement) {
+            cartCountElement.textContent = savedCartCount || 0;
+        }
+    });
+
+    // Save cart items to local storage on unload
+    window.addEventListener('beforeunload', () => {
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    });
+
+    // Example of adding items to the cart (you can call this function based on user actions)
+    // addToCart('Option 1', 10);
+    // addToCart('Option 2', 15);
+    // addToCart('Option 3', 20);
+</script>
+
+</body>
+</html>
 
