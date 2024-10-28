@@ -74,17 +74,20 @@ button.neon:hover {
 
 /* Remove Button Styling */
 .remove-button {
-    background-color: black; /* Black background */
-    color: white; /* White text */
-    border: 2px solid red; /* Red outline */
-    padding: 5px 10px; /* Padding for the button */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s, color 0.3s; /* Transition effects */
+    background-color: #ff0000; /* Red background */
+    color: #ffffff; /* White text */
+    padding: 8px 16px; /* Padding for the button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.6); /* Neon glow effect */
+    transition: all 0.3s ease;
 }
 
 .remove-button:hover {
-    background-color: red; /* Change background on hover */
-    color: black; /* Change text color on hover */
+    background-color: #cc0000; /* Darker red on hover */
+    box-shadow: 0 0 15px rgba(255, 0, 0, 1); /* Enhanced glow on hover */
 }
 
 /* Product Section */
