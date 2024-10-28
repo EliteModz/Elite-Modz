@@ -73,7 +73,7 @@ button.neon:hover {
 }
 
 /* Remove Button Styling */
-.remove-button {
+.remove-btn {
     background-color: #ff0000; /* Red background */
     color: #ffffff; /* White text */
     padding: 8px 16px; /* Padding for the button */
@@ -85,7 +85,7 @@ button.neon:hover {
     transition: all 0.3s ease;
 }
 
-.remove-button:hover {
+.remove-btn:hover {
     background-color: #cc0000; /* Darker red on hover */
     box-shadow: 0 0 15px rgba(255, 0, 0, 1); /* Enhanced glow on hover */
 }
