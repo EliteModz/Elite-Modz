@@ -29,7 +29,7 @@
     <h2 class="neon">Your Cart</h2>
     <div id="cart-items"></div>
     <h3 class="neon">Total: $<span id="total-cost">0</span></h3>
-    <button class="neon" id="checkout-btn">Checkout</button>
+    <button class="neon" id="checkout-btn" onclick="goToCheckout()">Checkout</button>
 </section>
 
 <footer>
@@ -60,6 +60,12 @@
         });
 
         totalCostElement.textContent = totalCost;
+        updateCartCount(); // Update cart count display
+    }
+
+    // Function to navigate to checkout page
+    function goToCheckout() {
+        window.location.href = 'checkout.html';
     }
 
     // Add item to cart
