@@ -55,6 +55,16 @@
     <h1>Elite Modz Shopping Cart</h1>
 </header>
 
+<div id="options">
+    <h2>Select Options to Add to Cart</h2>
+    <button onclick="addToCart('Option 1', 10)">Add Option 1 - $10</button>
+    <button onclick="addToCart('Option 2', 15)">Add Option 2 - $15</button>
+    <button onclick="addToCart('Option 3', 20)">Add Option 3 - $20</button>
+    <button onclick="addToCart('Option 4', 12)">Add Option 4 - $12</button>
+    <button onclick="addToCart('Option 5', 25)">Add Option 5 - $25</button>
+    <button onclick="addToCart('Option 6', 30)">Add Option 6 - $30</button>
+</div>
+
 <div id="cart-items"></div>
 
 <div id="cart-summary">
@@ -134,11 +144,6 @@
     window.addEventListener('beforeunload', () => {
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
     });
-
-    // Example of adding items to the cart (you can call this function based on user actions)
-    // addToCart('Option 1', 10);
-    // addToCart('Option 2', 15);
-    // addToCart('Option 3', 20);
 </script>
 
 </body>
