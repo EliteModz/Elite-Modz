@@ -13,15 +13,12 @@
     <!-- Order Summary -->
     <section class="order-summary">
       <h2>Order Summary</h2>
-      <div class="items-list">
-        <!-- Example Cart Item -->
-        <div class="item">
-          <p>Modded Account - Level 1000, 1 Billion GTA$</p>
-          <p>Price: <span class="price">$100</span></p>
-        </div>
+      <div class="items-list" id="items-list">
+        <!-- Items will be dynamically inserted here -->
       </div>
       <div class="total">
-        <p>Total Amount: <span class="total-price">$100</span></p>
+        <span>Total Amount:</span>
+        <span class="total-price" id="total-price">$0.00</span>
       </div>
     </section>
 
@@ -50,6 +47,34 @@
       <button type="submit" class="confirm-btn">Confirm Purchase</button>
     </form>
   </div>
+
+  <script>
+    // Sample cart items data (replace this with dynamic data from your cart)
+    const cartItems = [
+      { name: 'Modded Account - Level 300, 150 Million GTA$', price: 20 },
+      { name: 'Modded Account - Level 450, 250 Million GTA$', price: 35 },
+      { name: 'Modded Account - Level 750, 600 Million GTA$', price: 75 }
+    ];
+
+    // Function to populate the order summary
+    function populateOrderSummary() {
+      const itemsList = document.getElementById('items-list');
+      const totalPriceElement = document.getElementById('total-price');
+      let total = 0;
+
+      cartItems.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('item');
+        itemDiv.innerHTML = `<span>${item.name}</span><span class="price">$${item.price}</span>`;
+        itemsList.appendChild(itemDiv);
+        total += item.price;
+      });
+
+      totalPriceElement.textContent = `$${total.toFixed(2)}`;
+    }
+
+    // Call the function to populate the order summary on page load
+    window.onload = populateOrderSummary;
+  </script>
 </body>
-<script src="checkout.js"></script>
 </html>
