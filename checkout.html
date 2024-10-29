@@ -12,7 +12,7 @@
 
     <!-- Order Summary -->
     <section class="order-summary">
-      <h2>Order Summary</h2>
+      <h2>Your Order Summary</h2>
       <div class="items-list" id="items-list">
         <!-- Items will be dynamically inserted here -->
       </div>
@@ -49,8 +49,12 @@
   </div>
 
   <script>
-    // Assuming you have a global cart array or retrieve it from localStorage/sessionStorage
-    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || []; // Example of pulling from localStorage
+    // Sample cart items - Replace this with your actual cart data retrieval logic
+    const cartItems = [
+      { name: 'Modded Account - Level 300, 150 Million GTA$', price: 20 },
+      { name: 'Modded Account - Level 450, 250 Million GTA$', price: 35 },
+      { name: 'Modded Account - Level 750, 600 Million GTA$', price: 75 }
+    ];
 
     // Function to populate the order summary
     function populateOrderSummary() {
