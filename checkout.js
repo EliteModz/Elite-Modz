@@ -1,9 +1,6 @@
-// checkout.js
-document.getElementById("checkout-form").addEventListener("submit", (event) => {
-  const paymentMethod = document.getElementById("payment-method").value;
-
-  if (!paymentMethod) {
-    alert("Please select a payment method.");
-    event.preventDefault(); // Stop form submission if no payment method is selected
-  }
-});
+// Function to add an item to the cart
+function addToCart(item) {
+  let cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+  cart.push(item);
+  localStorage.setItem('cartItems', JSON.stringify(cart));
+}
