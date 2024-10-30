@@ -1,89 +1,121 @@
-/* Body background color for the Elite Modz theme */
+/* Base Styles */
 body {
-  background-color: #1a1a1a;
-  color: #ffffff;
-  font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0d0d0d; /* Dark background */
+    color: #fff; /* White text */
+    margin: 0;
+    padding: 0;
 }
 
-/* Checkout Container */
-.checkout-container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #2a2a2a;
-  border-radius: 10px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+/* Header Styling */
+header {
+    background-color: #1a1a1a; /* Dark header */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    position: relative; /* Positioning for cart icon */
 }
 
-/* Section Titles */
-.checkout-container h1,
-.checkout-container h2 {
-  color: #ff0000;
-  border-bottom: 2px solid #ff0000;
-  padding-bottom: 5px;
-  margin-bottom: 15px;
+header a {
+    color: #ff2d2d; /* Bright red links */
+    font-size: 2em;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-/* Order Summary Items */
-.order-summary {
-  margin-bottom: 20px;
+header a:hover {
+    color: #ff1a1a; /* Darker red on hover */
 }
 
-.order-summary .item {
-  display: flex;
-  justify-content: space-between;
-  padding: 5px 0;
-  border-bottom: 1px solid #444;
+/* Navbar Styling */
+nav {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
 }
 
-.order-summary .total {
-  display: flex;
-  justify-content: space-between;
-  font-size: 1.2em;
-  font-weight: bold;
-  color: #ff0000;
-  margin-top: 10px;
+nav ul {
+    list-style: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
 }
 
-/* Form Styling */
-form label {
-  display: block;
-  margin-top: 10px;
-  font-weight: bold;
+nav ul li {
+    display: inline; /* Align items horizontally */
+    margin: 0 15px; /* Spacing between items */
 }
 
-form input[type="text"],
-form input[type="email"],
-form select {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  margin-bottom: 15px;
-  background-color: #1a1a1a;
-  color: #ffffff;
-  border: 1px solid #ff0000;
-  border-radius: 5px;
+nav ul li a {
+    color: #ff2d2d; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.2em; /* Adjust font size */
 }
 
-form input[type="text"]::placeholder,
-form input[type="email"]::placeholder {
-  color: #888888;
+nav ul li a:hover {
+    color: #ff1a1a; /* Change color on hover */
 }
 
-/* Button Styling */
-.confirm-btn {
-  background-color: #ff0000;
-  color: #ffffff;
-  padding: 12px;
-  width: 100%;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1em;
-  font-weight: bold;
-  transition: background-color 0.3s;
+/* Neon Button Effect */
+button.neon {
+    background-color: #ff2d2d; /* Red background */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 45, 45, 0.7), 0 0 20px rgba(255, 45, 45, 0.6);
+    transition: all 0.3s ease;
 }
 
-.confirm-btn:hover {
-  background-color: #d40000;
+button.neon:hover {
+    background-color: #ff1a1a; /* Darker red on hover */
+    box-shadow: 0 0 15px rgba(255, 26, 26, 1), 0 0 30px rgba(255, 26, 26, 0.8);
+}
+
+/* Remove Button Styling */
+.remove-btn {
+    background-color: #ff0000; /* Red background */
+    color: #ffffff; /* White text */
+    padding: 8px 16px; /* Padding for the button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.6); /* Neon glow effect */
+    transition: all 0.3s ease;
+}
+
+.remove-btn:hover {
+    background-color: #cc0000; /* Darker red on hover */
+    box-shadow: 0 0 15px rgba(255, 0, 0, 1); /* Enhanced glow on hover */
+}
+
+/* Product Section */
+.product {
+    background-color: #1a1a1a; /* Dark product background */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.product h3 {
+    color: #ff2d2d; /* Red heading */
+    margin-bottom: 10px;
+}
+
+/* Cart Icon */
+.cart-link {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: white; /* White cart icon */
+    text-decoration: none;
+    font-size: 1.5em;
+    box-shadow: inset 0 -2px 0 red; /* Red shadow */
+}
+
+.cart-link:hover {
+    color: #ff1a1a; /* Darker red on hover */
+    box-shadow: inset 0 -4px 0 red; /* Enhanced red shadow on hover */
 }
