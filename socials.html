@@ -1,1 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Modz - Social Media</title>
+    <link rel="icon" href="https://github.com/EliteModz/Elite-Modz/raw/refs/heads/main/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic Styling */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212; /* Black background */
+            color: #e0e0e0; /* Light gray text */
+        }
 
+        header {
+            background-color: #1e1e1e;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid red;
+        }
+
+        .logo-text {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ff2d2d; /* Red logo text */
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #1e1e1e;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-size: 1.2em;
+            color: white;
+            padding: 10px 15px;
+        }
+
+        nav ul li a:hover {
+            background-color: transparent; /* No background color change on hover */
+            color: #ff2d2d; /* Change text color to match your theme */
+        }
+
+        .cart-link {
+            margin-left: auto;
+            font-size: 1.2em;
+            color: white;
+            padding: 10px 15px;
+        }
+
+        .cart-link:hover {
+            color: #ff2d2d; /* Neon red hover effect */
+        }
+
+        h1 {
+            text-align: center;
+            margin: 30px;
+            color: #ff2d2d; /* Red color for heading */
+            text-transform: uppercase;
+        }
+
+        /* Social Media Container */
+        .social-media-container {
+            display: flex;
+            justify-content: center;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+
+        .social-media-box {
+            width: 300px;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.5);
+            text-align: center;
+            transition: transform 0.3s;
+            margin: 10px; /* Add margin between boxes */
+        }
+
+        .social-media-box:hover {
+            transform: scale(1.05);
+        }
+
+        .social-media-box img {
+            width: 80px; /* Set width */
+            height: auto; /* Change height to auto to maintain aspect ratio */
+            margin-bottom: 15px;
+            object-fit: contain; /* Ensure the image fits without stretching */
+        }
+
+        .social-media-box h2 {
+            color: #ff2d2d; /* Red color for headings */
+            margin-bottom: 10px;
+        }
+
+        .social-media-box p {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .social-media-box a {
+            text-decoration: none;
+            background-color: #ff2d2d; /* Red background for buttons */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .social-media-box a:hover {
+            background-color: white;
+            color: red;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e1e1e;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            border-top: 2px solid red;
+        }
+
+        footer p {
+            color: #e0e0e0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .social-media-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .social-media-box {
+                width: 90%;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo-text">Elite Modz</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="socials.html">Socials</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+            <a href="cart.html" class="cart-link">🛒 Cart (<span id="cart-count">0</span>)</a>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <h1>Follow Us On Social Media</h1>
+
+    <div class="social-media-container">
+        <!-- TikTok Section -->
+        <div class="social-media-box">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a9/TikTok_logo.svg/1200px-TikTok_logo.svg.png" alt="TikTok Logo">
+            <img src="https://logolook.net/wp-content/uploads/2021/06/Tiktok-Logo-2016-2048x1152.png" alt="TikTok Logo" style="width: 150px; height: auto;">
+            <h2>TikTok</h2>
+            <p>Follow us on TikTok for daily updates and fun content.</p>
+            <p>@elitemodzgta5</p>
+            <a href="https://www.tiktok.com/@elitemodzgta5" target="_blank">Go to TikTok</a>
+        </div>
+
+        <!-- YouTube Section -->
+        <div class="social-media-box">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube Logo">
+            <h2>YouTube</h2>
+            <p>Watch our latest modding videos on YouTube.</p>
+            <p>Elite Modz Official</p>
+            <a href="https://www.youtube.com/channel/elite_modz" target="_blank">Go to YouTube</a>
+        </div>
+
+        <!-- Gmail Section -->
+        <div class="social-media-box">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Gmail Logo" style="background-color: white; border-radius: 50%;">
+            <h2>Email Us</h2>
+            <p>Have any questions? Drop us an email!</p>
+            <p>elitemodz1321@gmail.com</p>
+            <a href="mailto:Elitemodz1321@gmail.com">Send Email</a>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Elite Modz. All rights reserved.</p>
+    </footer>
+</body>
+</html>
