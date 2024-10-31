@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elite Modz - Social Media</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://github.com/EliteModz/Elite-Modz/raw/refs/heads/main/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
     <style>
         /* Basic Styling */
         body {
@@ -25,6 +26,12 @@
             font-size: 2.5em;
             font-weight: bold;
             color: #ff2d2d; /* Red logo text */
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         nav ul {
@@ -48,20 +55,32 @@
         }
 
         nav ul li a:hover {
+            background-color: red;
+            color: white;
+        }
+
+        .cart-link {
+            margin-left: auto;
+            font-size: 1.2em;
+            color: white;
+            padding: 10px 15px;
+        }
+
+        .cart-link:hover {
             color: #ff2d2d; /* Neon red hover effect */
         }
 
         h1 {
             text-align: center;
             margin: 30px;
-            color: red;
+            color: #ff2d2d; /* Red color for heading */
             text-transform: uppercase;
         }
 
         /* Social Media Container */
         .social-media-container {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             margin: 50px 0;
             flex-wrap: wrap;
         }
@@ -74,6 +93,7 @@
             box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.5);
             text-align: center;
             transition: transform 0.3s;
+            margin: 10px; /* Add margin between boxes */
         }
 
         .social-media-box:hover {
@@ -87,7 +107,7 @@
         }
 
         .social-media-box h2 {
-            color: red;
+            color: #ff2d2d; /* Red color for headings */
             margin-bottom: 10px;
         }
 
@@ -98,7 +118,7 @@
 
         .social-media-box a {
             text-decoration: none;
-            background-color: red;
+            background-color: #ff2d2d; /* Red background for buttons */
             color: white;
             padding: 10px 20px;
             border-radius: 5px;
@@ -149,8 +169,8 @@
                 <li><a href="socials.html">Socials</a></li>
                 <li><a href="login.html">Login</a></li>
                 <li><a href="register.html">Register</a></li>
-                <li><a href="cart.html" class="cart-link neon">🛒 Cart (<span id="cart-count">0</span>)</a></li>
             </ul>
+            <a href="cart.html" class="cart-link">🛒 Cart (<span id="cart-count">0</span>)</a>
         </nav>
     </header>
 
