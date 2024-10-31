@@ -1,1 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Modz - Cart</title>
+    <link rel="icon" href="https://github.com/EliteModz/Elite-Modz/raw/refs/heads/main/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo-text">Elite Modz</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="socials.html">Socials</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="cart.html" class="cart-link neon">🛒 Cart (<span id="cart-count">0</span>)</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="cart">
+    <h2 class="neon">Your Cart</h2>
+    <div id="cart-items"></div>
+    <h3 class="neon">Total: $<span id="total-cost">0</span></h3>
+    <button class="neon" id="checkout-btn">Checkout</button>
+    <button class="neon" id="checkout-btn" onclick="goToCheckout()">Checkout</button>
+</section>
+
+<footer>
+@@ -60,56 +60,62 @@
+        });
+
+        totalCostElement.textContent = totalCost;
+        updateCartCount(); // Update cart count display
+    }
+    // Function to navigate to checkout page
+    function goToCheckout() {
+        window.location.href = 'checkout.html';
+    }
+
+    // Add item to cart
+    function addCustomizationToCart() {
+        const form = document.getElementById('customization-form');
+        const checkboxes = form.querySelectorAll('input[type="checkbox"]:checked');
+        let total = 0;
+        let customizationDetails = "Customizations: ";
+        checkboxes.forEach(checkbox => {
+            total += parseInt(checkbox.value);
+            customizationDetails += `${checkbox.parentNode.textContent.trim()}, `;
+        });
+
+        const desiredLevel = form.desiredLevel.value;
+        if (desiredLevel) {
+            const levelCost = Math.floor(desiredLevel / 100) * 2;
+            total += levelCost;
+            customizationDetails += `Desired Level: ${desiredLevel} (+$${levelCost})`;
+        }
+
+        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        cartItems.push({ name: customizationDetails, price: total });
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+        alert('Customizations added to cart!');
+        loadCart(); // Update cart display
+    }
+
+    // Remove item from cart
+    function removeItem(index) {
+        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        if (index > -1) {
+            cartItems.splice(index, 1);
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            loadCart();
+        }
+    }
+
+    // Update cart count in nav
+    function updateCartCount() {
+        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        document.getElementById('cart-count').textContent = cartItems.length;
+    }
+
+    // Initialize cart on page load
+    window.onload = function() {
+        loadCart();
+        updateCartCount();
+    };
+</script>
+
+</body>
+</html>
