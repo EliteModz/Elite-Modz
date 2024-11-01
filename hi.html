@@ -1,295 +1,242 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Modz - GTA 5 Modded Accounts</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            background: #0f0f0f;
-            color: #fff;
-        }
-
-        .header {
-            background: #1a1a1a;
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #00ff88;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #00ff88;
-        }
-
-        .hero {
-            padding: 150px 0 80px;
-            text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('gta5-bg.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 18px;
-            color: #ccc;
-            margin-bottom: 30px;
-        }
-
-        .btn {
-            padding: 12px 30px;
-            background: #00ff88;
-            color: #000;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-
-        .btn:hover {
-            background: #00cc6a;
-        }
-
-        .features {
-            padding: 80px 0;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .feature-card {
-            background: #1a1a1a;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .feature-card i {
-            font-size: 40px;
-            color: #00ff88;
-            margin-bottom: 20px;
-        }
-
-        .feature-card h3 {
-            margin-bottom: 15px;
-        }
-
-        .packages {
-            padding: 80px 0;
-            background: #1a1a1a;
-        }
-
-        .packages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .package-card {
-            background: #2a2a2a;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .package-card h3 {
-            color: #00ff88;
-            margin-bottom: 20px;
-        }
-
-        .price {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-
-        .features-list {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-
-        .features-list li {
-            margin-bottom: 10px;
-        }
-
-        footer {
-            background: #1a1a1a;
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        .social-links {
-            margin-bottom: 20px;
-        }
-
-        .social-links a {
-            color: #fff;
-            margin: 0 10px;
-            font-size: 20px;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
-            color: #00ff88;
-        }
-    </style>
+    <title>Elite Modz</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <nav class="nav">
-                <div class="logo">Elite Modz</div>
-                <div class="nav-links">
-                    <a href="#home">Home</a>
-                    <a href="#features">Features</a>
-                    <a href="#packages">Packages</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </nav>
-        </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="cart.html">🛒 Cart (0)</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section class="hero" id="home">
-        <div class="container">
-            <h1>Premium GTA 5 Modded Accounts</h1>
-            <p>Get instant access to millions in GTA cash, rare items, and unlimited possibilities</p>
-            <a href="#packages" class="btn">View Packages</a>
-        </div>
-    </section>
+    <main>
+        <section id="hero">
+            <h1>Welcome to Elite Modz</h1>
+            <p>Your one-stop solution for all your GTA Online needs!</p>
+            <button onclick="location.href='packages.html'">Explore Packages</button>
+        </section>
 
-    <section class="features" id="features">
-        <div class="container">
-            <h2>Our Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-money-bill-wave"></i>
-                    <h3>Billions in Cash</h3>
-                    <p>Instant access to billions in GTA Online money</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-star"></i>
-                    <h3>High Rank</h3>
-                    <p>Accounts with high ranks and all unlocks</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-car"></i>
-                    <h3>All Vehicles</h3>
-                    <p>Access to all vehicles and customizations</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        <section id="features">
+            <h1>Our Features</h1>
+            <ul>
+                <li>Instant access to billions in GTA Online money</li>
+                <li>Accounts with high ranks and all unlocks</li>
+                <li>Access to all vehicles and customizations</li>
+                <li>24/7 Customer Support</li>
+                <li>Secure Payment Methods</li>
+                <li>Regular Updates and New Features</li>
+                <li>Exclusive Discounts for Returning Customers</li>
+                <li>Referral Program for Additional Rewards</li>
+                <li>Community Forum for Tips and Tricks</li>
+                <li>Live Chat Support for Immediate Assistance</li>
+                <li>Detailed User Guides and Tutorials</li>
+                <li>Free Trial for New Users</li>
+                <li>Custom Modding Options Available</li>
+                <li>Multi-Platform Support (PC, Xbox, PlayStation)</li>
+                <li>Regular Giveaways and Contests</li>
+            </ul>
+        </section>
 
-    <section class="packages" id="packages">
-        <div class="container">
-            <h2>Our Packages</h2>
-            <div class="packages-grid">
-                <div class="package-card">
-                    <h3>Starter Package</h3>
-                    <div class="price">$29.99</div>
-                    <ul class="features-list">
-                        <li>Rank 120</li>
-                        <li>$500 Million</li>
-                        <li>All Weapons Unlocked</li>
-                        <li>Basic Properties</li>
-                    </ul>
-                    <a href="#" class="btn">Purchase Now</a>
-                </div>
-                <div class="package-card">
-                    <h3>Premium Package</h3>
-                    <div class="price">$49.99</div>
-                    <ul class="features-list">
-                        <li>Rank 300</li>
-                        <li>$2 Billion</li>
-                        <li>All Properties</li>
-                        <li>All Vehicles</li>
-                    </ul>
-                    <a href="#" class="btn">Purchase Now</a>
-                </div>
-                <div class="package-card">
-                    <h3>Ultimate Package</h3>
-                    <div class="price">$79.99</div>
-                    <ul class="features-list">
-                        <li>Rank 1000</li>
-                        <li>$5 Billion</li>
-                        <li>Everything Unlocked</li>
-                        <li>Modded Stats</li>
-                    </ul>
-                    <a href="#" class="btn">Purchase Now</a>
-                </div>
+        <section id="packages">
+            <h1>Our Packages</h1>
+            <div class="package">
+                <h2>Starter Package</h2>
+                <p>Price: $29.99</p>
+                <ul>
+                    <li>Rank 120</li>
+                    <li>$500 Million</li>
+                    <li>All Weapons Unlocked</li>
+                    <li>Basic Properties</li>
+                    <li>1 Month Free Support</li>
+                    <li>Access to Basic Mods</li>
+                </ul>
+                <button>Purchase Now</button>
             </div>
-        </div>
-    </section>
+            <div class="package">
+                <h2>Premium Package</h2>
+                <p>Price: $49.99</p>
+                <ul>
+                    <li>Rank 300</li>
+                    <li>$2 Billion</li>
+                    <li>All Properties</li>
+                    <li>All Vehicles</li>
+                    <li>2 Months Free Support</li>
+                    <li>Access to Exclusive Events</li>
+                    <li>Priority Customer Service</li>
+                </ul>
+                <button>Purchase Now</button>
+            </div>
+            <div class="package">
+                <h2>Ultimate Package</h2>
+                <p>Price: $79.99</p>
+                <ul>
+                    <li>Rank 1000</li>
+                    <li>$5 Billion</li>
+                    <li>Everything Unlocked</li>
+                    <li>Modded Stats</li>
+                    <li>Lifetime Support</li>
+                    <li>Priority Access to New Features</li>
+                    <li>Exclusive Access to Beta Features</li>
+                </ul>
+                <button>Purchase Now</button>
+            </div>
+            <div class="package">
+                <h2>VIP Package</h2>
+                <p>Price: $99.99</p>
+                <ul>
+                    <li>Rank 1500</li>
+                    <li>$10 Billion</li>
+                    <li>All Unlocks and Customizations</li>
+                    <li>Personal Account Manager</li>
+                    <li>Exclusive VIP Events</li>
+                    <li>Free Upgrades for Life</li>
+                    <li>Access to VIP Community Forum</li>
+                </ul>
+                <button>Purchase Now</button>
+            </div>
+            <div class="package">
+                <h2>Elite Package</h2>
+                <p>Price: $149.99</p>
+                <ul>
+                    <li>Rank 2000</li>
+                    <li>$20 Billion</li>
+                    <li>All Vehicles and Properties</li>
+                    <li>Custom Modding Options</li>
+                    <li>Dedicated Support Line</li>
+                    <li>Exclusive Merchandise</li>
+                    <li>Annual VIP Event Invitations</li>
+                </ul>
+                <button>Purchase Now</button>
+            </div>
+        </section>
 
-    <footer id="contact">
-        <div class="container">
-            <div class="social-links">
-                <a href="#"><i class="fab fa-discord"></i></a>
-                <a href="#"><i class="fab fa-telegram"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+        <section id="products">
+            <h1>Modded Accounts for Sale</h1>
+            <div class="product">
+                <h3 class="neon">Basic: Level 300 and 150 Million</h3>
+                <p>Price: $20</p>
+                <button class="neon" onclick="addToCart('Basic: Level 300 and 150 Million', 20)">Add to Cart</button>
             </div>
-            <p>&copy; 2024 Elite Modz. All rights reserved.</p>
+            <div class="product">
+                <h3 class="neon">Regular: Level 450 and 250 Million</h3>
+                <p>Price: $35</p>
+                <button class="neon" onclick="addToCart('Regular: Level 450 and 250 Million', 35)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <h3 class="neon">Elite: Level 750 and 600 Million</h3>
+                <p>Price: $75</p>
+                <button class="neon" onclick="addToCart('Elite: Level 750 and 600 Million', 75)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <h3 class="neon">Ultimate: Level 1000 and 1 Billion</h3>
+                <p>Price: $100</p>
+                <button class="neon" onclick="addToCart('Ultimate: Level 1000 and 1 Billion', 100)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <h3 class="neon">God: Level 5000 and 100 Billion</h3>
+                <p>Price: $150</p>
+                <button class="neon" onclick="addToCart('God: Level 5000 and 100 Billion', 150)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <h3 class="neon">Infinity: Level 8000 and 1 Trillion</h3>
+                <p>Price: $250</p>
+                <button class="neon" onclick="addToCart('Infinity: Level 8000 and 1 Trillion', 250)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <h3 class="neon">Custom options</h3>
+                <p>Price: $2 - $250</p>
+                <button class="neon" onclick="window.location.href='customize.html'">Customize</button>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <h1>What Our Customers Say</h1>
+            <div class="testimonial">
+                <p>"Elite Modz changed my gaming experience! Highly recommend!" - John D.</p>
+            </div>
+            <div class="testimonial">
+                <p>"Fast and reliable service. I got my account upgraded in minutes!" - Sarah K.</p>
+            </div>
+            <div class="testimonial">
+                <p>"The support team is amazing! They helped me with everything." - Mike L.</p>
+            </div>
+            <div class="testimonial">
+                <p>"I love the community! So many tips and tricks shared." - Emily R.</p>
+            </div>
+            <div class="testimonial">
+                <p>"The packages are worth every penny. I feel like a pro!" - Alex T.</p>
+            </div>
+        </section>
+
+        <section id="faq">
+            <h1>Frequently Asked Questions</h1>
+            <div class="faq-item">
+                <h2>How do I purchase a package?</h2>
+                <p>Simply click the "Purchase Now" button on the package you want, and follow the instructions.</p>
+            </div>
+            <div class="faq-item">
+                <h2>Is my payment secure?</h2>
+                <p>Yes, we use secure payment methods to ensure your information is safe.</p>
+            </div>
+            <div class="faq-item">
+                <h2>What if I have issues with my account?</h2>
+                <p>Contact our 24/7 customer support for immediate assistance.</p>
+            </div>
+            <div class="faq-item">
+                <h2>Can I get a refund?</h2>
+                <p>Refunds are available within 30 days of purchase if you are not satisfied with the service.</p>
+            </div>
+            <div class="faq-item">
+                <h2>Do you offer discounts for bulk purchases?</h2>
+                <p>Yes, we offer discounts for bulk purchases. Please contact our support for more details.</p>
+            </div>
+            <div class="faq-item">
+                <h2>How often do you update your packages?</h2>
+                <p>We regularly update our packages to include the latest features and improvements based on customer feedback.</p>
+            </div>
+        </section>
+
+        <section id="blog">
+            <h1>Latest News and Updates</h1>
+            <article>
+                <h2>New Features Coming Soon!</h2>
+                <p>We are excited to announce that new features will be added to our packages next month. Stay tuned for more details!</p>
+            </article>
+            <article>
+                <h2>Customer Spotlight: How Elite Modz Changed My Game</h2>
+                <p>Read about how our customers have transformed their gaming experience with our services. Check out their stories!</p>
+            </article>
+            <article>
+                <h2>Tips for Maximizing Your GTA Online Experience</h2>
+                <p>Discover tips and tricks from our community to get the most out of your GTA Online gameplay.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Elite Modz. All rights reserved.</p>
+        <p>Follow us on Social Media</p>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+            <a href="#">YouTube</a>
+            <a href="#">Discord</a>
         </div>
     </footer>
 
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
 </body>
 </html>
