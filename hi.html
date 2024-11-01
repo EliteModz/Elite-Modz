@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Elite Modz - Premium GTA 5 Modded Accounts & Services. Get leveled up accounts with billions in GTA cash.">
-    <meta name="keywords" content="GTA 5 mods, modded accounts, GTA Online, gaming services">
-    <title>Elite Modz - Premium GTA 5 Modded Accounts & Services</title>
+    <meta name="description" content="Elite Modz - The #1 GTA 5 Modding Service. Premium modded accounts with billions in GTA cash.">
+    <meta name="keywords" content="GTA 5 mods, modded accounts, GTA Online, gaming services, GTA V modding">
+    <title>Elite Modz - Ultimate GTA 5 Modding Services</title>
+    
+    <!-- Favicon & External Resources -->
     <link rel="icon" href="https://github.com/EliteModz/Elite-Modz/raw/refs/heads/main/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    
     <style>
-        /* Root Variables */
+        /* Core Variables */
         :root {
             --primary-red: #ff2d2d;
             --primary-dark: #121212;
@@ -21,10 +26,15 @@
             --glow-shadow: 0 0 20px rgba(255, 45, 45, 0.4);
             --gradient-red: linear-gradient(45deg, var(--primary-red), #ff6b6b);
             --gradient-dark: linear-gradient(135deg, var(--primary-dark), #1a1a1a);
+            --gradient-neon: linear-gradient(90deg, #ff2d2d, #ff0000, #ff2d2d);
+            --border-glow: 0 0 10px var(--primary-red);
+            --text-shadow-red: 0 0 10px rgba(255, 45, 45, 0.8);
+            --box-shadow-hover: 0 10px 20px rgba(255, 45, 45, 0.2);
+            --animation-timing: cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         /* Reset & Base Styles */
-        * {
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -37,6 +47,22 @@
             color: var(--text-light);
             line-height: 1.6;
             overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+            background: var(--primary-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-red);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(var(--primary-red), #ff6b6b);
         }
 
         /* Loading Screen */
@@ -51,16 +77,30 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: opacity 0.5s;
+            transition: opacity 0.5s var(--animation-timing);
         }
 
-        .loading-animation {
+        .loading-content {
+            text-align: center;
+        }
+
+        .loading-spinner {
             width: 100px;
             height: 100px;
             border: 5px solid var(--primary-red);
             border-radius: 50%;
             border-top-color: transparent;
             animation: spin 1s linear infinite;
+        }
+
+        .loading-text {
+            margin-top: 20px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5em;
+            color: var(--primary-red);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: pulse 1.5s infinite;
         }
 
         /* Enhanced Header */
@@ -72,85 +112,93 @@
             z-index: 1000;
             backdrop-filter: blur(10px);
             border-bottom: 3px solid var(--primary-red);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
-            transition: all 0.3s ease;
+            box-shadow: var(--glow-shadow);
+            transition: all 0.3s var(--animation-timing);
         }
 
-        header.scrolled {
-            padding: 15px;
-            background: rgba(20, 20, 20, 0.98);
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .logo-container {
             display: flex;
-            justify-content: center;
             align-items: center;
-            margin-bottom: 15px;
+            gap: 20px;
+            margin-bottom: 20px;
         }
 
         .logo-text {
             font-family: 'Orbitron', sans-serif;
             font-size: 3.5em;
-            font-weight: 700;
-            background: var(--gradient-red);
+            font-weight: 800;
+            background: var(--gradient-neon);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            text-shadow: var(--glow-shadow);
-            letter-spacing: 2px;
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-shadow: var(--text-shadow-red);
+            letter-spacing: 3px;
             position: relative;
+            transition: transform 0.3s var(--animation-timing);
         }
 
         .logo-text::after {
-            content: 'PREMIUM GTA V SERVICES';
+            content: '';
             position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.2em;
-            letter-spacing: 5px;
-            color: var(--primary-red);
-            white-space: nowrap;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-red);
+            transform: scaleX(0);
+            transition: transform 0.3s var(--animation-timing);
         }
 
-        /* Advanced Navigation */
+        .logo-text:hover {
+            transform: translateY(-2px);
+        }
+
+        .logo-text:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* Navigation */
         nav {
-            position: relative;
+            width: 100%;
         }
 
-        nav ul {
+        .nav-list {
+            list-style: none;
             display: flex;
             justify-content: center;
             gap: 30px;
-            margin-top: 20px;
             flex-wrap: wrap;
+            padding: 0;
         }
 
-        nav ul li {
+        .nav-item {
             position: relative;
         }
 
-        nav ul li a {
+        .nav-link {
             color: var(--text-light);
             text-decoration: none;
             font-size: 1.2em;
             font-weight: 600;
             padding: 10px 20px;
             border-radius: 25px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            transition: all 0.3s var(--animation-timing);
             display: flex;
             align-items: center;
             gap: 8px;
+            position: relative;
+            overflow: hidden;
         }
 
-        nav ul li a i {
-            font-size: 0.9em;
-        }
-
-        nav ul li a::before {
+        .nav-link::before {
             content: '';
             position: absolute;
             top: 0;
@@ -158,82 +206,20 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255, 45, 45, 0.2), transparent);
-            transition: 0.5s;
+            transition: left 0.5s var(--animation-timing);
         }
 
-        nav ul li a:hover::before {
+        .nav-link:hover {
+            color: var(--primary-red);
+            text-shadow: var(--text-shadow-red);
+            transform: translateY(-2px);
+        }
+
+        .nav-link:hover::before {
             left: 100%;
         }
 
-        nav ul li a:hover {
-            color: var(--primary-red);
-            text-shadow: 0 0 10px rgba(255, 45, 45, 0.5);
-        }
-
-        /* Dropdown Menu */
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-content {
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(30, 30, 30, 0.95);
-            min-width: 200px;
-            border-radius: 10px;
-            padding: 10px;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 45, 45, 0.2);
-        }
-
-        .dropdown:hover .dropdown-content {
-            opacity: 1;
-            visibility: visible;
-            top: 120%;
-        }
-
-        .dropdown-content a {
-            padding: 10px 15px;
-            display: block;
-            color: var(--text-light);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border-radius: 5px;
-        }
-
-        .dropdown-content a:hover {
-            background: rgba(255, 45, 45, 0.1);
-            transform: translateX(5px);
-        }
-
-        /* Cart Badge */
-        .cart-link {
-            position: relative;
-        }
-
-        #cart-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: var(--primary-red);
-            color: white;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8em;
-            font-weight: bold;
-            animation: pulse 2s infinite;
-        }
-
-        /* Enhanced Hero Section */
+        /* Hero Section */
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
@@ -243,157 +229,111 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
+            margin-top: 80px;
         }
 
         .hero-content {
             text-align: center;
-            z-index: 2;
+            z-index: 1;
             padding: 20px;
         }
 
-        .hero h1 {
+        .hero-title {
             font-family: 'Orbitron', sans-serif;
             font-size: 5em;
-            font-weight: 700;
-            text-transform: uppercase;
+            font-weight: 900;
             color: #fff;
             text-shadow: 0 0 30px var(--primary-red);
-            letter-spacing: 4px;
-            animation: float 3s ease-in-out infinite;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.5em;
-            color: var(--text-light);
+            letter-spacing: 5px;
             margin-bottom: 30px;
-            max-width: 800px;
-            margin: 0 auto 30px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s var(--animation-timing) forwards;
         }
 
-        .cta-button {
-            display: inline-block;
+        .hero-subtitle {
+            font-size: 1.8em;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s var(--animation-timing) 0.3s forwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s var(--animation-timing) 0.6s forwards;
+        }
+
+        .hero-button {
             padding: 15px 40px;
-            background: var(--gradient-red);
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
             font-size: 1.2em;
             font-weight: 600;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s var(--animation-timing);
             text-transform: uppercase;
             letter-spacing: 2px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
         }
 
-        .cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(255, 45, 45, 0.4);
+        .hero-button.primary {
+            background: var(--gradient-red);
+            color: white;
         }
 
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: rgba(255, 255, 255, 0.1);
-            transform: rotate(45deg);
-            transition: all 0.3s ease;
+        .hero-button.secondary {
+            background: transparent;
+            border: 2px solid var(--primary-red);
+            color: var(--primary-red);
         }
 
-        .cta-button:hover::before {
-            transform: rotate(45deg) translateY(-100%);
+        .hero-button:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-hover);
         }
 
-        /* Features Section */
-        .features {
-            padding: 100px 50px;
-            background: linear-gradient(0deg, rgba(30, 30, 30, 0.9), rgba(18, 18, 18, 0.9));
-            position: relative;
+        /* Featured Products Carousel */
+        .featured-products {
+            padding: 100px 0;
+            background: linear-gradient(0deg, var(--secondary-dark), var(--primary-dark));
         }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 30px;
+        .section-title {
             text-align: center;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .feature-card i {
+            font-family: 'Orbitron', sans-serif;
             font-size: 3em;
             color: var(--primary-red);
-            margin-bottom: 20px;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
         }
 
-        .feature-card h3 {
-            font-size: 1.8em;
-            color: var(--primary-red);
-            margin-bottom: 15px;
+        .swiper {
+            width: 100%;
+            padding: 50px 0;
         }
 
-        .feature-card p {
-            color: var(--text-light);
-            font-size: 1.1em;
-        }
-
-        /* Product Grid */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 50px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .product-card {
+        .swiper-slide {
             background: rgba(30, 30, 30, 0.9);
             border-radius: 20px;
             padding: 30px;
+            transition: all 0.3s var(--animation-timing);
+            border: 1px solid rgba(255, 45, 45, 0.1);
+        }
+
+        .swiper-slide:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-red);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        .product-card {
             text-align: center;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .product-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(255, 45, 45, 0.1), transparent);
-            transform: translateX(-100%);
-            transition: 0.5s;
-        }
-
-        .product-card:hover::before {
-            transform: translateX(100%);
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 10px 30px rgba(255, 45, 45, 0.2);
         }
 
         .product-image {
@@ -410,6 +350,11 @@
             margin-bottom: 10px;
         }
 
+        .product-description {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
         .product-price {
             font-size: 2em;
             color: var(--text-light);
@@ -417,55 +362,175 @@
             font-weight: bold;
         }
 
-        .product-features {
-            list-style: none;
-            margin: 20px 0;
-            text-align: left;
+        .buy-button {
+            background: var(--gradient-red);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s var(--animation-timing);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .product-features li {
-            margin: 10px 0;
-            padding-left: 25px;
+        .buy-button:hover {
+            transform: scale(1.05);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        /* Features Grid */
+        .features {
+            padding: 100px 0;
+            background: var(--gradient-dark);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s var(--animation-timing);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 45, 45, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s var(--animation-timing);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 45, 45, 0.1);
+        }
+
+        .feature-card:hover::before {
+            transform: translateX(100%);
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            color: var(--primary-red);
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 1.5em;
+            color: var(--primary-red);
+            margin-bottom: 15px;
+        }
+
+        .feature-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: linear-gradient(0deg, var(--primary-dark), var(--secondary-dark));
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
             position: relative;
         }
 
-        .product-features li::before {
-            content: '✓';
-            color: var(--primary-red);
-            position: absolute;
-            left: 0;
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 20px;
         }
 
-        /* Footer Enhancement */
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info {
+            flex-grow: 1;
+        }
+
+        .author-name {
+            color: var(--primary-red);
+            font-weight: 600;
+        }
+
+        .author-title {
+            font-size: 0.9em;
+            color: var(--text-light);
+        }
+
+        /* Footer */
         footer {
             background: var(--secondary-dark);
-            padding: 80px 20px 40px;
+            padding: 80px 0 30px;
             position: relative;
+            border-top: 3px solid var(--primary-red);
         }
 
         .footer-content {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
+            padding: 0 20px;
         }
 
         .footer-section {
-            padding: 20px;
+            margin-bottom: 30px;
         }
 
-        .footer-section h3 {
+        .footer-title {
             color: var(--primary-red);
             font-size: 1.5em;
             margin-bottom: 20px;
             position: relative;
+            display: inline-block;
         }
 
-        .footer-section h3::after {
+        .footer-title::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -5px;
             left: 0;
             width: 50px;
             height: 2px;
@@ -483,21 +548,22 @@
         .footer-links a {
             color: var(--text-light);
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.3s var(--animation-timing);
+            display: inline-block;
         }
 
         .footer-links a:hover {
             color: var(--primary-red);
-            padding-left: 10px;
+            transform: translateX(10px);
         }
 
-        .social-icons {
+        .social-links {
             display: flex;
             gap: 15px;
             margin-top: 20px;
         }
 
-        .social-icons a {
+        .social-link {
             width: 40px;
             height: 40px;
             background: rgba(255, 45, 45, 0.1);
@@ -506,253 +572,228 @@
             align-items: center;
             justify-content: center;
             color: var(--primary-red);
-            transition: all 0.3s ease;
+            transition: all 0.3s var(--animation-timing);
         }
 
-        .social-icons a:hover {
+        .social-link:hover {
             background: var(--primary-red);
             color: white;
             transform: translateY(-5px);
         }
 
-        /* Animations */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+        .newsletter-input {
+            flex-grow: 1;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+        }
+
+        .newsletter-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            background: var(--gradient-red);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s var(--animation-timing);
+        }
+
+        .newsletter-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @keyframes spin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
         }
 
         /* Responsive Design */
         @media (max-width: 1200px) {
-            .hero h1 { font-size: 4em; }
-            .product-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero-title {
+                font-size: 4em;
+            }
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
-            .logo-text { font-size: 2.5em; }
-            nav ul { flex-direction: column; align-items: center; }
-            .hero h1 { font-size: 3em; }
-            .product-grid { grid-template-columns: 1fr; }
-            .features-grid { grid-template-columns: 1fr; }
+            .logo-text {
+                font-size: 2.5em;
+            }
+            .nav-list {
+                flex-direction: column;
+                align-items: center;
+            }
+            .hero-title {
+                font-size: 3em;
+            }
+            .hero-buttons {
+                flex-direction: column;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 480px) {
-            .hero h1 { font-size: 2em; }
-            .cta-button { padding: 12px 30px; font-size: 1em; }
-            .footer-content { grid-template-columns: 1fr; }
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--secondary-dark);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary-red);
-            border-radius: 5px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #ff4444;
-        }
-
-        /* Toast Notifications */
-        .toast {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(30, 30, 30, 0.9);
-            color: white;
-            padding: 15px 25px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            z-index: 1000;
-            transform: translateY(100px);
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .toast.show {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        /* Modal Styles */
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .modal.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal-content {
-            background: var(--secondary-dark);
-            padding: 30px;
-            border-radius: 20px;
-            max-width: 500px;
-            width: 90%;
-            position: relative;
-            transform: scale(0.7);
-            transition: all 0.3s ease;
-        }
-
-        .modal.active .modal-content {
-            transform: scale(1);
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 1.5em;
-            color: var(--text-light);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .close-modal:hover {
-            color: var(--primary-red);
-            transform: rotate(90deg);
+            .hero-title {
+                font-size: 2.5em;
+            }
+            .section-title {
+                font-size: 2em;
+            }
+            .product-card {
+                padding: 15px;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Loading Screen -->
     <div class="loading-screen">
-        <div class="loading-animation"></div>
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Loading Elite Modz...</div>
+        </div>
     </div>
 
     <!-- Header -->
     <header>
-        <div class="logo-container">
-            <div class="logo-text">Elite Modz</div>
+        <div class="header-container">
+            <div class="logo-container">
+                <div class="logo-text">Elite Modz</div>
+            </div>
+            <nav>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a href="#products" class="nav-link"><i class="fas fa-shopping-bag"></i> Shop</a></li>
+                    <li class="nav-item"><a href="#features" class="nav-link"><i class="fas fa-star"></i> Features</a></li>
+                    <li class="nav-item"><a href="#testimonials" class="nav-link"><i class="fas fa-comments"></i> Reviews</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-user"></i> Account</a></li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link cart-link">
+                            <i class="fas fa-shopping-cart"></i> Cart
+                            <span class="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                <li class="dropdown">
-                    <a href="shop.html"><i class="fas fa-shopping-bag"></i> Shop</a>
-                    <div class="dropdown-content">
-                        <a href="shop.html#accounts">Modded Accounts</a>
-                        <a href="shop.html#services">Services</a>
-                        <a href="shop.html#packages">Special Packages</a>
-                    </div>
-                </li>
-                <li><a href="socials.html"><i class="fas fa-users"></i> Community</a></li>
-                <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
-                <li><a href="register.html"><i class="fas fa-user-plus"></i> Register</a></li>
-                <li><a href="cart.html" class="cart-link">
-                    <i class="fas fa-shopping-cart"></i> Cart
-                    <span id="cart-count">0</span>
-                </a></li>
-            </ul>
-        </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Elite GTA V Modding</h1>
-            <p>Experience the ultimate GTA Online adventure with our premium modded accounts and services</p>
-            <a href="#products" class="cta-button">Explore Services</a>
+            <h1 class="hero-title">Elite GTA V Modding</h1>
+            <p class="hero-subtitle">Premium Modded Accounts & Services</p>
+            <div class="hero-buttons">
+                <button class="hero-button primary">View Products</button>
+                <button class="hero-button secondary">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="products" class="featured-products">
+        <h2 class="section-title">Featured Products</h2>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <!-- Product Cards -->
+                <div class="swiper-slide">
+                    <div class="product-card">
+                        <h3 class="product-title">Basic Package</h3>
+                        <p class="product-description">Level 300 + $150M</p>
+                        <div class="product-price">$20</div>
+                        <button class="buy-button">Purchase Now</button>
+                    </div>
+                </div>
+                <!-- More product slides... -->
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section class="features">
+    <section id="features" class="features">
+        <h2 class="section-title">Why Choose Us</h2>
         <div class="features-grid">
-            <div class="feature-card">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Secure & Safe</h3>
-                <p>All our services are tested and verified for maximum account safety</p>
+            <div class="feature-card" data-aos="fade-up">
+                <i class="fas fa-shield-alt feature-icon"></i>
+                <h3 class="feature-title">Secure & Safe</h3>
+                <p class="feature-description">All accounts are handled with maximum security measures</p>
             </div>
-            <div class="feature-card">
-                <i class="fas fa-bolt"></i>
-                <h3>Instant Delivery</h3>
-                <p>Get your modded account within minutes after purchase</p>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-bolt feature-icon"></i>
+                <h3 class="feature-title">Instant Delivery</h3>
+                <p class="feature-description">Get your account within minutes after purchase</p>
             </div>
-            <div class="feature-card">
-                <i class="fas fa-headset"></i>
-                <h3>24/7 Support</h3>
-                <p>Our team is always here to help with any questions</p>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-headset feature-icon"></i>
+                <h3 class="feature-title">24/7 Support</h3>
+                <p class="feature-description">Professional support team always available to help</p>
             </div>
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section class="product-section" id="products">
-        <div class="product-grid">
-            <!-- Basic Package -->
-            <div class="product-card">
-                <img src="images/basic-package.jpg" alt="Basic Package" class="product-image">
-                <h3 class="product-title">Basic Package</h3>
-                <ul class="product-features">
-                    <li>Level 300</li>
-                    <li>$150M GTA Cash</li>
-                    <li>All Weapons Unlocked</li>
-                    <li>Basic Vehicles Package</li>
-                </ul>
-                <div class="product-price">$20</div>
-                <button class="cta-button" onclick="addToCart('basic')">Add to Cart</button>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <h2 class="section-title">Customer Reviews</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card" data-aos="fade-up">
+                <p class="testimonial-content">"Amazing service! Got my modded account within minutes. Highly recommended!"</p>
+                <div class="testimonial-author">
+                    <img src="path/to/avatar1.jpg" alt="User Avatar" class="author-avatar">
+                    <div class="author-info">
+                        <div class="author-name">John Doe</div>
+                        <div class="author-title">Verified Customer</div>
+                    </div>
+                </div>
             </div>
-
-            <!-- Elite Package -->
-            <div class="product-card">
-                <img src="images/elite-package.jpg" alt="Elite Package" class="product-image">
-                <h3 class="product-title">Elite Package</h3>
-                <ul class="product-features">
-                    <li>Level 750</li>
-                    <li>$600M GTA Cash</li>
-                    <li>All Content Unlocked</li>
-                    <li>Premium Vehicle Collection</li>
-                </ul>
-                <div class="product-price">$75</div>
-                <button class="cta-button" onclick="addToCart('elite')">Add to Cart</button>
-            </div>
-
-            <!-- God Package -->
-            <div class="product-card">
-                <img src="images/god-package.jpg" alt="God Package" class="product-image">
-                <h3 class="product-title">God Package</h3>
-                <ul class="product-features">
-                    <li>Level 5000</li>
-                    <li>$100B GTA Cash</li>
-                    <li>Everything Unlocked</li>
-                    <li>Exclusive Modded Items</li>
-                </ul>
-                <div class="product-price">$150</div>
-                <button class="cta-button" onclick="addToCart('god')">Add to Cart</button>
-            </div>
+            <!-- More testimonials... -->
         </div>
     </section>
 
@@ -760,140 +801,114 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>Quick Links</h3>
+                <h3 class="footer-title">Quick Links</h3>
                 <ul class="footer-links">
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="terms.html">Terms of Service</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Contact Us</h3>
-                <ul class="footer-links">
-                    <li><a href="mailto:support@elitemodz.com">support@elitemodz.com</a></li>
-                    <li><a href="discord.html">Join our Discord</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-discord"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+                <h3 class="footer-title">Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
+            <div class="footer-section">
+                <h3 class="footer-title">Newsletter</h3>
+                <p>Subscribe for updates and exclusive offers</p>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Enter your email">
+                    <button type="submit" class="newsletter-button">Subscribe</button>
+                </form>
+            </div>
         </div>
-        <p class="copyright">&copy; 2024 Elite Modz. All rights reserved.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Elite Modz. All rights reserved.</p>
+        </div>
     </footer>
 
-    <!-- Toast Notification -->
-    <div class="toast" id="toast"></div>
-
-    <!-- Modal -->
-    <div class="modal" id="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Welcome to Elite Modz</h2>
-            <p>Get started with our premium GTA V modding services!</p>
-        </div>
-    </div>
-
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Initialize Swiper
+        new Swiper('.swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2
+                },
+                1024: {
+                    slidesPerView: 3
+                }
+            }
+        });
+
         // Loading Screen
         window.addEventListener('load', () => {
-            const loadingScreen = document.querySelector('.loading-screen');
-            loadingScreen.style.opacity = '0';
+            document.querySelector('.loading-screen').style.opacity = '0';
             setTimeout(() => {
-                loadingScreen.style.display = 'none';
+                document.querySelector('.loading-screen').style.display = 'none';
             }, 500);
         });
 
-        // Header Scroll Effect
+        // Scroll Animation for Header
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.classList.add('scrolled');
+                header.style.padding = '15px';
+                header.style.background = 'rgba(20, 20, 20, 0.98)';
             } else {
-                header.classList.remove('scrolled');
+                header.style.padding = '20px';
+                header.style.background = 'rgba(30, 30, 30, 0.95)';
             }
         });
 
         // Cart Functionality
-        let cartItems = [];
-        
-        function addToCart(product) {
-            cartItems.push(product);
-            document.getElementById('cart-count').textContent = cartItems.length;
-            
-            // Show toast notification
-            showToast(`${product.charAt(0).toUpperCase() + product.slice(1)} package added to cart!`);
-            
-            // Animation feedback
-            const button = event.target;
-            button.style.transform = 'scale(0.95)';
-            setTimeout(() => button.style.transform = 'scale(1)', 200);
-        }
+        const buyButtons = document.querySelectorAll('.buy-button');
+        let cartCount = 0;
 
-        // Toast Notification
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            toast.textContent = message;
-            toast.classList.add('show');
-            
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
-        }
+        buyButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                cartCount++;
+                document.querySelector('.cart-count').textContent = cartCount;
+                
+                // Add animation to button
+                button.style.transform = 'scale(0.95)';
+                setTimeout(() => button.style.transform = 'scale(1)', 200);
 
-        // Modal
-        const modal = document.getElementById('modal');
-        const closeModal = document.querySelector('.close-modal');
-
-        // Show modal after 5 seconds
-        setTimeout(() => {
-            modal.classList.add('active');
-        }, 5000);
-
-        closeModal.addEventListener('click', () => {
-            modal.classList.remove('active');
-        });
-
-        // Close modal when clicking outside
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active');
-            }
-        });
-
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                // Show notification
+                showNotification('Item added to cart!');
             });
         });
 
-        // Intersection Observer for Animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        });
+        // Notification System
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
 
-        document.querySelectorAll('.product-card, .feature-card').forEach((el) => observer.observe(el));
 
-        // Parallax Effect
-        window.addEventListener('scroll', () => {
-            const hero = document.querySelector('.hero');
-            const scrolled = window.pageYOffset;
-            hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
-        });
-    </script>
-</body>
-</html>
+
+
+
