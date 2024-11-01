@@ -10,10 +10,9 @@
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background-color: #121212; /* Black background */
-            color: #e0e0e0; /* Light gray text */
+            background-color: #121212;
+            color: #e0e0e0;
         }
-        /* Header and Navigation Bar */
         header {
             background-color: #1e1e1e;
             padding: 20px;
@@ -23,7 +22,7 @@
         header .logo-text {
             font-size: 2.5em;
             font-weight: bold;
-            color: #ff2d2d; /* Red logo text */
+            color: #ff2d2d;
         }
         nav ul {
             list-style: none;
@@ -31,7 +30,6 @@
             margin: 0;
             display: flex;
             justify-content: center;
-            background-color: #1e1e1e;
         }
         nav ul li {
             margin: 0 15px;
@@ -43,51 +41,20 @@
             padding: 10px 15px;
         }
         nav ul li a:hover {
-            color: #ff2d2d; /* Neon red hover effect */
+            color: #ff2d2d;
         }
-        /* Cart Section */
         #cart {
             padding: 40px;
             text-align: center;
         }
-        #cart h2 {
-            color: #ff2d2d;
-            margin-bottom: 30px;
-            font-size: 2.5em;
-        }
-        .cart-item {
+        .product {
             background-color: #1e1e1e;
-            margin: 20px auto;
+            margin: 20px;
             padding: 20px;
             border-radius: 10px;
-            width: 300px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
-        .cart-item h3 {
-            color: #ff2d2d;
-        }
-        .remove-button {
-            background-color: #ff2d2d;
-            border: none;
-            padding: 5px 10px;
-            color: #121212;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .remove-button:hover {
-            background-color: #ff1a1a;
-        }
-        /* Total Cost */
-        #total-cost {
-            color: #ff2d2d;
-            font-size: 1.5em;
-        }
-        /* Checkout Button */
-        #checkout-btn {
+        .remove-btn {
             background-color: #ff2d2d;
             border: none;
             padding: 10px 20px;
@@ -95,12 +62,14 @@
             font-weight: bold;
             cursor: pointer;
             border-radius: 5px;
-            font-size: 1.2em;
+            margin-top: 10px;
         }
-        #checkout-btn:hover {
+        .remove-btn:hover {
             background-color: #ff1a1a;
         }
-        /* Footer */
+        .neon {
+            color: #ff2d2d;
+        }
         footer {
             background-color: #1e1e1e;
             padding: 20px;
@@ -126,8 +95,6 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="shop.html">Shop</a></li>
                 <li><a href="socials.html">Socials</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="register.html">Register</a></li>
                 <li><a href="cart.html" class="cart-link neon">🛒 Cart (<span id="cart-count">0</span>)</a></li>
             </ul>
         </nav>
@@ -136,14 +103,14 @@
     <section id="cart">
         <h2 class="neon">Your Cart</h2>
         <div id="cart-items">
-            <!-- Example of cart item -->
-            <div class="cart-item">
-                <h3>Item Name</h3>
-                <button class="remove-button">Remove</button>
+            <div class="product">
+                <h3>Modded Account Example</h3>
+                <p>Price: $20</p>
+                <button class="remove-btn" onclick="removeFromCart()">Remove</button>
             </div>
         </div>
         <h3 class="neon">Total: $<span id="total-cost">0</span></h3>
-        <button class="neon" id="checkout-btn" onclick="location.href='checkout.html'">Checkout</button>
+        <button class="neon" onclick="location.href='checkout.html'">Checkout</button>
     </section>
 
     <footer>
@@ -151,6 +118,10 @@
         <p>Follow us on <a href="#">Social Media</a></p>
     </footer>
 
-    <script src="cart.js"></script>
+    <script>
+        function removeFromCart() {
+            // Your remove logic here
+        }
+    </script>
 </body>
 </html>
