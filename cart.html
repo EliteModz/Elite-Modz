@@ -1,241 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Modz - Your Cart</title>
-    <!-- Favicon link -->
     <title>Elite Modz - Cart</title>
     <link rel="icon" href="https://github.com/EliteModz/Elite-Modz/raw/refs/heads/main/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            background-color: #121212;
-            color: #e0e0e0;
-            font-family: 'Arial', sans-serif;
-        }
-        /* Header and Navigation Bar */
-        header {
-            background-color: #1e1e1e;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 3px solid red;
-        }
-        header .logo-text {
-            font-size: 2.5em;
-            font-weight: bold;
-            color: #ff2d2d;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            background-color: #1e1e1e;
-        }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            text-decoration: none;
-            font-size: 1.2em;
-            color: white;
-            padding: 10px 15px;
-        }
-        nav ul li a:hover {
-            color: #ff2d2d;
-        }
-        /* Cart Section */
-        #cart {
-            text-align: center;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            max-width: 600px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-        #cart h2 {
-            color: #ff2d2d;
-        }
-        #cart-items {
-            margin-top: 20px;
-            text-align: left;
-            color: #e0e0e0;
-        }
-        .neon {
-            color: #ff2d2d;
-            text-shadow: 0 0 5px #ff2d2d, 0 0 10px #ff2d2d;
-        }
 </head>
-
-        button.neon {
-            background-color: #333;
-            color: #ff2d2d;
-            border: 2px solid #ff2d2d;
-            cursor: pointer;
-            padding: 10px 20px;
-            border-radius: 5px;
-        }
 <body>
-
-        button.neon:hover {
-            background-color: #444;
-        }
-<header>
-    <div class="logo-text">Elite Modz</div>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="socials.html">Socials</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="register.html">Register</a></li>
-            <li><a href="cart.html" class="cart-link neon">🛒 Cart (<span id="cart-count">0</span>)</a></li>
-        </ul>
-    </nav>
-</header>
-<section id="cart">
-    <h2 class="neon">Your Cart</h2>
-    <div id="cart-items"></div>
-    <h3 class="neon">Total: $<span id="total-cost">0</span></h3>
-    <button class="neon" id="checkout-btn">Checkout</button>
-</section>
-<footer>
-    <p class="neon">&copy; 2024 Elite Modz. All rights reserved.</p>
-</footer>
-<script>
-    // Load cart items and update cart display
-    function loadCart() {
-        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-        const cartItemsContainer = document.getElementById('cart-items');
-        const totalCostElement = document.getElementById('total-cost');
-        let totalCost = 0;
-        cartItemsContainer.innerHTML = ''; // Clear previous content
-        cartItems.forEach((item, index) => {
-            totalCost += item.price;
-            const itemElement = document.createElement('div');
-            itemElement.className = 'cart-item';
-            itemElement.innerHTML = `
-                <p>${item.name}</p>
-                <p>Price: $${item.price}</p>
-                <button onclick="removeItem(${index})" class="remove-btn">Remove</button>
-            `;
-            cartItemsContainer.appendChild(itemElement);
-        });
-
-        footer {
-            background-color: #1e1e1e;
-            padding: 20px;
-            text-align: center;
-            color: #e0e0e0;
-            border-top: 2px solid red;
-            margin-top: 40px;
-        }
-        totalCostElement.textContent = totalCost;
-    }
-    // Add item to cart
-    function addCustomizationToCart() {
-        const form = document.getElementById('customization-form');
-        const checkboxes = form.querySelectorAll('input[type="checkbox"]:checked');
-        let total = 0;
-        let customizationDetails = "Customizations: ";
-        checkboxes.forEach(checkbox => {
-            total += parseInt(checkbox.value);
-            customizationDetails += `${checkbox.parentNode.textContent.trim()}, `;
-        });
-
-        footer a {
-            color: #ff2d2d;
-            text-decoration: none;
-        const desiredLevel = form.desiredLevel.value;
-        if (desiredLevel) {
-            const levelCost = Math.floor(desiredLevel / 100) * 2;
-            total += levelCost;
-            customizationDetails += `Desired Level: ${desiredLevel} (+$${levelCost})`;
-        }
-
-        footer a:hover {
-            color: #ff1a1a;
-        }
-    </style>
-</head>
-        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-        cartItems.push({ name: customizationDetails, price: total });
-        localStorage.setItem('cartItems', JSON.stringify(cartItems));
-
-<body>
-        alert('Customizations added to cart!');
-        loadCart(); // Update cart display
-    }
-
     <header>
-        <div class="logo-text">Elite Modz</div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="shop.html">Shop</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <li><a href="socials.html">Socials</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="register.html">Register</a></li>
                 <li><a href="cart.html" class="cart-link neon">🛒 Cart (<span id="cart-count">0</span>)</a></li>
             </ul>
         </nav>
     </header>
+
     <section id="cart">
         <h2 class="neon">Your Cart</h2>
         <div id="cart-items"></div>
         <h3 class="neon">Total: $<span id="total-cost">0</span></h3>
         <button class="neon" id="checkout-btn">Checkout</button>
     </section>
-    <footer>
-        <p>&copy; 2024 Elite Modz. All rights reserved.</p>
-        <p>Follow us on <a href="#">Social Media</a></p>
-    </footer>
-    <script>
-        function loadCart() {
-            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-            const cartItemsDiv = document.getElementById('cart-items');
-            const totalCostSpan = document.getElementById('total-cost');
-            let total = 0;
-            cartItemsDiv.innerHTML = "";
-            cartItems.forEach(item => {
-                const itemDiv = document.createElement('div');
-                itemDiv.classList.add('cart-item');
-                itemDiv.innerText = `${item.name} - $${item.price}`;
-                cartItemsDiv.appendChild(itemDiv);
-                total += item.price;
-            });
-            totalCostSpan.innerText = total;
-            document.getElementById('cart-count').innerText = cartItems.length;
-    // Remove item from cart
-    function removeItem(index) {
-        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-        if (index > -1) {
-            cartItems.splice(index, 1);
-            localStorage.setItem('cartItems', JSON.stringify(cartItems));
-            loadCart();
-        }
-    }
 
-        document.getElementById('checkout-btn').addEventListener('click', () => {
-            alert("Proceeding to checkout...");
-            localStorage.removeItem('cartItems');
-            loadCart();
-        });
-    // Update cart count in nav
-    function updateCartCount() {
-        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-        document.getElementById('cart-count').textContent = cartItems.length;
-    }
-
-        window.addEventListener('load', loadCart);
-    </script>
-    // Initialize cart on page load
-    window.onload = function() {
-        loadCart();
-        updateCartCount();
-    };
-</script>
-
+    <script src="cart.js"></script>
 </body>
 </html>
