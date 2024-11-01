@@ -27,25 +27,51 @@
 
 <section id="cart">
     <h2 class="neon">Your Cart</h2>
-    <div id="cart-items"></div>
-    <h3 class="neon">Total: $<span id="total-cost">0</span></h3>
-    <button class="neon" id="checkout-btn">Checkout</button>
+    <ul id="cart-items"></ul>
+    <h3 class="neon">Total: $<span id="total-cost">0.00</span></h3>
     <button class="neon" id="checkout-btn" onclick="goToCheckout()">Checkout</button>
 </section>
 
 <footer>
-@@ -60,56 +60,62 @@
+    <p>&copy; 2024 Elite Modz. All Rights Reserved.</p>
+</footer>
+
+<script>
+    // Load cart items from localStorage
+    function loadCart() {
+        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const cartItemsContainer = document.getElementById('cart-items');
+        cartItemsContainer.innerHTML = '';
+
+        cartItems.forEach((item, index) => {
+            const li = document.createElement('li');
+            li.innerHTML = `${item.name} - $${item.price.toFixed(2)} <button onclick="removeItem(${index})">Remove</button>`;
+            cartItemsContainer.appendChild(li);
         });
 
-        totalCostElement.textContent = totalCost;
+        updateTotalCost(); // Update total on load
+    }
+
+    // Calculate and update total cost
+    function updateTotalCost() {
+        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const totalCostElement = document.getElementById('total-cost');
+        let totalCost = 0;
+
+        cartItems.forEach(item => {
+            totalCost += item.price;
+        });
+
+        totalCostElement.textContent = totalCost.toFixed(2);
         updateCartCount(); // Update cart count display
     }
+
     // Function to navigate to checkout page
     function goToCheckout() {
         window.location.href = 'checkout.html';
     }
 
-    // Add item to cart
+    // Add item to cart with customizations
     function addCustomizationToCart() {
         const form = document.getElementById('customization-form');
         const checkboxes = form.querySelectorAll('input[type="checkbox"]:checked');
