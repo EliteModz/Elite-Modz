@@ -4,162 +4,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Modz - Premium Gaming Mods</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Elite Modz - Premium Modded Accounts & Services</title>
+    <link rel="icon" href="https://github.com/EliteModz/Elite-Modz/raw/refs/heads/main/favicon.ico" type="image/x-icon">
     <style>
-        /* Root Variables */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
+        
         :root {
-            --primary-color: #ff0000;
-            --secondary-color: #000000;
-            --text-color: #ffffff;
-            --neon-glow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
-            --neon-text-glow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000;
-            --accent-color: #ff3333;
-            --dark-overlay: rgba(0, 0, 0, 0.8);
+            --neon-red: #ff2d2d;
+            --neon-red-glow: 0 0 10px #ff2d2d, 0 0 20px #ff2d2d, 0 0 30px #ff2d2d;
+            --dark-bg: #121212;
+            --darker-bg: #0a0a0a;
         }
 
-        /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: var(--secondary-color);
-            color: var(--text-color);
+            font-family: 'Orbitron', sans-serif;
+            background-color: var(--dark-bg);
+            color: #e0e0e0;
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* Watermark Styles */
-        .watermark {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-45deg);
-            font-size: 8rem;
-            opacity: 0.05;
-            color: var(--primary-color);
-            white-space: nowrap;
-            pointer-events: none;
-            z-index: -1;
-            text-transform: uppercase;
-            font-weight: 900;
-        }
-
-        /* Navigation Styles */
-        .navbar {
-            background: rgba(0, 0, 0, 0.95);
-            border-bottom: 2px solid var(--primary-color);
-            box-shadow: var(--neon-glow);
+        /* Enhanced Header Styles */
+        header {
+            background-color: rgba(30, 30, 30, 0.95);
+            padding: 20px;
             position: fixed;
             width: 100%;
-            top: 0;
             z-index: 1000;
             backdrop-filter: blur(10px);
+            border-bottom: 3px solid var(--neon-red);
+            box-shadow: 0 0 20px rgba(255, 45, 45, 0.3);
         }
 
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: var(--primary-color);
-            text-shadow: var(--neon-text-glow);
-            text-transform: uppercase;
+        .logo-text {
+            font-size: 3em;
+            font-weight: 700;
+            color: var(--neon-red);
+            text-shadow: var(--neon-red-glow);
             letter-spacing: 2px;
-            position: relative;
+            margin-bottom: 15px;
+            animation: pulsate 2s infinite;
         }
 
-        .logo::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--primary-color);
-            box-shadow: var(--neon-glow);
+        @keyframes pulsate {
+            0% { text-shadow: var(--neon-red-glow); }
+            50% { text-shadow: 0 0 15px #ff2d2d, 0 0 30px #ff2d2d, 0 0 45px #ff2d2d; }
+            100% { text-shadow: var(--neon-red-glow); }
         }
 
-        .nav-links {
+        nav {
+            background: linear-gradient(180deg, rgba(30,30,30,0.95) 0%, rgba(20,20,20,0.95) 100%);
+            padding: 15px 0;
+            border-radius: 10px;
+        }
+
+        nav ul {
             display: flex;
-            gap: 2rem;
-            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            list-style: none;
         }
 
-        .nav-links a {
-            color: var(--text-color);
+        nav ul li a {
+            color: #fff;
             text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            transition: all 0.3s;
-            font-size: 1.1rem;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
             position: relative;
-            padding: 0.5rem 1rem;
+            overflow: hidden;
         }
 
-        .nav-links a::after {
+        nav ul li a::before {
             content: '';
             position: absolute;
             bottom: 0;
-            left: 0;
+            left: 50%;
+            transform: translateX(-50%);
             width: 0;
             height: 2px;
-            background: var(--primary-color);
-            transition: width 0.3s;
-            box-shadow: var(--neon-glow);
+            background-color: var(--neon-red);
+            transition: width 0.3s ease;
         }
 
-        .nav-links a:hover::after {
+        nav ul li a:hover::before {
             width: 100%;
         }
 
-        .cart-icon {
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--primary-color);
-            text-shadow: var(--neon-text-glow);
-            position: relative;
-            transition: transform 0.3s;
+        nav ul li a:hover {
+            color: var(--neon-red);
+            text-shadow: 0 0 10px var(--neon-red);
         }
 
-        .cart-icon:hover {
-            transform: scale(1.1);
+        .cart-link {
+            background: linear-gradient(45deg, #ff2d2d, #ff0000);
+            padding: 10px 20px;
+            border-radius: 25px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
         }
 
-        .cart-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: var(--primary-color);
-            color: var(--text-color);
-            font-size: 0.8rem;
-            padding: 2px 6px;
-            border-radius: 50%;
-            box-shadow: var(--neon-glow);
-        }
-
-        /* Hero Section Enhanced */
+        /* Enhanced Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                        url('gaming-bg.jpg') center/cover;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('images/grand-theft-auto-v-online-sunset-panorama-tapete-1920x1080_48.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-            text-align: center;
-            padding-top: 80px;
+            align-items: center;
             position: relative;
             overflow: hidden;
         }
@@ -169,350 +131,284 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, var(--primary-color) 0%, transparent 100%);
-            opacity: 0.1;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { opacity: 0.1; }
-            50% { opacity: 0.2; }
-            100% { opacity: 0.1; }
-        }
-
-        .hero-content {
-            max-width: 800px;
-            padding: 2rem;
-            position: relative;
-            z-index: 1;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle, transparent 20%, var(--darker-bg) 100%);
         }
 
         .hero h1 {
-            font-size: 4.5rem;
-            color: var(--primary-color);
-            text-shadow: var(--neon-text-glow);
-            margin-bottom: 1.5rem;
+            font-size: 5em;
+            color: var(--neon-red);
+            text-shadow: var(--neon-red-glow);
+            margin-bottom: 30px;
+            text-align: center;
+            z-index: 1;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Enhanced Product Section */
+        .product-section {
+            padding: 100px 40px;
+            background: linear-gradient(180deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+        }
+
+        .product-section h2 {
+            color: var(--neon-red);
+            font-size: 3em;
+            margin-bottom: 50px;
+            text-align: center;
+            text-shadow: var(--neon-red-glow);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .product {
+            background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+            border-radius: 15px;
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255,45,45,0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .product:hover::before {
+            transform: translateX(100%);
+        }
+
+        .product:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(255, 45, 45, 0.2);
+        }
+
+        .product h3 {
+            color: var(--neon-red);
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .product p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .product button {
+            background: linear-gradient(45deg, #ff2d2d, #ff0000);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            font-family: 'Orbitron', sans-serif;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            animation: glow 1.5s ease-in-out infinite alternate;
+            letter-spacing: 1px;
         }
 
+        .product button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 45, 45, 0.5);
+        }
+
+        /* Enhanced Footer */
+        footer {
+            background: linear-gradient(0deg, #1e1e1e 0%, var(--darker-bg) 100%);
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 2px solid var(--neon-red);
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--neon-red), transparent);
+        }
+
+        footer p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        footer a {
+            color: var(--neon-red);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        footer a:hover {
+            text-shadow: var(--neon-red-glow);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo-text {
+                font-size: 2em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 3em;
+                padding: 0 20px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Additional Animations */
         @keyframes glow {
-            from {
-                text-shadow: var(--neon-text-glow);
-            }
-            to {
-                text-shadow: 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000;
-            }
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 45, 45, 0.5); }
+            50% { box-shadow: 0 0 30px rgba(255, 45, 45, 0.8); }
         }
 
-        .hero p {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-            opacity: 0.9;
+        .product button {
+            animation: glow 2s infinite;
         }
 
-        /* Custom Scrollbar */
+        /* Scroll Bar Styling */
         ::-webkit-scrollbar {
             width: 10px;
         }
 
         ::-webkit-scrollbar-track {
-            background: var(--secondary-color);
+            background: var(--darker-bg);
         }
 
         ::-webkit-scrollbar-thumb {
-            background: var(--primary-color);
+            background: var(--neon-red);
             border-radius: 5px;
-            box-shadow: var(--neon-glow);
         }
 
-        /* Loading Animation */
-        .loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--secondary-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-
-        .loader {
-            width: 50px;
-            height: 50px;
-            border: 5px solid var(--secondary-color);
-            border-top: 5px solid var(--primary-color);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            box-shadow: var(--neon-glow);
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 1001;
-            backdrop-filter: blur(5px);
-        }
-
-        .modal-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: var(--secondary-color);
-            padding: 2rem;
-            border: 2px solid var(--primary-color);
-            box-shadow: var(--neon-glow);
-            max-width: 500px;
-            width: 90%;
-            border-radius: 10px;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .close-modal:hover {
-            transform: scale(1.1);
-        }
-
-        /* Additional Animation Classes */
-        .fade-in {
-            animation: fadeIn 0.5s ease-in;
-        }
-
-        .slide-in {
-            animation: slideIn 0.5s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideIn {
-            from { transform: translateY(-20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        /* Responsive Design Enhanced */
-        @media (max-width: 1200px) {
-            .hero h1 {
-                font-size: 4rem;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .nav-links {
-                gap: 1.5rem;
-            }
-            
-            .hero h1 {
-                font-size: 3.5rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .mobile-menu {
-                display: block;
-            }
-
-            .hero h1 {
-                font-size: 3rem;
-            }
-
-            .hero p {
-                font-size: 1.4rem;
-            }
-
-            .section-title {
-                font-size: 2.5rem;
-            }
-
-            .watermark {
-                font-size: 5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-            }
-
-            .nav-container {
-                padding: 1rem;
-            }
-
-            .logo {
-                font-size: 2rem;
-            }
-        }
-
-        /* Mobile Menu Styles */
-        .mobile-menu {
-            display: none;
-            font-size: 2rem;
-            color: var(--primary-color);
-            cursor: pointer;
-            text-shadow: var(--neon-text-glow);
-        }
-
-        .mobile-nav {
-            position: fixed;
-            top: 0;
-            left: -100%;
-            width: 80%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            padding: 2rem;
-            transition: left 0.3s ease;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-            border-right: 2px solid var(--primary-color);
-            box-shadow: var(--neon-glow);
-        }
-
-        .mobile-nav.active {
-            left: 0;
-        }
-
-        .mobile-nav-links {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .mobile-nav-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            transition: color 0.3s;
-        }
-
-        .mobile-nav-links a:hover {
-            color: var(--primary-color);
-            text-shadow: var(--neon-text-glow);
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff1a1a;
         }
     </style>
 </head>
 <body>
-    <div class="loading-screen">
-        <div class="loader"></div>
-    </div>
-
-    <div class="watermark">ELITE MODZ</div>
-    
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">Elite Modz</div>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#shop">Shop</a>
-                <a href="#socials">Socials</a>
-                <a href="#login">Login</a>
-                <a href="#register">Register</a>
-            </div>
-            <div class="cart-icon">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="cart-count">0</span>
-            </div>
-            <div class="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </nav>
-
-    <div class="mobile-nav">
-        <div class="mobile-nav-links">
-            <a href="#home">Home</a>
-            <a href="#shop">Shop</a>
-            <a href="#socials">Socials</a>
-            <a href="#login">Login</a>
-            <a href="#register">Register</a>
-        </div>
-    </div>
+    <header>
+        <div class="logo-text">Elite Modz</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="socials.html">Socials</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="cart.html" class="cart-link">🛒 Cart (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <section class="hero">
-        <div class="hero-content">
-            <h1>Welcome to Elite Modz</h1>
-            <p>Premium Gaming Modifications & Services</p>
-            <a href="#shop" class="download-button">Browse Products</a>
+        <h1>Premium Modded Accounts & Services</h1>
+    </section>
+
+    <section class="product-section">
+        <h2>Elite Modded Accounts</h2>
+        <div class="products-grid">
+            <div class="product">
+                <h3>Basic: Level 300</h3>
+                <p>• 150 Million GTA$</p>
+                <p>• All Weapons Unlocked</p>
+                <p>• Basic Properties</p>
+                <p>Price: $20</p>
+                <button onclick="location.href='shop.html#basic'">Buy Now</button>
+            </div>
+            <div class="product">
+                <h3>Regular: Level 450</h3>
+                <p>• 250 Million GTA$</p>
+                <p>• All Weapons & Upgrades</p>
+                <p>• Multiple Properties</p>
+                <p>Price: $35</p>
+                <button onclick="location.href='shop.html#regular'">Buy Now</button>
+            </div>
+            <div class="product">
+                <h3>Elite: Level 750</h3>
+                <p>• 600 Million GTA$</p>
+                <p>• All Content Unlocked</p>
+                <p>• Premium Properties</p>
+                <p>Price: $75</p>
+                <button onclick="location.href='shop.html#elite'">Buy Now</button>
+            </div>
+            <div class="product">
+                <h3>Ultimate: Level 1000</h3>
+                <p>• 1 Billion GTA$</p>
+                <p>• Everything Unlocked</p>
+                <p>• VIP Status</p>
+                <p>Price: $100</p>
+                <button onclick="location.href='shop.html#ultimate'">Buy Now</button>
+            </div>
+            <div class="product">
+                <h3>God: Level 5000</h3>
+                <p>• 100 Billion GTA$</p>
+                <p>• Exclusive Content</p>
+                <p>• Supreme Status</p>
+                <p>Price: $150</p>
+                <button onclick="location.href='shop.html#god'">Buy Now</button>
+            </div>
+            <div class="product">
+                <h3>Infinity: Level 8000</h3>
+                <p>• 1 Trillion GTA$</p>
+                <p>• Everything Maxed</p>
+                <p>• Legendary Status</p>
+                <p>Price: $250</p>
+                <button onclick="location.href='shop.html#infinity'">Buy Now</button>
+            </div>
+            <div class="product">
+                <h3>Custom Package</h3>
+                <p>• Choose Your Level</p>
+                <p>• Choose Your Money</p>
+                <p>• Custom Unlocks</p>
+                <p>Price: $2 - $250</p>
+                <button onclick="location.href='customize.html'">Customize Now</button>
+            </div>
         </div>
     </section>
 
-    <script>
-        // Loading Screen
-        window.addEventListener('load', function() {
-            const loadingScreen = document.querySelector('.loading-screen');
-            setTimeout(() => {
-                loadingScreen.style.display = 'none';
-            }, 1500);
-        });
-
-        // Mobile Menu
-        const mobileMenuBtn = document.querySelector('.mobile-menu');
-        const mobileNav = document.querySelector('.mobile-nav');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileNav.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!mobileNav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                mobileNav.classList.remove('active');
-            }
-        });
-
-        // Scroll Animation
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        });
-
-        document.querySelectorAll('section').forEach((section) => {
-            observer.observe(section);
-        });
-    </script>
+    <footer>
+        <p>© 2024 Elite Modz. All rights reserved.</p>
+        <p>Follow us on <a href="#">Discord</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a></p>
+        <p>Contact: <a href="mailto:support@elitemodz.com">support@elitemodz.com</a></p>
+    </footer>
 </body>
 </html>
+
+
 
 
 
