@@ -4,47 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Game Mods Site</title>
+    <title>Elite Modz - Premium Gaming Mods</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root {
-            --primary-color: #6200ee;
-            --secondary-color: #03dac6;
-            --background-color: #121212;
-            --text-color: #ffffff;
-            --accent-color: #bb86fc;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--background-color);
-            color: var(--text-color);
-        }
-
-        header {
-            background-color: var(--primary-color);
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+        /* Previous CSS styles remain the same until nav styles */
 
         nav {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 2rem;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+        .nav-group {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
         }
 
         .nav-links {
@@ -52,450 +29,219 @@
             gap: 2rem;
         }
 
-        .nav-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
-
-        .hero-section {
-            text-align: center;
-            padding: 4rem 1rem;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('game-background.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .hero-section h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero-section p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-
-        .search-bar {
-            margin: 2rem auto;
-            max-width: 800px;
-            padding: 0 1rem;
-        }
-
-        .search-bar input {
-            width: 100%;
-            padding: 1rem;
-            border-radius: 8px;
-            border: none;
-            background-color: #2d2d2d;
-            color: var(--text-color);
-            font-size: 1.1rem;
-        }
-
-        .categories {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        .auth-links {
+            display: flex;
             gap: 1rem;
         }
 
-        .category-card {
-            background-color: #1e1e1e;
-            padding: 1rem;
-            border-radius: 8px;
-            text-align: center;
+        .cart-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            text-shadow: var(--neon-glow);
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
         }
 
-        .category-card:hover {
+        .cart-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .auth-button {
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 4px;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .auth-button:hover {
             background-color: var(--primary-color);
+            box-shadow: var(--neon-glow);
         }
 
-        .mods-grid {
+        /* Additional content sections */
+        .shop-section {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
+            margin-top: 2rem;
         }
 
-        .mod-card {
-            background-color: #1e1e1e;
-            border-radius: 12px;
+        .product-card {
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 1px solid var(--primary-color);
+            border-radius: 8px;
             overflow: hidden;
-            transition: transform 0.2s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s;
         }
 
-        .mod-card:hover {
+        .product-card:hover {
             transform: translateY(-5px);
+            box-shadow: var(--neon-glow);
         }
 
-        .mod-image {
+        .product-image {
             width: 100%;
             height: 200px;
             object-fit: cover;
         }
 
-        .mod-content {
+        .product-info {
             padding: 1.5rem;
         }
 
-        .mod-title {
+        .product-title {
+            color: var(--primary-color);
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
-            color: var(--accent-color);
+            text-shadow: 0 0 5px var(--primary-color);
         }
 
-        .mod-description {
-            color: #a0a0a0;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-
-        .mod-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.8rem;
-            color: #808080;
-        }
-
-        .download-button {
-            display: block;
-            background-color: var(--primary-color);
+        .product-price {
             color: var(--text-color);
-            padding: 0.8rem;
-            text-align: center;
-            border-radius: 6px;
-            margin-top: 1rem;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-
-        .download-button:hover {
-            background-color: var(--accent-color);
-        }
-
-        .featured-section {
-            background-color: #1e1e1e;
-            padding: 4rem 1rem;
-            margin: 3rem 0;
-        }
-
-        .featured-section h2 {
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-        }
-
-        .testimonials {
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 0 1rem;
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .testimonial-card {
-            background-color: #1e1e1e;
-            padding: 2rem;
-            border-radius: 12px;
-            position: relative;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-author {
+            font-size: 1.1rem;
             font-weight: bold;
-            color: var(--accent-color);
-        }
-
-        footer {
-            background-color: #1e1e1e;
-            padding: 4rem 1rem;
-            margin-top: 4rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-        }
-
-        .footer-section h3 {
-            color: var(--accent-color);
             margin-bottom: 1rem;
         }
 
-        .footer-section ul {
-            list-style: none;
+        .socials-section {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-top: 2px solid var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
         }
 
-        .footer-section ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-section ul li a {
-            color: var(--text-color);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-section ul li a:hover {
-            color: var(--accent-color);
-        }
-
-        .social-links {
+        .social-icons {
             display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
-        .social-links a {
+        .social-icons a {
+            font-size: 2rem;
             color: var(--text-color);
-            font-size: 1.5rem;
-            transition: color 0.3s;
+            transition: all 0.3s;
         }
 
-        .social-links a:hover {
-            color: var(--accent-color);
+        .social-icons a:hover {
+            color: var(--primary-color);
+            text-shadow: var(--neon-glow);
+            transform: scale(1.1);
         }
 
-        .newsletter-form {
-            margin-top: 1rem;
-        }
-
-        .newsletter-form input {
-            width: 100%;
-            padding: 0.8rem;
-            margin-bottom: 1rem;
-            border-radius: 4px;
-            border: none;
-            background-color: #2d2d2d;
-            color: var(--text-color);
-        }
-
-        .newsletter-form button {
-            background-color: var(--primary-color);
-            color: var(--text-color);
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .newsletter-form button:hover {
-            background-color: var(--accent-color);
-        }
+        /* Previous CSS styles remain the same */
     </style>
 </head>
 <body>
+    <div class="watermark">ELITE MODZ</div>
     <header>
         <nav>
-            <div class="logo">YourModSite</div>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#mods">Mods</a>
-                <a href="#categories">Categories</a>
-                <a href="#featured">Featured</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+            <div class="logo">ELITE MODZ</div>
+            <div class="nav-group">
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#shop">Shop</a>
+                    <a href="#socials">Socials</a>
+                </div>
+                <div class="auth-links">
+                    <a href="#login" class="auth-button">Login</a>
+                    <a href="#register" class="auth-button">Register</a>
+                </div>
+            </div>
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
             </div>
         </nav>
     </header>
 
     <section class="hero-section">
-        <h1>Welcome to YourModSite</h1>
-        <p>Discover thousands of high-quality mods to enhance your gaming experience</p>
-    </section>
-
-    <div class="search-bar">
-        <input type="text" placeholder="Search mods, games, or categories...">
-    </div>
-
-    <section class="categories">
-        <h2>Popular Categories</h2>
-        <div class="category-grid">
-            <div class="category-card">Graphics Mods</div>
-            <div class="category-card">Gameplay Enhancements</div>
-            <div class="category-card">Character Skins</div>
-            <div class="category-card">Maps & Levels</div>
-            <div class="category-card">Sound Mods</div>
-            <div class="category-card">UI Improvements</div>
+        <h1>ELITE MODZ</h1>
+        <p>Your Ultimate Destination for Premium Gaming Mods</p>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for mods...">
         </div>
     </section>
 
-    <div class="mods-grid">
-        <!-- More mod cards -->
-        <div class="mod-card">
-            <img src="mod1.jpg" alt="Mod 1" class="mod-image">
-            <div class="mod-content">
-                <h3 class="mod-title">Enhanced Graphics Overhaul</h3>
-                <p class="mod-description">Transform your game's visuals with this comprehensive graphics enhancement package.</p>
-                <div class="mod-meta">
-                    <span>Downloads: 25k+</span>
-                    <span>Rating: 4.9/5</span>
-                </div>
-                <a href="#" class="download-button">Download Now</a>
-            </div>
-        </div>
-
-        <div class="mod-card">
-            <img src="mod2.jpg" alt="Mod 2" class="mod-image">
-            <div class="mod-content">
-                <h3 class="mod-title">Advanced Combat System</h3>
-                <p class="mod-description">Revolutionize your combat experience with new mechanics and animations.</p>
-                <div class="mod-meta">
-                    <span>Downloads: 15k+</span>
-                    <span>Rating: 4.7/5</span>
-                </div>
-                <a href="#" class="download-button">Download Now</a>
-            </div>
-        </div>
-
-        <div class="mod-card">
-            <img src="mod3.jpg" alt="Mod 3" class="mod-image">
-            <div class="mod-content">
-                <h3 class="mod-title">Ultimate UI Overhaul</h3>
-                <p class="mod-description">A complete redesign of the user interface for better usability and aesthetics.</p>
-                <div class="mod-meta">
-                    <span>Downloads: 18k+</span>
-                    <span>Rating: 4.8/5</span>
-                </div>
-                <a href="#" class="download-button">Download Now</a>
-            </div>
-        </div>
-    </div>
-
-    <section class="featured-section">
-        <h2>Featured Mods</h2>
-        <div class="mods-grid">
-            <!-- Featured mod cards -->
-            <div class="mod-card">
-                <img src="featured1.jpg" alt="Featured Mod 1" class="mod-image">
-                <div class="mod-content">
-                    <h3 class="mod-title">Epic Quest Pack</h3>
-                    <p class="mod-description">Embark on new adventures with this massive quest modification.</p>
-                    <div class="mod-meta">
-                        <span>Downloads: 50k+</span>
-                        <span>Rating: 5/5</span>
-                    </div>
-                    <a href="#" class="download-button">Download Now</a>
+    <section class="shop-section" id="shop">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+            <!-- Repeat this product card structure -->
+            <div class="product-card">
+                <img src="product1.jpg" alt="Mod Pack 1" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Premium Mod Pack</h3>
+                    <p class="product-price">$29.99</p>
+                    <a href="#" class="download-button">Add to Cart</a>
                 </div>
             </div>
+            <!-- Add more product cards -->
         </div>
     </section>
 
-    <section class="testimonials">
-        <h2>What Our Users Say</h2>
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <p class="testimonial-text">"The best mod site I've ever used. Amazing selection and easy to navigate!"</p>
-                <p class="testimonial-author">- John D.</p>
-            </div>
-            <div class="testimonial-card">
-                <p class="testimonial-text">"Great community and fantastic mod selection. Couldn't ask for more!"</p>
-                <p class="testimonial-author">- Sarah M.</p>
-            </div>
-            <div class="testimonial-card">
-                <p class="testimonial-text">"The download speeds and mod quality are exceptional. Highly recommended!"</p>
-                <p class="testimonial-author">- Mike R.</p>
-            </div>
+    <section class="socials-section" id="socials">
+        <h2>Connect With Us</h2>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-discord"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
         </div>
     </section>
 
+    <!-- Previous footer content remains the same -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>About Us</h3>
-                <p>Your premier destination for high-quality game mods and enhancements.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-discord"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                </div>
+                <h3>About Elite Modz</h3>
+                <p>The #1 destination for premium gaming mods and enhancements.</p>
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Popular Mods</a></li>
-                    <li><a href="#">Categories</a></li>
-                    <li><a href="#">Upload Mod</a></li>
-                    <li><a href="#">Support</a></li>
+                    <li><a href="#shop">Shop</a></li>
+                    <li><a href="#support">Support</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Newsletter</h3>
-                <p>Subscribe to stay updated with new mods and features!</p>
                 <form class="newsletter-form">
                     <input type="email" placeholder="Enter your email">
                     <button type="submit">Subscribe</button>
                 </form>
             </div>
         </div>
-        <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #333;">
-            <p>&copy; 2024 YourModSite. All rights reserved.</p>
+        <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--primary-color);">
+            <p>&copy; 2024 Elite Modz. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Search functionality
-        const searchInput = document.querySelector('.search-bar input');
-        const modCards = document.querySelectorAll('.mod-card');
-
-        searchInput.addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase();
-            
-            modCards.forEach(card => {
-                const title = card.querySelector('.mod-title').textContent.toLowerCase();
-                const description = card.querySelector('.mod-description').textContent.toLowerCase();
-                
-                if (title.includes(searchTerm) || description.includes(searchTerm)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-
-        // Add smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+        // Add cart functionality
+        const cartIcon = document.querySelector('.cart-icon');
+        cartIcon.addEventListener('click', () => {
+            // Implement cart popup or navigation
+            console.log('Cart clicked');
         });
     </script>
 </body>
 </html>
+
+
 
 
 
