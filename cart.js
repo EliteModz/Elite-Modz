@@ -5,15 +5,18 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 document.addEventListener('DOMContentLoaded', () => {
     renderCart();
     updateTotalCost();
+    updateCartCount(); // Update the cart count in the navbar
 });
 
-// Function to add items to the cart
-function addItem(name, price) {
-    const item = { name, price };
+// Function to add shop items to the cart
+function addShopItemToCart(name, price) {
+    const item = { name, price: parseFloat(price) };
     cart.push(item);
     localStorage.setItem('cart', JSON.stringify(cart));
-    renderCart();
-    updateTotalCost();
+    renderCart(); // Update cart display
+    updateTotalCost(); // Update total cost
+    updateCartCount(); // Update count in navbar
+    alert('Item added to cart!');
 }
 
 // Function to render cart items
@@ -45,6 +48,7 @@ function removeItem(index) {
     localStorage.setItem('cart', JSON.stringify(cart));
     renderCart();
     updateTotalCost();
+    updateCartCount();
 }
 
 // Function to calculate and update the total cost
@@ -53,9 +57,13 @@ function updateTotalCost() {
     document.getElementById('total-cost').textContent = totalCost.toFixed(2);
 }
 
+// Function to update the cart count in the navbar
+function updateCartCount() {
+    document.getElementById('cart-count').textContent = cart.length;
+}
+
 // Example function to simulate adding items
 document.getElementById('add-to-cart').addEventListener('click', () => {
     // Replace with actual item details
-    addItem('Modded Account', 20);
+    addShopItemToCart('Modded Account', 20);
 });
-
