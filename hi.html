@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -431,41 +430,3 @@
         function showNotification(message) {
             const notification = document.getElementById('notification');
             notification.textContent = message;
-            notification.style.display = 'block';
-            setTimeout(() => {
-                notification.style.display = 'none';
-            }, 3000);
-        }
-
-        // Cart Functionality
-        let cartCount = 0;
-        const cartCountElement = document.getElementById('cart-count');
-        
-        function updateCart(count) {
-            cartCount += count;
-            cartCountElement.textContent = cartCount;
-            showNotification('Cart updated successfully!');
-        }
-    </script>
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
