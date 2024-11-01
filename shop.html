@@ -104,6 +104,26 @@
     <footer>
         <p class="neon">&copy; 2024 Elite Modz. All rights reserved.</p>
     </footer>
-    <script src="cart.js"></script>
+    <script>
+        // Initialize cart from localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Function to add items to the cart
+        function addToCart(name, price) {
+            const item = { name, price };
+            cart.push(item);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            alert(`${name} has been added to your cart!`);
+        }
+
+        // Function to update cart count in the navigation bar
+        function updateCartCount() {
+            document.getElementById('cart-count').textContent = cart.length;
+        }
+
+        // Update cart count on page load
+        document.addEventListener('DOMContentLoaded', updateCartCount);
+    </script>
 </body>
 </html>
