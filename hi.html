@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,253 +11,251 @@
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background-color: #121212; /* Black background */
-            color: #e0e0e0; /* Light gray text */
+            background-color: #121212;
+            color: #e0e0e0;
         }
 
-        /* Header and Navigation Bar */
+        /* Header and Navigation */
         header {
             background-color: #1e1e1e;
             padding: 20px;
             text-align: center;
-            border-bottom: 3px solid red;
+            border-bottom: 3px solid #ff2d2d;
+            box-shadow: 0 2px 10px rgba(255, 45, 45, 0.3);
         }
 
-        header .logo img {
-            width: 150px;
-        }
-
-        header .logo-text {
-            font-size: 2.5em;
+        .logo-text {
+            font-size: 3em;
             font-weight: bold;
-            color: #ff2d2d; /* Red logo text */
+            color: #ff2d2d;
+            text-shadow: 0 0 10px rgba(255, 45, 45, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .logo-text:hover {
+            transform: scale(1.05);
+            text-shadow: 0 0 20px rgba(255, 45, 45, 0.8);
         }
 
         nav ul {
             list-style: none;
             padding: 0;
-            margin: 0;
+            margin: 15px 0;
             display: flex;
             justify-content: center;
-            background-color: #1e1e1e;
-        }
-
-        nav ul li {
-            margin: 0 15px;
+            gap: 25px;
         }
 
         nav ul li a {
             text-decoration: none;
             font-size: 1.2em;
             color: white;
-            padding: 10px 15px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
         }
 
         nav ul li a:hover {
-            color: #ff2d2d; /* Neon red hover effect */
+            color: #ff2d2d;
+            background-color: rgba(255, 45, 45, 0.1);
+            transform: translateY(-2px);
         }
 
         /* Hero Section */
         .hero {
-            background-image: url('images/grand-theft-auto-v-online-sunset-panorama-tapete-1920x1080_48.jpg');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('images/grand-theft-auto-v-online-sunset-panorama-tapete-1920x1080_48.jpg');
             background-size: cover;
             background-position: center;
-            height: 500px;
-            text-align: center;
+            height: 600px;
             display: flex;
             justify-content: center;
             align-items: center;
             position: relative;
+            overflow: hidden;
         }
 
-        .hero h1 {
-            font-size: 4em;
-            color: #ff2d2d;
-            text-shadow: 0 0 15px #ff0000;
-            z-index: 1;
-        }
-
-        .hero::after {
+        .hero::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 0;
+            background: linear-gradient(45deg, rgba(255, 45, 45, 0.2), transparent);
+            animation: gradientShift 10s infinite alternate;
+        }
+
+        .hero h1 {
+            font-size: 4.5em;
+            color: #ffffff;
+            text-shadow: 0 0 20px #ff2d2d;
+            position: relative;
+            z-index: 1;
+            animation: glow 2s ease-in-out infinite alternate;
         }
 
         /* Product Section */
         .product-section {
-            padding: 40px;
+            padding: 60px 40px;
             text-align: center;
+            background: linear-gradient(180deg, #121212, #1a1a1a);
         }
 
         .product-section h2 {
             color: #ff2d2d;
-            margin-bottom: 30px;
-            font-size: 2.5em;
+            font-size: 3em;
+            margin-bottom: 40px;
+            text-shadow: 0 0 15px rgba(255, 45, 45, 0.3);
         }
 
         .product {
             display: inline-block;
             background-color: #1e1e1e;
             margin: 20px;
-            padding: 20px;
-            border-radius: 10px;
-            width: 300px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
+            padding: 30px;
+            border-radius: 15px;
+            width: 320px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #ff2d2d, #ff6b6b);
         }
 
         .product:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(255, 45, 45, 0.2);
         }
 
         .product h3 {
             color: #ff2d2d;
+            font-size: 1.5em;
+            margin-bottom: 15px;
         }
 
         .product p {
             color: #e0e0e0;
+            font-size: 1.1em;
+            margin: 10px 0;
         }
 
         .product button {
-            background-color: #ff2d2d;
+            background: linear-gradient(45deg, #ff2d2d, #ff4444);
             border: none;
-            padding: 10px 20px;
-            color: #121212;
+            padding: 12px 25px;
+            color: white;
             font-weight: bold;
+            font-size: 1.1em;
             cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            margin-top: 15px;
         }
 
         .product button:hover {
-            background-color: #ff1a1a;
-        }
-
-        /* About Us Section */
-        .about {
-            background-color: #1c1c1c;
-            padding: 40px;
-            text-align: center;
-        }
-
-        .about h2 {
-            color: #ff2d2d;
-        }
-
-        .about p {
-            max-width: 600px;
-            margin: auto;
-            line-height: 1.6;
-        }
-
-        /* Testimonials Section */
-        .testimonials {
-            background-color: #333;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .testimonial {
-            margin: 20px;
-            background-color: #1e1e1e;
-            padding: 15px;
-            border-radius: 8px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .testimonial:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        .testimonial h3 {
-            color: #ff2d2d;
-            margin-bottom: 10px;
-        }
-
-        .testimonial p {
-            color: #ffffff;
-        }
-
-        /* FAQ Section */
-        .faq {
-            padding: 40px 20px;
-            text-align: center;
-            background-color: #1c1c1c;
-        }
-
-        .faq h2 {
-            color: #ff2d2d;
-        }
-
-        .faq-item {
-            margin: 15px 0;
-            background-color: #333;
-            border-radius: 8px;
-            padding: 15px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .faq-item:hover {
-            background-color: #444;
-        }
-
-        .faq-answer {
-            display: none;
-            padding: 10px;
-            background-color: #444;
-            border-radius: 4px;
+            background: linear-gradient(45deg, #ff4444, #ff2d2d);
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 45, 45, 0.4);
         }
 
         /* Footer */
         footer {
             background-color: #1e1e1e;
-            padding: 20px;
+            padding: 30px;
             text-align: center;
-            color: #e0e0e0;
-            margin-top: 40px;
-            border-top: 2px solid red;
+            border-top: 3px solid #ff2d2d;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #ff2d2d, transparent);
+        }
+
+        footer p {
+            margin: 10px 0;
+            font-size: 1.1em;
         }
 
         footer a {
             color: #ff2d2d;
             text-decoration: none;
+            transition: all 0.3s ease;
         }
 
         footer a:hover {
-            color: #ff1a1a;
+            color: #ff6b6b;
+            text-shadow: 0 0 10px rgba(255, 45, 45, 0.5);
         }
 
-        .socials {
-            margin-top: 10px;
+        /* Animations */
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px #ff2d2d;
+            }
+            to {
+                text-shadow: 0 0 30px #ff2d2d, 0 0 40px #ff2d2d;
+            }
         }
 
-        .socials a {
-            color: #ffffff;
-            margin: 0 10px;
-            text-decoration: none;
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
         }
 
-        .socials a:hover {
-            color: #ff2d2d;
+        /* Cart Badge */
+        .cart-link {
+            position: relative;
         }
 
-        /* Utility classes */
-        .hidden {
-            display: none;
+        #cart-count {
+            background-color: #ff2d2d;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 50%;
+            font-size: 0.8em;
+            position: relative;
+            top: -8px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .product {
+                width: 90%;
+                margin: 10px auto;
+            }
         }
     </style>
 </head>
-
 <body>
-
     <header>
         <div class="logo-text">Elite Modz</div>
         <nav>
@@ -268,7 +265,7 @@
                 <li><a href="socials.html">Socials</a></li>
                 <li><a href="login.html">Login</a></li>
                 <li><a href="register.html">Register</a></li>
-                <li><a href="cart.html" class="cart-link neon">🛒 Cart (<span id="cart-count">0</span>)</a></li>
+                <li><a href="cart.html" class="cart-link">🛒 Cart (<span id="cart-count">0</span>)</a></li>
             </ul>
         </nav>
     </header>
@@ -278,102 +275,86 @@
     </section>
 
     <section class="product-section">
-        <h2>New Modded Accounts</h2>
+        <h2>Featured Modded Accounts</h2>
         <div class="product">
             <h3>Basic: Level 300 and 150 Million</h3>
+            <p>Perfect for Beginners</p>
             <p>Price: $20</p>
             <button onclick="location.href='shop.html#basic'">Buy Now</button>
         </div>
         <div class="product">
             <h3>Regular: Level 450 and 250 Million</h3>
+            <p>Most Popular Choice</p>
             <p>Price: $35</p>
             <button onclick="location.href='shop.html#regular'">Buy Now</button>
         </div>
         <div class="product">
             <h3>Elite: Level 750 and 600 Million</h3>
+            <p>For Serious Players</p>
             <p>Price: $75</p>
             <button onclick="location.href='shop.html#elite'">Buy Now</button>
         </div>
         <div class="product">
             <h3>Ultimate: Level 1000 and 1 Billion</h3>
+            <p>Premium Experience</p>
             <p>Price: $100</p>
             <button onclick="location.href='shop.html#ultimate'">Buy Now</button>
         </div>
         <div class="product">
             <h3>God: Level 5000 and 100 Billion</h3>
+            <p>Unlimited Power</p>
             <p>Price: $150</p>
             <button onclick="location.href='shop.html#god'">Buy Now</button>
         </div>
-    </section>
-
-    <section class="about">
-        <h2>About Us</h2>
-        <p>Welcome to Elite Modz, your one-stop shop for the best modded accounts and services. Our mission is to provide
-            you with top-notch accounts and exceptional customer service. We pride ourselves on our reliability and
-            commitment to customer satisfaction.</p>
-    </section>
-
-    <section class="testimonials">
-        <h2>Testimonials</h2>
-        <div class="testimonial">
-            <h3>John Doe</h3>
-            <p>Amazing service! My account was delivered fast and the process was smooth. Highly recommend Elite Modz!</p>
+        <div class="product">
+            <h3>Infinity: Level 8000 and 1 Trillion</h3>
+            <p>Beyond Limits</p>
+            <p>Price: $250</p>
+            <button onclick="location.href='shop.html#infinity'">Buy Now</button>
         </div>
-        <div class="testimonial">
-            <h3>Jane Smith</h3>
-            <p>I've bought several accounts from Elite Modz and they never disappoint. Great prices and excellent
-                support.</p>
-        </div>
-    </section>
-
-    <section class="faq">
-        <h2>FAQ</h2>
-        <div class="faq-item">
-            <h3>How long does it take to receive my modded account?</h3>
-            <div class="faq-answer">
-                <p>Delivery times vary, but typically you can expect to receive your modded account within 24-48 hours.</p>
-            </div>
-        </div>
-        <div class="faq-item">
-            <h3>Is buying modded accounts safe?</h3>
-            <div class="faq-answer">
-                <p>We take every precaution to ensure the safety of your account. However, it's important to understand
-                    the risks involved with modded accounts.</p>
-            </div>
-        </div>
-        <div class="faq-item">
-            <h3>Can I get a refund if I'm not satisfied?</h3>
-            <div class="faq-answer">
-                <p>We offer refunds on a case-by-case basis. Please contact our support team if you encounter any
-                    issues.</p>
-            </div>
+        <div class="product">
+            <h3>Custom Options</h3>
+            <p>Build Your Perfect Account</p>
+            <p>Price: $2 - $250</p>
+            <button onclick="location.href='customize.html'">Customize Now</button>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2024 Elite Modz. All rights reserved.</p>
-        <div class="socials">
-            <a href="https://discord.com" target="_blank">Discord</a>
-            <a href="https://instagram.com" target="_blank">Instagram</a>
-            <a href="https://tiktok.com" target="_blank">TikTok</a>
-        </div>
+        <p>Follow us on <a href="#">Discord</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a></p>
+        <p>Contact: <a href="mailto:support@elitemodz.com">support@elitemodz.com</a></p>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const faqItems = document.querySelectorAll('.faq-item');
-            faqItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    const answer = item.querySelector('.faq-answer');
-                    if (answer.classList.contains('hidden')) {
-                        answer.classList.remove('hidden');
-                    } else {
-                        answer.classList.add('hidden');
-                    }
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
                 });
+            });
+        });
+
+        // Simple cart functionality
+        let cartCount = 0;
+        const cartCountElement = document.getElementById('cart-count');
+        
+        function updateCart() {
+            cartCountElement.textContent = cartCount;
+        }
+
+        // Add hover effects
+        document.querySelectorAll('.product').forEach(product => {
+            product.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            
+            product.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
             });
         });
     </script>
 </body>
-
 </html>
