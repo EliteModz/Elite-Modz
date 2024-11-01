@@ -27,76 +27,84 @@
 
 <section id="cart">
     <h2 class="neon">Your Cart</h2>
-    <ul id="cart-items"></ul>
-    <h3 class="neon">Total: $<span id="total-cost">0.00</span></h3>
-    <button class="neon" onclick="addTestItem()">Add Test Item</button>
-    <button class="neon" onclick="goToCheckout()">Checkout</button>
+    <div id="cart-items"></div>
+    <h3 class="neon">Total: $<span id="total-cost">0</span></h3>
+    <button class="neon" id="checkout-btn">Checkout</button>
 </section>
 
 <footer>
-    <p>&copy; 2024 Elite Modz. All Rights Reserved.</p>
+    <p class="neon">&copy; 2024 Elite Modz. All rights reserved.</p>
 </footer>
 
 <script>
-    // Load cart items from localStorage
+    // Load cart items and update cart display
     function loadCart() {
         const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
         const cartItemsContainer = document.getElementById('cart-items');
-        cartItemsContainer.innerHTML = ''; // Clear the list
+        const totalCostElement = document.getElementById('total-cost');
+        let totalCost = 0;
+
+        cartItemsContainer.innerHTML = ''; // Clear previous content
 
         cartItems.forEach((item, index) => {
-            const li = document.createElement('li');
-            li.innerHTML = `${item.name} - $${item.price.toFixed(2)} <button onclick="removeItem(${index})">Remove</button>`;
-            cartItemsContainer.appendChild(li);
+            totalCost += item.price;
+
+            const itemElement = document.createElement('div');
+            itemElement.className = 'cart-item';
+            itemElement.innerHTML = `
+                <p>${item.name}</p>
+                <p>Price: $${item.price}</p>
+                <button onclick="removeItem(${index})" class="remove-btn">Remove</button>
+            `;
+            cartItemsContainer.appendChild(itemElement);
         });
 
-        updateTotalCost(); // Update the total
+        totalCostElement.textContent = totalCost;
     }
 
-    // Function to add a test item to the cart
-    function addTestItem() {
+    // Add item to cart
+    function addCustomizationToCart() {
+        const form = document.getElementById('customization-form');
+        const checkboxes = form.querySelectorAll('input[type="checkbox"]:checked');
+        let total = 0;
+        let customizationDetails = "Customizations: ";
+        checkboxes.forEach(checkbox => {
+            total += parseInt(checkbox.value);
+            customizationDetails += `${checkbox.parentNode.textContent.trim()}, `;
+        });
+
+        const desiredLevel = form.desiredLevel.value;
+        if (desiredLevel) {
+            const levelCost = Math.floor(desiredLevel / 100) * 2;
+            total += levelCost;
+            customizationDetails += `Desired Level: ${desiredLevel} (+$${levelCost})`;
+        }
+
         const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-        cartItems.push({ name: "Test Item", price: 10.00 });
+        cartItems.push({ name: customizationDetails, price: total });
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
-        loadCart(); // Reload cart to show the new item
-        updateCartCount(); // Update the item count
+
+        alert('Customizations added to cart!');
+        loadCart(); // Update cart display
     }
 
-    // Function to remove an item by index
+    // Remove item from cart
     function removeItem(index) {
         const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
         if (index > -1) {
             cartItems.splice(index, 1);
             localStorage.setItem('cartItems', JSON.stringify(cartItems));
-            loadCart(); // Reload cart after removal
-            updateCartCount(); // Update the item count
+            loadCart();
         }
     }
 
-    // Calculate and update the total cost
-    function updateTotalCost() {
-        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-        let totalCost = 0;
-
-        cartItems.forEach(item => {
-            totalCost += item.price;
-        });
-
-        document.getElementById('total-cost').textContent = totalCost.toFixed(2);
-    }
-
-    // Update the cart count in nav
+    // Update cart count in nav
     function updateCartCount() {
         const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
         document.getElementById('cart-count').textContent = cartItems.length;
     }
 
-    // Function to navigate to the checkout page
-    function goToCheckout() {
-        window.location.href = 'checkout.html';
-    }
-
-    // Initialize the cart on page load
+    // Initialize cart on page load
     window.onload = function() {
         loadCart();
         updateCartCount();
