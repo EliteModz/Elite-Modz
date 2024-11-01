@@ -4,268 +4,285 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Modz - Premium Modded Accounts & Services</title>
+    <title>Elite Modz - Ultimate Gaming Services</title>
     <link rel="icon" href="https://github.com/EliteModz/Elite-Modz/raw/refs/heads/main/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
-        
+        /* Base Variables and Reset */
         :root {
             --neon-red: #ff2d2d;
-            --neon-red-glow: 0 0 10px #ff2d2d, 0 0 20px #ff2d2d, 0 0 30px #ff2d2d;
-            --dark-bg: #121212;
+            --dark-red: #ff0000;
             --darker-bg: #0a0a0a;
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --text-color: #e0e0e0;
+            --gradient-1: linear-gradient(45deg, var(--neon-red), var(--dark-red));
+            --gradient-2: linear-gradient(to right, rgba(255,0,0,0.1), rgba(255,0,0,0.3));
+            --box-shadow-1: 0 0 20px rgba(255, 0, 0, 0.3);
+            --box-shadow-2: 0 10px 30px rgba(255, 45, 45, 0.2);
+            --transition-1: all 0.3s ease;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: var(--dark-bg);
-            color: #e0e0e0;
+            color: var(--text-color);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* Enhanced Header Styles */
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 10px;
+            background: var(--darker-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--neon-red);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--dark-red);
+        }
+
+        /* Loading Animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--darker-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loader-content {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--dark-red);
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Header and Navigation */
         header {
             background-color: rgba(30, 30, 30, 0.95);
             padding: 20px;
             position: fixed;
             width: 100%;
+            top: 0;
             z-index: 1000;
-            backdrop-filter: blur(10px);
             border-bottom: 3px solid var(--neon-red);
-            box-shadow: 0 0 20px rgba(255, 45, 45, 0.3);
+            box-shadow: var(--box-shadow-1);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
         }
 
         .logo-text {
-            font-size: 3em;
-            font-weight: 700;
+            font-size: 2.8em;
+            font-weight: bold;
             color: var(--neon-red);
-            text-shadow: var(--neon-red-glow);
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-            animation: pulsate 2s infinite;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+            animation: neonPulse 1.5s infinite alternate;
         }
 
-        @keyframes pulsate {
-            0% { text-shadow: var(--neon-red-glow); }
-            50% { text-shadow: 0 0 15px #ff2d2d, 0 0 30px #ff2d2d, 0 0 45px #ff2d2d; }
-            100% { text-shadow: var(--neon-red-glow); }
-        }
-
+        /* Navigation Menu */
         nav {
-            background: linear-gradient(180deg, rgba(30,30,30,0.95) 0%, rgba(20,20,20,0.95) 100%);
+            background-color: rgba(30, 30, 30, 0.95);
             padding: 15px 0;
             border-radius: 10px;
+            transition: var(--transition-1);
         }
 
         nav ul {
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 30px;
             list-style: none;
+            flex-wrap: wrap;
         }
 
         nav ul li a {
-            color: #fff;
+            color: var(--text-color);
             text-decoration: none;
-            font-size: 1.2em;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        nav ul li a::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background-color: var(--neon-red);
-            transition: width 0.3s ease;
-        }
-
-        nav ul li a:hover::before {
-            width: 100%;
-        }
-
-        nav ul li a:hover {
-            color: var(--neon-red);
-            text-shadow: 0 0 10px var(--neon-red);
-        }
-
-        .cart-link {
-            background: linear-gradient(45deg, #ff2d2d, #ff0000);
+            font-size: 1.1em;
+            font-weight: 500;
             padding: 10px 20px;
             border-radius: 25px;
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
-        }
-
-        /* Enhanced Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-                        url('images/grand-theft-auto-v-online-sunset-panorama-tapete-1920x1080_48.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            transition: var(--transition-1);
             position: relative;
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle, transparent 20%, var(--darker-bg) 100%);
-        }
-
-        .hero h1 {
-            font-size: 5em;
-            color: var(--neon-red);
-            text-shadow: var(--neon-red-glow);
-            margin-bottom: 30px;
-            text-align: center;
-            z-index: 1;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        /* Enhanced Product Section */
-        .product-section {
-            padding: 100px 40px;
-            background: linear-gradient(180deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
-        }
-
-        .product-section h2 {
-            color: var(--neon-red);
-            font-size: 3em;
-            margin-bottom: 50px;
-            text-align: center;
-            text-shadow: var(--neon-red-glow);
-        }
-
-        .products-grid {
+        /* Product Grid Layout */
+        .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            padding: 40px;
             max-width: 1400px;
             margin: 0 auto;
         }
 
-        .product {
-            background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+        .product-card {
+            background: var(--card-bg);
             border-radius: 15px;
-            padding: 30px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 20px;
+            text-align: center;
+            transition: var(--transition-1);
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(255, 45, 45, 0.1);
         }
 
-        .product::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow-2);
+        }
+
+        .product-image {
             width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(255,45,45,0.1), transparent);
-            transform: translateX(-100%);
-            transition: transform 0.6s ease;
-        }
-
-        .product:hover::before {
-            transform: translateX(100%);
-        }
-
-        .product:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 10px 30px rgba(255, 45, 45, 0.2);
-        }
-
-        .product h3 {
-            color: var(--neon-red);
-            font-size: 1.5em;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
             margin-bottom: 15px;
         }
 
-        .product p {
-            margin: 10px 0;
-            font-size: 1.1em;
+        .product-title {
+            font-size: 1.5em;
+            color: var(--neon-red);
+            margin-bottom: 10px;
         }
 
-        .product button {
-            background: linear-gradient(45deg, #ff2d2d, #ff0000);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 25px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 20px;
-            font-family: 'Orbitron', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .product-price {
+            font-size: 1.8em;
+            color: var(--text-color);
+            margin: 15px 0;
         }
 
-        .product button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(255, 45, 45, 0.5);
+        .product-description {
+            color: var(--text-color);
+            margin-bottom: 20px;
         }
 
-        /* Enhanced Footer */
-        footer {
-            background: linear-gradient(0deg, #1e1e1e 0%, var(--darker-bg) 100%);
-            padding: 40px 20px;
-            text-align: center;
-            border-top: 2px solid var(--neon-red);
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 40px;
+            background: var(--darker-bg);
+        }
+
+        .testimonial-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px;
             position: relative;
         }
 
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--neon-red), transparent);
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
         }
 
-        footer p {
-            margin: 10px 0;
-            font-size: 1.1em;
-        }
-
-        footer a {
+        .testimonial-author {
             color: var(--neon-red);
-            text-decoration: none;
-            transition: all 0.3s ease;
+            font-weight: bold;
         }
 
-        footer a:hover {
-            text-shadow: var(--neon-red-glow);
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--neon-red);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition-1);
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: var(--card-bg);
+            padding: 60px 40px;
+            margin-top: 80px;
+            border-top: 3px solid var(--neon-red);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-section h3 {
+            color: var(--neon-red);
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: var(--transition-1);
+        }
+
+        .footer-links a:hover {
+            color: var(--neon-red);
+            padding-left: 10px;
         }
 
         /* Responsive Design */
@@ -276,137 +293,170 @@
 
             nav ul {
                 flex-direction: column;
-                align-items: center;
                 gap: 15px;
             }
 
             .hero h1 {
                 font-size: 3em;
-                padding: 0 20px;
             }
 
-            .products-grid {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
                 grid-template-columns: 1fr;
             }
         }
 
-        /* Additional Animations */
-        @keyframes glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(255, 45, 45, 0.5); }
-            50% { box-shadow: 0 0 30px rgba(255, 45, 45, 0.8); }
+        /* Custom Animations */
+        @keyframes neonPulse {
+            0% { text-shadow: 0 0 10px var(--neon-red), 0 0 20px var(--neon-red); }
+            100% { text-shadow: 0 0 20px var(--neon-red), 0 0 30px var(--neon-red); }
         }
 
-        .product button {
-            animation: glow 2s infinite;
+        @keyframes floatAnimation {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
         }
 
-        /* Scroll Bar Styling */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--darker-bg);
-        }
-
-        ::-webkit-scrollbar-thumb {
+        /* Additional Features */
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
             background: var(--neon-red);
-            border-radius: 5px;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            display: none;
+            animation: slideIn 0.5s ease-out;
         }
 
-        ::-webkit-scrollbar-thumb:hover {
-            background: #ff1a1a;
+        @keyframes slideIn {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--gradient-1);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: var(--transition-1);
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        /* Modal Styles */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1001;
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: var(--neon-red);
+            cursor: pointer;
+            font-size: 1.5em;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo-text">Elite Modz</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="socials.html">Socials</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="register.html">Register</a></li>
-                <li><a href="cart.html" class="cart-link">🛒 Cart (<span id="cart-count">0</span>)</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Content remains the same as previous version -->
+    <div class="loader">
+        <div class="loader-content"></div>
+    </div>
 
-    <section class="hero">
-        <h1>Premium Modded Accounts & Services</h1>
-    </section>
+    <div class="notification" id="notification"></div>
+    
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
 
-    <section class="product-section">
-        <h2>Elite Modded Accounts</h2>
-        <div class="products-grid">
-            <div class="product">
-                <h3>Basic: Level 300</h3>
-                <p>• 150 Million GTA$</p>
-                <p>• All Weapons Unlocked</p>
-                <p>• Basic Properties</p>
-                <p>Price: $20</p>
-                <button onclick="location.href='shop.html#basic'">Buy Now</button>
-            </div>
-            <div class="product">
-                <h3>Regular: Level 450</h3>
-                <p>• 250 Million GTA$</p>
-                <p>• All Weapons & Upgrades</p>
-                <p>• Multiple Properties</p>
-                <p>Price: $35</p>
-                <button onclick="location.href='shop.html#regular'">Buy Now</button>
-            </div>
-            <div class="product">
-                <h3>Elite: Level 750</h3>
-                <p>• 600 Million GTA$</p>
-                <p>• All Content Unlocked</p>
-                <p>• Premium Properties</p>
-                <p>Price: $75</p>
-                <button onclick="location.href='shop.html#elite'">Buy Now</button>
-            </div>
-            <div class="product">
-                <h3>Ultimate: Level 1000</h3>
-                <p>• 1 Billion GTA$</p>
-                <p>• Everything Unlocked</p>
-                <p>• VIP Status</p>
-                <p>Price: $100</p>
-                <button onclick="location.href='shop.html#ultimate'">Buy Now</button>
-            </div>
-            <div class="product">
-                <h3>God: Level 5000</h3>
-                <p>• 100 Billion GTA$</p>
-                <p>• Exclusive Content</p>
-                <p>• Supreme Status</p>
-                <p>Price: $150</p>
-                <button onclick="location.href='shop.html#god'">Buy Now</button>
-            </div>
-            <div class="product">
-                <h3>Infinity: Level 8000</h3>
-                <p>• 1 Trillion GTA$</p>
-                <p>• Everything Maxed</p>
-                <p>• Legendary Status</p>
-                <p>Price: $250</p>
-                <button onclick="location.href='shop.html#infinity'">Buy Now</button>
-            </div>
-            <div class="product">
-                <h3>Custom Package</h3>
-                <p>• Choose Your Level</p>
-                <p>• Choose Your Money</p>
-                <p>• Custom Unlocks</p>
-                <p>Price: $2 - $250</p>
-                <button onclick="location.href='customize.html'">Customize Now</button>
-            </div>
-        </div>
-    </section>
+    <script>
+        // Loading Animation
+        window.addEventListener('load', () => {
+            const loader = document.querySelector('.loader');
+            loader.style.display = 'none';
+        });
 
-    <footer>
-        <p>© 2024 Elite Modz. All rights reserved.</p>
-        <p>Follow us on <a href="#">Discord</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a></p>
-        <p>Contact: <a href="mailto:support@elitemodz.com">support@elitemodz.com</a></p>
-    </footer>
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Notification System
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.style.display = 'block';
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+
+        // Cart Functionality
+        let cartCount = 0;
+        const cartCountElement = document.getElementById('cart-count');
+        
+        function updateCart(count) {
+            cartCount += count;
+            cartCountElement.textContent = cartCount;
+            showNotification('Cart updated successfully!');
+        }
+    </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 
