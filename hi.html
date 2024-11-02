@@ -1,628 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Modz - Modded Accounts & Services</title>
-    <!-- Favicon link -->
-    <meta name="description" content="Elite Modz - Premium GTA 5 Modded Accounts & Services. Get leveled up accounts with billions in GTA cash.">
-    <meta name="keywords" content="GTA 5 mods, modded accounts, GTA Online, gaming services">
-    <title>Elite Modz - Premium GTA 5 Modded Accounts & Services</title>
-<link rel="icon" href="https://github.com/EliteModz/Elite-Modz/raw/refs/heads/main/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<style>
-        body {
-        /* Root Variables */
-        :root {
-            --primary-red: #ff2d2d;
-            --primary-dark: #121212;
-            --secondary-dark: #1e1e1e;
-            --text-light: #e0e0e0;
-            --glow-shadow: 0 0 20px rgba(255, 45, 45, 0.4);
-            --gradient-red: linear-gradient(45deg, var(--primary-red), #ff6b6b);
-            --gradient-dark: linear-gradient(135deg, var(--primary-dark), #1a1a1a);
-        }
-
-        /* Reset & Base Styles */
-        * {
+@@ -12,253 +11,251 @@
+body {
 margin: 0;
-            font-family: 'Arial', sans-serif;
+font-family: 'Arial', sans-serif;
+            background-color: #121212; /* Black background */
+            color: #e0e0e0; /* Light gray text */
             background-color: #121212;
             color: #e0e0e0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Rajdhani', sans-serif;
-            background: var(--gradient-dark);
-            color: var(--text-light);
-            line-height: 1.6;
-            overflow-x: hidden;
 }
 
+        /* Header and Navigation Bar */
         /* Header and Navigation */
-        /* Loading Screen */
-        .loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--primary-dark);
-            z-index: 9999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: opacity 0.5s;
-        }
-
-        .loading-animation {
-            width: 100px;
-            height: 100px;
-            border: 5px solid var(--primary-red);
-            border-radius: 50%;
-            border-top-color: transparent;
-            animation: spin 1s linear infinite;
-        }
-
-        /* Enhanced Header */
 header {
-            background-color: #1e1e1e;
-            background: rgba(30, 30, 30, 0.95);
+background-color: #1e1e1e;
 padding: 20px;
-            text-align: center;
+text-align: center;
+            border-bottom: 3px solid red;
             border-bottom: 3px solid #ff2d2d;
             box-shadow: 0 2px 10px rgba(255, 45, 45, 0.3);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-            border-bottom: 3px solid var(--primary-red);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
-            transition: all 0.3s ease;
-        }
-
-        header.scrolled {
-            padding: 15px;
-            background: rgba(20, 20, 20, 0.98);
-        }
-
-        .logo-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 15px;
 }
 
-.logo-text {
+        header .logo img {
+            width: 150px;
+        .logo-text {
             font-size: 3em;
             font-weight: bold;
             color: #ff2d2d;
             text-shadow: 0 0 10px rgba(255, 45, 45, 0.5);
             transition: all 0.3s ease;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3.5em;
-            font-weight: 700;
-            background: var(--gradient-red);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: var(--glow-shadow);
-            letter-spacing: 2px;
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
 }
 
+        header .logo-text {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ff2d2d; /* Red logo text */
         .logo-text:hover {
             transform: scale(1.05);
             text-shadow: 0 0 20px rgba(255, 45, 45, 0.8);
-        .logo-text::after {
-            content: 'PREMIUM GTA V SERVICES';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.2em;
-            letter-spacing: 5px;
-            color: var(--primary-red);
-            white-space: nowrap;
-        }
-
-        /* Advanced Navigation */
-        nav {
-            position: relative;
 }
 
 nav ul {
-            list-style: none;
-            padding: 0;
+list-style: none;
+padding: 0;
+            margin: 0;
             margin: 15px 0;
 display: flex;
 justify-content: center;
-            gap: 25px;
-            gap: 30px;
-            margin-top: 20px;
-            flex-wrap: wrap;
+            background-color: #1e1e1e;
         }
 
         nav ul li {
-            position: relative;
+            margin: 0 15px;
+            gap: 25px;
 }
 
 nav ul li a {
-            color: var(--text-light);
 text-decoration: none;
 font-size: 1.2em;
-            color: white;
-            font-weight: 600;
-padding: 10px 20px;
+color: white;
+            padding: 10px 15px;
+            padding: 10px 20px;
             border-radius: 5px;
-            border-radius: 25px;
-transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        nav ul li a i {
-            font-size: 0.9em;
-        }
-
-        nav ul li a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 45, 45, 0.2), transparent);
-            transition: 0.5s;
-        }
-
-        nav ul li a:hover::before {
-            left: 100%;
+            transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
+            color: #ff2d2d; /* Neon red hover effect */
             color: #ff2d2d;
             background-color: rgba(255, 45, 45, 0.1);
             transform: translateY(-2px);
-            color: var(--primary-red);
-            text-shadow: 0 0 10px rgba(255, 45, 45, 0.5);
 }
 
-        /* Hero Section */
-        .hero {
+/* Hero Section */
+.hero {
+            background-image: url('images/grand-theft-auto-v-online-sunset-panorama-tapete-1920x1080_48.jpg');
             background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
                 url('images/grand-theft-auto-v-online-sunset-panorama-tapete-1920x1080_48.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 600px;
-        /* Dropdown Menu */
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-content {
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(30, 30, 30, 0.95);
-            min-width: 200px;
-            border-radius: 10px;
-            padding: 10px;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 45, 45, 0.2);
-        }
-
-        .dropdown:hover .dropdown-content {
-            opacity: 1;
-            visibility: visible;
-            top: 120%;
-        }
-
-        .dropdown-content a {
-            padding: 10px 15px;
-            display: block;
-            color: var(--text-light);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border-radius: 5px;
-        }
-
-        .dropdown-content a:hover {
-            background: rgba(255, 45, 45, 0.1);
-            transform: translateX(5px);
-        }
-
-        /* Cart Badge */
-        .cart-link {
-            position: relative;
-        }
-
-        #cart-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: var(--primary-red);
-            color: white;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-display: flex;
-            align-items: center;
-justify-content: center;
-            font-size: 0.8em;
-            font-weight: bold;
-            animation: pulse 2s infinite;
-        }
-
-        /* Enhanced Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-                       url('images/grand-theft-auto-v-online-sunset-panorama-tapete-1920x1080_48.jpg') no-repeat center/cover;
-            display: flex;
-align-items: center;
-            justify-content: center;
-position: relative;
-overflow: hidden;
-}
-
-        .hero::before {
-        .hero-content {
+background-size: cover;
+background-position: center;
+            height: 500px;
             text-align: center;
-            z-index: 2;
-            padding: 20px;
-        }
+            height: 600px;
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+            overflow: hidden;
+}
 
         .hero h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 5em;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: #fff;
-            text-shadow: 0 0 30px var(--primary-red);
-            letter-spacing: 4px;
-            animation: float 3s ease-in-out infinite;
-            margin-bottom: 20px;
+            font-size: 4em;
+            color: #ff2d2d;
+            text-shadow: 0 0 15px #ff0000;
+            z-index: 1;
         }
 
-        .hero p {
-            font-size: 1.5em;
-            color: var(--text-light);
-            margin-bottom: 30px;
-            max-width: 800px;
-            margin: 0 auto 30px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 15px 40px;
-            background: var(--gradient-red);
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            font-size: 1.2em;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(255, 45, 45, 0.4);
-        }
-
-        .cta-button::before {
+        .hero::after {
+        .hero::before {
 content: '';
 position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 0;
             background: linear-gradient(45deg, rgba(255, 45, 45, 0.2), transparent);
             animation: gradientShift 10s infinite alternate;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: rgba(255, 255, 255, 0.1);
-            transform: rotate(45deg);
-            transition: all 0.3s ease;
-}
+        }
 
         .hero h1 {
             font-size: 4.5em;
             color: #ffffff;
             text-shadow: 0 0 20px #ff2d2d;
-        .cta-button:hover::before {
-            transform: rotate(45deg) translateY(-100%);
-        }
-
-        /* Features Section */
-        .features {
-            padding: 100px 50px;
-            background: linear-gradient(0deg, rgba(30, 30, 30, 0.9), rgba(18, 18, 18, 0.9));
-position: relative;
+            position: relative;
             z-index: 1;
             animation: glow 2s ease-in-out infinite alternate;
 }
 
-        /* Product Section */
-        .product-section {
+/* Product Section */
+.product-section {
+            padding: 40px;
             padding: 60px 40px;
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 30px;
 text-align: center;
             background: linear-gradient(180deg, #121212, #1a1a1a);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
 }
 
-        .product-section h2 {
-            color: #ff2d2d;
-        .feature-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .feature-card i {
-font-size: 3em;
+.product-section h2 {
+color: #ff2d2d;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            font-size: 3em;
             margin-bottom: 40px;
             text-shadow: 0 0 15px rgba(255, 45, 45, 0.3);
-            color: var(--primary-red);
-            margin-bottom: 20px;
 }
 
-        .product {
-            display: inline-block;
-            background-color: #1e1e1e;
-            margin: 20px;
-        .feature-card h3 {
-            font-size: 1.8em;
-            color: var(--primary-red);
-            margin-bottom: 15px;
-        }
-
-        .feature-card p {
-            color: var(--text-light);
-            font-size: 1.1em;
-        }
-
-        /* Product Grid */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 50px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .product-card {
-            background: rgba(30, 30, 30, 0.9);
-            border-radius: 20px;
-padding: 30px;
+.product {
+display: inline-block;
+background-color: #1e1e1e;
+margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            padding: 30px;
             border-radius: 15px;
             width: 320px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
             transition: all 0.3s ease;
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-position: relative;
-overflow: hidden;
-}
-
-        .product::before {
-        .product-card::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, #ff2d2d, #ff6b6b);
-            height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(255, 45, 45, 0.1), transparent);
-            transform: translateX(-100%);
-            transition: 0.5s;
-}
-
-        .product:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 25px rgba(255, 45, 45, 0.2);
-        .product-card:hover::before {
-            transform: translateX(100%);
-}
-
-        .product h3 {
-            color: #ff2d2d;
-            font-size: 1.5em;
-            margin-bottom: 15px;
-        .product-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 10px 30px rgba(255, 45, 45, 0.2);
-}
-
-        .product p {
-            color: #e0e0e0;
-            font-size: 1.1em;
-            margin: 10px 0;
-        .product-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 20px;
-}
-
-        .product button {
-            background: linear-gradient(45deg, #ff2d2d, #ff4444);
-            border: none;
-            padding: 12px 25px;
-            color: white;
-        .product-title {
-            font-size: 1.8em;
-            color: var(--primary-red);
-            margin-bottom: 10px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .product-price {
-            font-size: 2em;
-            color: var(--text-light);
-            margin: 15px 0;
+        .product::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #ff2d2d, #ff6b6b);
+}
+
+.product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(255, 45, 45, 0.2);
+}
+
+.product h3 {
+color: #ff2d2d;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+}
+
+.product p {
+color: #e0e0e0;
+            font-size: 1.1em;
+            margin: 10px 0;
+}
+
+.product button {
+            background-color: #ff2d2d;
+            background: linear-gradient(45deg, #ff2d2d, #ff4444);
+border: none;
+            padding: 10px 20px;
+            color: #121212;
+            padding: 12px 25px;
+            color: white;
 font-weight: bold;
             font-size: 1.1em;
-            cursor: pointer;
+cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
             border-radius: 25px;
             transition: all 0.3s ease;
             margin-top: 15px;
 }
 
-        .product button:hover {
+.product button:hover {
+            background-color: #ff1a1a;
             background: linear-gradient(45deg, #ff4444, #ff2d2d);
             transform: scale(1.05);
             box-shadow: 0 0 20px rgba(255, 45, 45, 0.4);
-        .product-features {
-            list-style: none;
-            margin: 20px 0;
-            text-align: left;
-        }
-
-        .product-features li {
-            margin: 10px 0;
-            padding-left: 25px;
-            position: relative;
-        }
-
-        .product-features li::before {
-            content: '✓';
-            color: var(--primary-red);
-            position: absolute;
-            left: 0;
 }
 
-        /* Footer */
-        /* Footer Enhancement */
-footer {
-            background-color: #1e1e1e;
-            padding: 30px;
+        /* About Us Section */
+        .about {
+            background-color: #1c1c1c;
+            padding: 40px;
             text-align: center;
+        }
+
+        .about h2 {
+            color: #ff2d2d;
+        }
+
+        .about p {
+            max-width: 600px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .testimonial {
+            margin: 20px;
+        /* Footer */
+        footer {
+background-color: #1e1e1e;
+            padding: 15px;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .testimonial h3 {
+            color: #ff2d2d;
+            margin-bottom: 10px;
+        }
+
+        .testimonial p {
+            color: #ffffff;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 40px 20px;
+            padding: 30px;
+text-align: center;
+            background-color: #1c1c1c;
+        }
+
+        .faq h2 {
+            color: #ff2d2d;
+        }
+
+        .faq-item {
+            margin: 15px 0;
+            background-color: #333;
+            border-radius: 8px;
+            padding: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .faq-item:hover {
+            background-color: #444;
             border-top: 3px solid #ff2d2d;
-            background: var(--secondary-dark);
-            padding: 80px 20px 40px;
-position: relative;
+            position: relative;
 }
 
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            background-color: #444;
+            border-radius: 4px;
         footer::before {
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-        }
-
-        .footer-section {
-            padding: 20px;
-        }
-
-        .footer-section h3 {
-            color: var(--primary-red);
-            font-size: 1.5em;
-            margin-bottom: 20px;
-            position: relative;
-        }
-
-        .footer-section h3::after {
-content: '';
-position: absolute;
+            content: '';
+            position: absolute;
             top: 0;
-            bottom: -10px;
-left: 0;
+            left: 0;
             right: 0;
             height: 1px;
             background: linear-gradient(90deg, transparent, #ff2d2d, transparent);
-            width: 50px;
-            height: 2px;
-            background: var(--primary-red);
-        }
-
-        .footer-links {
-            list-style: none;
 }
 
+        /* Footer */
+        footer {
+            background-color: #1e1e1e;
+            padding: 20px;
+            text-align: center;
+            color: #e0e0e0;
+            margin-top: 40px;
+            border-top: 2px solid red;
         footer p {
-        .footer-links li {
-margin: 10px 0;
+            margin: 10px 0;
             font-size: 1.1em;
 }
 
-        footer a {
-            color: #ff2d2d;
-        .footer-links a {
-            color: var(--text-light);
+footer a {
+color: #ff2d2d;
 text-decoration: none;
-transition: all 0.3s ease;
+            transition: all 0.3s ease;
 }
 
-        footer a:hover {
+footer a:hover {
+            color: #ff1a1a;
             color: #ff6b6b;
             text-shadow: 0 0 10px rgba(255, 45, 45, 0.5);
-        .footer-links a:hover {
-            color: var(--primary-red);
-            padding-left: 10px;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-icons a {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 45, 45, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-red);
-            transition: all 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            background: var(--primary-red);
-            color: white;
-            transform: translateY(-5px);
 }
 
-/* Animations */
+        .socials {
+            margin-top: 10px;
+        /* Animations */
         @keyframes glow {
             from {
                 text-shadow: 0 0 20px #ff2d2d;
@@ -630,11 +337,12 @@ transition: all 0.3s ease;
             to {
                 text-shadow: 0 0 30px #ff2d2d, 0 0 40px #ff2d2d;
             }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
 }
 
+        .socials a {
+            color: #ffffff;
+            margin: 0 10px;
+            text-decoration: none;
         @keyframes gradientShift {
             0% {
                 background-position: 0% 50%;
@@ -642,433 +350,182 @@ transition: all 0.3s ease;
             100% {
                 background-position: 100% 50%;
             }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
 }
 
+        .socials a:hover {
+            color: #ff2d2d;
         /* Cart Badge */
         .cart-link {
             position: relative;
-        @keyframes spin {
-            to { transform: rotate(360deg); }
 }
 
+        /* Utility classes */
+        .hidden {
+            display: none;
         #cart-count {
             background-color: #ff2d2d;
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            .hero h1 { font-size: 4em; }
-            .product-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        @media (max-width: 768px) {
-            .logo-text { font-size: 2.5em; }
-            nav ul { flex-direction: column; align-items: center; }
-            .hero h1 { font-size: 3em; }
-            .product-grid { grid-template-columns: 1fr; }
-            .features-grid { grid-template-columns: 1fr; }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 { font-size: 2em; }
-            .cta-button { padding: 12px 30px; font-size: 1em; }
-            .footer-content { grid-template-columns: 1fr; }
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--secondary-dark);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary-red);
-            border-radius: 5px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #ff4444;
-        }
-
-        /* Toast Notifications */
-        .toast {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(30, 30, 30, 0.9);
-color: white;
+            color: white;
             padding: 2px 6px;
             border-radius: 50%;
             font-size: 0.8em;
-            padding: 15px 25px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            z-index: 1000;
-            transform: translateY(100px);
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .toast.show {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        /* Modal Styles */
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .modal.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal-content {
-            background: var(--secondary-dark);
-            padding: 30px;
-            border-radius: 20px;
-            max-width: 500px;
-            width: 90%;
-position: relative;
+            position: relative;
             top: -8px;
-            transform: scale(0.7);
-            transition: all 0.3s ease;
-}
+        }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 3em;
             }
-        .modal.active .modal-content {
-            transform: scale(1);
-        }
 
             nav ul {
                 flex-direction: column;
                 gap: 10px;
             }
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 1.5em;
-            color: var(--text-light);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
 
             .product {
                 width: 90%;
                 margin: 10px auto;
             }
-        .close-modal:hover {
-            color: var(--primary-red);
-            transform: rotate(90deg);
 }
 </style>
 </head>
-<body>
-    <!-- Loading Screen -->
-    <div class="loading-screen">
-        <div class="loading-animation"></div>
-    </div>
 
-    <!-- Header -->
+<body>
+
 <header>
-        <div class="logo-text">Elite Modz</div>
-        <div class="logo-container">
-            <div class="logo-text">Elite Modz</div>
-        </div>
+<div class="logo-text">Elite Modz</div>
 <nav>
-<ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="socials.html">Socials</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="register.html">Register</a></li>
+@@ -268,7 +265,7 @@
+<li><a href="socials.html">Socials</a></li>
+<li><a href="login.html">Login</a></li>
+<li><a href="register.html">Register</a></li>
+                <li><a href="cart.html" class="cart-link neon">🛒 Cart (<span id="cart-count">0</span>)</a></li>
                 <li><a href="cart.html" class="cart-link">🛒 Cart (<span id="cart-count">0</span>)</a></li>
-                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                <li class="dropdown">
-                    <a href="shop.html"><i class="fas fa-shopping-bag"></i> Shop</a>
-                    <div class="dropdown-content">
-                        <a href="shop.html#accounts">Modded Accounts</a>
-                        <a href="shop.html#services">Services</a>
-                        <a href="shop.html#packages">Special Packages</a>
-                    </div>
-                </li>
-                <li><a href="socials.html"><i class="fas fa-users"></i> Community</a></li>
-                <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
-                <li><a href="register.html"><i class="fas fa-user-plus"></i> Register</a></li>
-                <li><a href="cart.html" class="cart-link">
-                    <i class="fas fa-shopping-cart"></i> Cart
-                    <span id="cart-count">0</span>
-                </a></li>
 </ul>
 </nav>
 </header>
-
-    <!-- Hero Section -->
-<section class="hero">
-        <h1>Modded Accounts & Services</h1>
-        <div class="hero-content">
-            <h1>Elite GTA V Modding</h1>
-            <p>Experience the ultimate GTA Online adventure with our premium modded accounts and services</p>
-            <a href="#products" class="cta-button">Explore Services</a>
-        </div>
+@@ -278,102 +275,86 @@ <h1>Modded Accounts & Services</h1>
 </section>
 
-    <section class="product-section">
+<section class="product-section">
+        <h2>New Modded Accounts</h2>
         <h2>Featured Modded Accounts</h2>
-        <div class="product">
-            <h3>Basic: Level 300 and 150 Million</h3>
+<div class="product">
+<h3>Basic: Level 300 and 150 Million</h3>
             <p>Perfect for Beginners</p>
-            <p>Price: $20</p>
-            <button onclick="location.href='shop.html#basic'">Buy Now</button>
-        </div>
-        <div class="product">
-            <h3>Regular: Level 450 and 250 Million</h3>
-            <p>Most Popular Choice</p>
-            <p>Price: $35</p>
-            <button onclick="location.href='shop.html#regular'">Buy Now</button>
-        </div>
-        <div class="product">
-            <h3>Elite: Level 750 and 600 Million</h3>
-            <p>For Serious Players</p>
-            <p>Price: $75</p>
-            <button onclick="location.href='shop.html#elite'">Buy Now</button>
-    <!-- Features Section -->
-    <section class="features">
-        <div class="features-grid">
-            <div class="feature-card">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Secure & Safe</h3>
-                <p>All our services are tested and verified for maximum account safety</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-bolt"></i>
-                <h3>Instant Delivery</h3>
-                <p>Get your modded account within minutes after purchase</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-headset"></i>
-                <h3>24/7 Support</h3>
-                <p>Our team is always here to help with any questions</p>
-            </div>
+<p>Price: $20</p>
+<button onclick="location.href='shop.html#basic'">Buy Now</button>
 </div>
-        <div class="product">
-            <h3>Ultimate: Level 1000 and 1 Billion</h3>
+<div class="product">
+<h3>Regular: Level 450 and 250 Million</h3>
+            <p>Most Popular Choice</p>
+<p>Price: $35</p>
+<button onclick="location.href='shop.html#regular'">Buy Now</button>
+</div>
+<div class="product">
+<h3>Elite: Level 750 and 600 Million</h3>
+            <p>For Serious Players</p>
+<p>Price: $75</p>
+<button onclick="location.href='shop.html#elite'">Buy Now</button>
+</div>
+<div class="product">
+<h3>Ultimate: Level 1000 and 1 Billion</h3>
             <p>Premium Experience</p>
-            <p>Price: $100</p>
-            <button onclick="location.href='shop.html#ultimate'">Buy Now</button>
-        </div>
-        <div class="product">
-            <h3>God: Level 5000 and 100 Billion</h3>
+<p>Price: $100</p>
+<button onclick="location.href='shop.html#ultimate'">Buy Now</button>
+</div>
+<div class="product">
+<h3>God: Level 5000 and 100 Billion</h3>
             <p>Unlimited Power</p>
-            <p>Price: $150</p>
-            <button onclick="location.href='shop.html#god'">Buy Now</button>
+<p>Price: $150</p>
+<button onclick="location.href='shop.html#god'">Buy Now</button>
+</div>
+    </section>
+
+    <section class="about">
+        <h2>About Us</h2>
+        <p>Welcome to Elite Modz, your one-stop shop for the best modded accounts and services. Our mission is to provide
+            you with top-notch accounts and exceptional customer service. We pride ourselves on our reliability and
+            commitment to customer satisfaction.</p>
+    </section>
+
+    <section class="testimonials">
+        <h2>Testimonials</h2>
+        <div class="testimonial">
+            <h3>John Doe</h3>
+            <p>Amazing service! My account was delivered fast and the process was smooth. Highly recommend Elite Modz!</p>
         </div>
+        <div class="testimonial">
+            <h3>Jane Smith</h3>
+            <p>I've bought several accounts from Elite Modz and they never disappoint. Great prices and excellent
+                support.</p>
+        </div>
+    </section>
+
+    <section class="faq">
+        <h2>FAQ</h2>
+        <div class="faq-item">
+            <h3>How long does it take to receive my modded account?</h3>
+            <div class="faq-answer">
+                <p>Delivery times vary, but typically you can expect to receive your modded account within 24-48 hours.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <h3>Is buying modded accounts safe?</h3>
+            <div class="faq-answer">
+                <p>We take every precaution to ensure the safety of your account. However, it's important to understand
+                    the risks involved with modded accounts.</p>
+            </div>
         <div class="product">
             <h3>Infinity: Level 8000 and 1 Trillion</h3>
             <p>Beyond Limits</p>
             <p>Price: $250</p>
             <button onclick="location.href='shop.html#infinity'">Buy Now</button>
-        </div>
+</div>
+        <div class="faq-item">
+            <h3>Can I get a refund if I'm not satisfied?</h3>
+            <div class="faq-answer">
+                <p>We offer refunds on a case-by-case basis. Please contact our support team if you encounter any
+                    issues.</p>
+            </div>
         <div class="product">
             <h3>Custom Options</h3>
             <p>Build Your Perfect Account</p>
             <p>Price: $2 - $250</p>
             <button onclick="location.href='customize.html'">Customize Now</button>
-    </section>
-
-    <!-- Products Section -->
-    <section class="product-section" id="products">
-        <div class="product-grid">
-            <!-- Basic Package -->
-            <div class="product-card">
-                <img src="images/basic-package.jpg" alt="Basic Package" class="product-image">
-                <h3 class="product-title">Basic Package</h3>
-                <ul class="product-features">
-                    <li>Level 300</li>
-                    <li>$150M GTA Cash</li>
-                    <li>All Weapons Unlocked</li>
-                    <li>Basic Vehicles Package</li>
-                </ul>
-                <div class="product-price">$20</div>
-                <button class="cta-button" onclick="addToCart('basic')">Add to Cart</button>
-            </div>
-
-            <!-- Elite Package -->
-            <div class="product-card">
-                <img src="images/elite-package.jpg" alt="Elite Package" class="product-image">
-                <h3 class="product-title">Elite Package</h3>
-                <ul class="product-features">
-                    <li>Level 750</li>
-                    <li>$600M GTA Cash</li>
-                    <li>All Content Unlocked</li>
-                    <li>Premium Vehicle Collection</li>
-                </ul>
-                <div class="product-price">$75</div>
-                <button class="cta-button" onclick="addToCart('elite')">Add to Cart</button>
-            </div>
-
-            <!-- God Package -->
-            <div class="product-card">
-                <img src="images/god-package.jpg" alt="God Package" class="product-image">
-                <h3 class="product-title">God Package</h3>
-                <ul class="product-features">
-                    <li>Level 5000</li>
-                    <li>$100B GTA Cash</li>
-                    <li>Everything Unlocked</li>
-                    <li>Exclusive Modded Items</li>
-                </ul>
-                <div class="product-price">$150</div>
-                <button class="cta-button" onclick="addToCart('god')">Add to Cart</button>
-            </div>
 </div>
 </section>
 
-    <!-- Footer -->
 <footer>
-        <p>&copy; 2024 Elite Modz. All rights reserved.</p>
+<p>&copy; 2024 Elite Modz. All rights reserved.</p>
+        <div class="socials">
+            <a href="https://discord.com" target="_blank">Discord</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+            <a href="https://tiktok.com" target="_blank">TikTok</a>
+        </div>
         <p>Follow us on <a href="#">Discord</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a></p>
         <p>Contact: <a href="mailto:support@elitemodz.com">support@elitemodz.com</a></p>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="terms.html">Terms of Service</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <ul class="footer-links">
-                    <li><a href="mailto:support@elitemodz.com">support@elitemodz.com</a></li>
-                    <li><a href="discord.html">Join our Discord</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-discord"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-        </div>
-        <p class="copyright">&copy; 2024 Elite Modz. All rights reserved.</p>
 </footer>
 
-    <!-- Toast Notification -->
-    <div class="toast" id="toast"></div>
-
-    <!-- Modal -->
-    <div class="modal" id="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Welcome to Elite Modz</h2>
-            <p>Get started with our premium GTA V modding services!</p>
-        </div>
-    </div>
-
 <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const answer = item.querySelector('.faq-answer');
+                    if (answer.classList.contains('hidden')) {
+                        answer.classList.remove('hidden');
+                    } else {
+                        answer.classList.add('hidden');
+                    }
         // Add smooth scrolling
-        // Loading Screen
-        window.addEventListener('load', () => {
-            const loadingScreen = document.querySelector('.loading-screen');
-            loadingScreen.style.opacity = '0';
-            setTimeout(() => {
-                loadingScreen.style.display = 'none';
-            }, 500);
-        });
-
-        // Header Scroll Effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Cart Functionality
-        let cartItems = [];
-        
-        function addToCart(product) {
-            cartItems.push(product);
-            document.getElementById('cart-count').textContent = cartItems.length;
-            
-            // Show toast notification
-            showToast(`${product.charAt(0).toUpperCase() + product.slice(1)} package added to cart!`);
-            
-            // Animation feedback
-            const button = event.target;
-            button.style.transform = 'scale(0.95)';
-            setTimeout(() => button.style.transform = 'scale(1)', 200);
-        }
-
-        // Toast Notification
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            toast.textContent = message;
-            toast.classList.add('show');
-            
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
-        }
-
-        // Modal
-        const modal = document.getElementById('modal');
-        const closeModal = document.querySelector('.close-modal');
-
-        // Show modal after 5 seconds
-        setTimeout(() => {
-            modal.classList.add('active');
-        }, 5000);
-
-        closeModal.addEventListener('click', () => {
-            modal.classList.remove('active');
-        });
-
-        // Close modal when clicking outside
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active');
-            }
-        });
-
-        // Smooth Scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-anchor.addEventListener('click', function (e) {
-e.preventDefault();
-@@ -337,24 +877,23 @@ <h3>Custom Options</h3>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+});
 });
 });
 
@@ -1088,23 +545,9 @@ e.preventDefault();
             
             product.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0)';
-        // Intersection Observer for Animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-});
-});
-
-        document.querySelectorAll('.product-card, .feature-card').forEach((el) => observer.observe(el));
-
-        // Parallax Effect
-        window.addEventListener('scroll', () => {
-            const hero = document.querySelector('.hero');
-            const scrolled = window.pageYOffset;
-            hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
+            });
         });
 </script>
 </body>
+
 </html>
