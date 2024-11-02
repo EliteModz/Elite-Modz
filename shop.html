@@ -49,56 +49,50 @@
         }
 
         nav ul li a:hover {
-            color: #ff2d2d; /* Neon red hover effect */
+            color: #ff2d2d; /* Red hover effect */
         }
 
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 50px;
-            background-color: #1e1e1e;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            color: #ff2d2d; /* Red text for the hero title */
-            font-size: 3em;
-        }
-
-        /* Product Listings */
+        /* Product Styles */
         .product {
-            margin: 20px;
+            border: 1px solid #333;
+            border-radius: 8px;
             padding: 20px;
+            margin: 20px;
             background-color: #1e1e1e;
-            border: 1px solid #ff2d2d; /* Red border */
-            text-align: center;
-            transition: transform 0.3s;
+            transition: transform 0.2s;
         }
 
         .product:hover {
-            transform: translateY(-5px); /* Bounce effect */
-            box-shadow: 0 0 10px rgba(255, 45, 45, 0.5);
+            transform: scale(1.05); /* Bouncing effect */
         }
 
         .product h3 {
-            color: #ff2d2d; /* Neon red */
+            color: #ff2d2d; /* Red product name */
         }
 
-        .neon {
-            color: #ff2d2d; /* Neon color */
-            text-shadow: 0 0 5px #ff2d2d, 0 0 10px #ff2d2d;
+        button {
+            background-color: #ff2d2d; /* Red button */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
 
-        /* Footer */
+        button:hover {
+            background-color: #ff5555; /* Lighter red on hover */
+        }
+
+        /* Footer Styles */
         footer {
             text-align: center;
-            background-color: #1e1e1e;
             padding: 20px;
-            border-top: 3px solid red;
-        }
-
-        footer .neon {
-            color: #ff2d2d; /* Neon color for footer */
+            background-color: #1e1e1e;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            color: #e0e0e0; /* Light gray text */
         }
     </style>
 </head>
@@ -112,56 +106,52 @@
                 <li><a href="socials.html">Socials</a></li>
                 <li><a href="login.html">Login</a></li>
                 <li><a href="register.html">Register</a></li>
-                <li><a href="cart.html" class="cart-link neon">🛒 Cart (<span id="cart-count">0</span>)</a></li>
+                <li><a href="cart.html" class="cart-link">🛒 Cart (<span id="cart-count">0</span>)</a></li>
             </ul>
         </nav>
     </header>
-
     <section class="hero">
         <h1>Modded Accounts for Sale</h1>
     </section>
-
     <!-- Product Listings -->
     <div class="product">
-        <h3 class="neon">Basic: Level 300 and 150 Million</h3>
+        <h3>Basic: Level 300 and 150 Million</h3>
         <p>Price: $20</p>
-        <button class="neon" onclick="addToCart('Basic: Level 300 and 150 Million', 20)">Add to Cart</button>
+        <button onclick="addToCart('Basic: Level 300 and 150 Million', 20)">Add to Cart</button>
     </div>
     <div class="product">
-        <h3 class="neon">Regular: Level 450 and 250 Million</h3>
+        <h3>Regular: Level 450 and 250 Million</h3>
         <p>Price: $35</p>
-        <button class="neon" onclick="addToCart('Regular: Level 450 and 250 Million', 35)">Add to Cart</button>
+        <button onclick="addToCart('Regular: Level 450 and 250 Million', 35)">Add to Cart</button>
     </div>
     <div class="product">
-        <h3 class="neon">Elite: Level 750 and 600 Million</h3>
+        <h3>Elite: Level 750 and 600 Million</h3>
         <p>Price: $75</p>
-        <button class="neon" onclick="addToCart('Elite: Level 750 and 600 Million', 75)">Add to Cart</button>
+        <button onclick="addToCart('Elite: Level 750 and 600 Million', 75)">Add to Cart</button>
     </div>
     <div class="product">
-        <h3 class="neon">Ultimate: Level 1000 and 1 Billion</h3>
+        <h3>Ultimate: Level 1000 and 1 Billion</h3>
         <p>Price: $100</p>
-        <button class="neon" onclick="addToCart('Ultimate: Level 1000 and 1 Billion', 100)">Add to Cart</button>
+        <button onclick="addToCart('Ultimate: Level 1000 and 1 Billion', 100)">Add to Cart</button>
     </div>
     <div class="product">
-        <h3 class="neon">God: Level 5000 and 100 Billion</h3>
+        <h3>God: Level 5000 and 100 Billion</h3>
         <p>Price: $150</p>
-        <button class="neon" onclick="addToCart('God: Level 5000 and 100 Billion', 150)">Add to Cart</button>
+        <button onclick="addToCart('God: Level 5000 and 100 Billion', 150)">Add to Cart</button>
     </div>
     <div class="product">
-        <h3 class="neon">Infinity: Level 8000 and 1 Trillion</h3>
+        <h3>Infinity: Level 8000 and 1 Trillion</h3>
         <p>Price: $250</p>
-        <button class="neon" onclick="addToCart('Infinity: Level 8000 and 1 Trillion', 250)">Add to Cart</button>
+        <button onclick="addToCart('Infinity: Level 8000 and 1 Trillion', 250)">Add to Cart</button>
     </div>
     <div class="product">
-        <h3 class="neon">Custom options</h3>
+        <h3>Custom options</h3>
         <p>Price: $2 - $250</p>
-        <button class="neon" onclick="window.location.href='customize.html'">Customize</button>
+        <button onclick="window.location.href='customize.html'">Customize</button>
     </div>
-
     <footer>
-        <p class="neon">&copy; 2024 Elite Modz. All rights reserved.</p>
+        <p>&copy; 2024 Elite Modz. All rights reserved.</p>
     </footer>
-
     <script>
         // Initialize cart from localStorage
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
