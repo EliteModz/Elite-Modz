@@ -21,11 +21,13 @@
             text-align: center;
             border-bottom: 3px solid red;
         }
+
         header .logo-text {
             font-size: 2.5em;
             font-weight: bold;
             color: #ff2d2d; /* Red logo text */
         }
+
         nav ul {
             list-style: none;
             padding: 0;
@@ -34,17 +36,69 @@
             justify-content: center;
             background-color: #1e1e1e;
         }
+
         nav ul li {
             margin: 0 15px;
         }
+
         nav ul li a {
             text-decoration: none;
             font-size: 1.2em;
             color: white;
             padding: 10px 15px;
         }
+
         nav ul li a:hover {
             color: #ff2d2d; /* Neon red hover effect */
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 50px;
+            background-color: #1e1e1e;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            color: #ff2d2d; /* Red text for the hero title */
+            font-size: 3em;
+        }
+
+        /* Product Listings */
+        .product {
+            margin: 20px;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border: 1px solid #ff2d2d; /* Red border */
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-5px); /* Bounce effect */
+            box-shadow: 0 0 10px rgba(255, 45, 45, 0.5);
+        }
+
+        .product h3 {
+            color: #ff2d2d; /* Neon red */
+        }
+
+        .neon {
+            color: #ff2d2d; /* Neon color */
+            text-shadow: 0 0 5px #ff2d2d, 0 0 10px #ff2d2d;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-top: 3px solid red;
+        }
+
+        footer .neon {
+            color: #ff2d2d; /* Neon color for footer */
         }
     </style>
 </head>
@@ -62,9 +116,11 @@
             </ul>
         </nav>
     </header>
+
     <section class="hero">
         <h1>Modded Accounts for Sale</h1>
     </section>
+
     <!-- Product Listings -->
     <div class="product">
         <h3 class="neon">Basic: Level 300 and 150 Million</h3>
@@ -101,9 +157,11 @@
         <p>Price: $2 - $250</p>
         <button class="neon" onclick="window.location.href='customize.html'">Customize</button>
     </div>
+
     <footer>
         <p class="neon">&copy; 2024 Elite Modz. All rights reserved.</p>
     </footer>
+
     <script>
         // Initialize cart from localStorage
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
