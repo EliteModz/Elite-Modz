@@ -9,8 +9,117 @@
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Your existing styles remain the same */
-        
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        /* Header and Navigation Bar */
+        header {
+            background-color: #1e1e1e;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid red;
+        }
+
+        header .logo img {
+            width: 150px;
+        }
+
+        header .logo-text {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ff2d2d;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #1e1e1e;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-size: 1.2em;
+            color: white;
+            padding: 10px 15px;
+        }
+
+        nav ul li a:hover {
+            color: #ff2d2d;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('images/grand-theft-auto-v-online-sunset-panorama-tapete-1920x1080_48.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            color: #ff2d2d;
+            text-shadow: 0 0 15px #ff0000;
+        }
+
+        /* Product Section */
+        .product-section {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .product-section h2 {
+            color: #ff2d2d;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        .product {
+            display: inline-block;
+            background-color: #1e1e1e;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .product h3 {
+            color: #ff2d2d;
+        }
+
+        .product p {
+            color: #e0e0e0;
+        }
+
+        .product button {
+            background-color: #ff2d2d;
+            border: none;
+            padding: 10px 20px;
+            color: #121212;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .product button:hover {
+            background-color: #ff1a1a;
+        }
+
         /* Additional Features */
         
         /* Live Chat Widget */
@@ -48,168 +157,6 @@
             transform: translateY(-10px);
         }
 
-        /* Testimonials Carousel */
-        .testimonials {
-            padding: 80px 0;
-            background: #0a0a0a;
-        }
-
-        .testimonial-card {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #1e1e1e;
-            padding: 40px;
-            border-radius: 20px;
-            position: relative;
-        }
-
-        /* Payment Methods */
-        .payment-methods {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 40px;
-            background: #111;
-        }
-
-        .payment-icon {
-            width: 60px;
-            height: 60px;
-            filter: grayscale(1);
-            transition: filter 0.3s;
-        }
-
-        .payment-icon:hover {
-            filter: grayscale(0);
-        }
-
-        /* Account Stats */
-        .stats-section {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            padding: 60px 40px;
-            background: linear-gradient(45deg, #0a0a0a, #1a1a1a);
-        }
-
-        .stat-box {
-            text-align: center;
-            padding: 30px;
-            background: rgba(255,0,0,0.1);
-            border-radius: 15px;
-        }
-
-        /* VIP Benefits */
-        .vip-benefits {
-            padding: 80px 40px;
-            background: url('images/vip-background.jpg') center/cover;
-        }
-
-        .benefit-card {
-            background: rgba(0,0,0,0.8);
-            padding: 30px;
-            border-radius: 15px;
-            margin: 20px;
-            border: 2px solid #ff2d2d;
-        }
-
-        /* Account Customization */
-        .customization-panel {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 60px 40px;
-            background: #0c0c0c;
-        }
-
-        .custom-option {
-            background: #1e1e1e;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-        }
-
-        /* Security Features */
-        .security-features {
-            padding: 70px 40px;
-            background: #0a0a0a;
-        }
-
-        .security-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        /* Support Section */
-        .support-section {
-            padding: 80px 40px;
-            background: linear-gradient(to right, #0a0a0a, #1a1a1a);
-        }
-
-        .support-channels {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-        }
-
-        /* News & Updates */
-        .news-section {
-            padding: 60px 40px;
-            background: #0f0f0f;
-        }
-
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        /* Bundle Deals */
-        .bundle-section {
-            padding: 70px 40px;
-            background: url('images/bundle-bg.jpg') center/cover;
-        }
-
-        .bundle-card {
-            background: rgba(0,0,0,0.9);
-            padding: 40px;
-            border-radius: 20px;
-            border: 3px solid #ff2d2d;
-            margin: 20px;
-        }
-
-        /* Loyalty Program */
-        .loyalty-program {
-            padding: 80px 40px;
-            background: #0a0a0a;
-        }
-
-        .loyalty-tiers {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-        }
-
-        /* Tutorial Section */
-        .tutorial-section {
-            padding: 70px 40px;
-            background: #0f0f0f;
-        }
-
-        .tutorial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        /* Guarantee Section */
-        .guarantee-section {
-            padding: 60px 40px;
-            background: linear-gradient(45deg, #0a0a0a, #1a1a1a);
-            text-align: center;
-        }
-
         /* Live Counter */
         .live-counter {
             position: fixed;
@@ -221,49 +168,94 @@
             z-index: 999;
         }
 
-        /* Animation Effects */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
+        /* Premium Product Styles */
+        .premium-product {
+            position: relative;
+            border: 2px solid #ff2d2d;
+            transform: scale(1.05);
         }
 
-        .floating {
-            animation: float 3s ease-in-out infinite;
+        .premium-badge {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background: #ff2d2d;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
         }
 
-        /* Responsive Design Updates */
+        .features {
+            text-align: left;
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e1e1e;
+            padding: 20px;
+            text-align: center;
+            color: #e0e0e0;
+            margin-top: 40px;
+            border-top: 2px solid red;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            padding: 40px;
+        }
+
+        .footer-section h3 {
+            color: #ff2d2d;
+            margin-bottom: 20px;
+        }
+
+        footer a {
+            color: #ff2d2d;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ff1a1a;
+        }
+
+        /* Responsive Design */
         @media (max-width: 1200px) {
-            .stats-section,
-            .security-grid,
-            .support-channels,
-            .loyalty-tiers {
+            .footer-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (max-width: 768px) {
-            .stats-section,
-            .security-grid,
-            .support-channels,
-            .loyalty-tiers {
+            .footer-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .product {
+                width: 100%;
+                margin: 20px 0;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Your existing header and navigation -->
-
-    <!-- New Features Section -->
-    <section class="features-list">
-        <div class="feature-item">
-            <i class="fas fa-shield-alt fa-3x"></i>
-            <h3>Anti-Ban Protection</h3>
-            <p>Advanced security measures to protect your account</p>
-        </div>
-        <!-- Add more feature items -->
-    </section>
+    <header>
+        <div class="logo-text">Elite Modz</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="socials.html">Socials</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="cart.html" class="cart-link neon">🛒 Cart (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <!-- Live Counter -->
     <div class="live-counter">
@@ -271,71 +263,72 @@
         <p>💰 Money Added Today: $<span id="money-count">1.5B</span></p>
     </div>
 
-    <!-- Your existing hero section -->
+    <section class="hero">
+        <h1>Modded Accounts & Services</h1>
+    </section>
 
-    <!-- Enhanced Product Section -->
+    <section class="features-list">
+        <div class="feature-item">
+            <i class="fas fa-shield-alt fa-3x"></i>
+            <h3>Anti-Ban Protection</h3>
+            <p>Advanced security measures to protect your account</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-bolt fa-3x"></i>
+            <h3>Instant Delivery</h3>
+            <p>Get your modded account within minutes</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-headset fa-3x"></i>
+            <h3>24/7 Support</h3>
+            <p>Professional support team always available</p>
+        </div>
+    </section>
+
     <section class="product-section">
-        <!-- Your existing products with added features -->
+        <h2>New Modded Accounts</h2>
+        <div class="product">
+            <h3>Basic: Level 300 and 150 Million</h3>
+            <p>Price: $20</p>
+            <button onclick="location.href='shop.html#basic'">Buy Now</button>
+        </div>
+        <div class="product">
+            <h3>Regular: Level 450 and 250 Million</h3>
+            <p>Price: $35</p>
+            <button onclick="location.href='shop.html#regular'">Buy Now</button>
+        </div>
         <div class="product premium-product">
             <div class="premium-badge">BEST SELLER</div>
-            <h3>Diamond Package: Level 8000</h3>
-            <p class="price">$500</p>
+            <h3>Elite: Level 750 and 600 Million</h3>
+            <p>Price: $75</p>
             <ul class="features">
-                <li>Unlimited Money</li>
-                <li>All Properties Unlocked</li>
-                <li>All Vehicles Unlocked</li>
-                <li>Modded Stats</li>
-                <li>Lifetime Support</li>
+                <li>Unlocked All Weapons</li>
+                <li>All Properties Available</li>
+                <li>Premium Vehicle Collection</li>
+                <li>VIP Status</li>
             </ul>
-            <button class="premium-button" onclick="location.href='shop.html#diamond'">Get Started</button>
+            <button onclick="location.href='shop.html#elite'">Buy Now</button>
         </div>
-    </section>
-
-    <!-- VIP Benefits -->
-    <section class="vip-benefits">
-        <h2>VIP Member Benefits</h2>
-        <div class="benefit-grid">
-            <!-- Add VIP benefit cards -->
+        <div class="product">
+            <h3>Ultimate: Level 1000 and 1 Billion</h3>
+            <p>Price: $100</p>
+            <button onclick="location.href='shop.html#ultimate'">Buy Now</button>
         </div>
-    </section>
-
-    <!-- Security Features -->
-    <section class="security-features">
-        <h2>Our Security Guarantee</h2>
-        <div class="security-grid">
-            <!-- Add security feature cards -->
+        <div class="product">
+            <h3>God: Level 5000 and 100 Billion</h3>
+            <p>Price: $150</p>
+            <button onclick="location.href='shop.html#god'">Buy Now</button>
         </div>
-    </section>
-
-    <!-- Support Section -->
-    <section class="support-section">
-        <h2>24/7 Premium Support</h2>
-        <div class="support-channels">
-            <!-- Add support channel cards -->
+        <div class="product">
+            <h3>Infinity: Level 8000 and 1 Trillion</h3>
+            <p>Price: $250</p>
+            <button onclick="location.href='shop.html#infinity'">Buy Now</button>
         </div>
-    </section>
-
-    <!-- Bundle Deals -->
-    <section class="bundle-section">
-        <h2>Special Bundle Deals</h2>
-        <div class="bundle-container">
-            <!-- Add bundle cards -->
-        </div>
-    </section>
-
-    <!-- Loyalty Program -->
-    <section class="loyalty-program">
-        <h2>Elite Rewards Program</h2>
-        <div class="loyalty-tiers">
-            <!-- Add loyalty tier cards -->
-        </div>
-    </section>
-
-    <!-- Tutorial Section -->
-    <section class="tutorial-section">
-        <h2>How It Works</h2>
-        <div class="tutorial-grid">
-            <!-- Add tutorial steps -->
+        <div class="product">
+            <h3>Custom options</h3>
+            <p>Custom pricing available</p>
+            <p>Price: $2 - $250</p>
+            <button onclick="location.href='customize.html'">Customize</button>
         </div>
     </section>
 
@@ -344,32 +337,41 @@
         <i class="fas fa-comments fa-2x"></i>
     </div>
 
-    <!-- Enhanced Footer -->
     <footer>
         <div class="footer-grid">
             <div class="footer-section">
                 <h3>Quick Links</h3>
-                <!-- Add footer links -->
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="faq.html">FAQ</a></p>
+                <p><a href="terms.html">Terms of Service</a></p>
+                <p><a href="privacy.html">Privacy Policy</a></p>
             </div>
             <div class="footer-section">
                 <h3>Contact Us</h3>
-                <!-- Add contact information -->
+                <p>Email: support@elitemodz.com</p>
+                <p>Discord: EliteModz#1234</p>
+                <p>Telegram: @EliteModz</p>
             </div>
             <div class="footer-section">
                 <h3>Payment Methods</h3>
-                <!-- Add payment icons -->
+                <p>PayPal</p>
+                <p>Bitcoin</p>
+                <p>Cash App</p>
+                <p>Credit Card</p>
             </div>
             <div class="footer-section">
                 <h3>Follow Us</h3>
-                <!-- Add social media links -->
+                <p><a href="#">Discord</a></p>
+                <p><a href="#">Telegram</a></p>
+                <p><a href="#">Instagram</a></p>
+                <p><a href="#">Twitter</a></p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Elite Modz - The Ultimate GTA 5 Modding Service</p>
+            <p>&copy; 2024 Elite Modz. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Add JavaScript for dynamic features -->
     <script>
         // Live counter update
         function updateCounter() {
@@ -383,9 +385,8 @@
         // Chat widget functionality
         function openChat() {
             // Add chat functionality
+            alert('Chat feature coming soon!');
         }
     </script>
 </body>
 </html>
-
-
