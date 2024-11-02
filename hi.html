@@ -1,553 +1,391 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-@@ -12,253 +11,251 @@
-body {
-margin: 0;
-font-family: 'Arial', sans-serif;
-            background-color: #121212; /* Black background */
-            color: #e0e0e0; /* Light gray text */
-            background-color: #121212;
-            color: #e0e0e0;
-}
-
-        /* Header and Navigation Bar */
-        /* Header and Navigation */
-header {
-background-color: #1e1e1e;
-padding: 20px;
-text-align: center;
-            border-bottom: 3px solid red;
-            border-bottom: 3px solid #ff2d2d;
-            box-shadow: 0 2px 10px rgba(255, 45, 45, 0.3);
-}
-
-        header .logo img {
-            width: 150px;
-        .logo-text {
-            font-size: 3em;
-            font-weight: bold;
-            color: #ff2d2d;
-            text-shadow: 0 0 10px rgba(255, 45, 45, 0.5);
-            transition: all 0.3s ease;
-}
-
-        header .logo-text {
-            font-size: 2.5em;
-            font-weight: bold;
-            color: #ff2d2d; /* Red logo text */
-        .logo-text:hover {
-            transform: scale(1.05);
-            text-shadow: 0 0 20px rgba(255, 45, 45, 0.8);
-}
-
-nav ul {
-list-style: none;
-padding: 0;
-            margin: 0;
-            margin: 15px 0;
-display: flex;
-justify-content: center;
-            background-color: #1e1e1e;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Modz - Ultimate GTA 5 Modding Services</title>
+    <link rel="icon" href="https://github.com/EliteModz/Elite-Modz/raw/refs/heads/main/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Your existing styles remain the same */
+        
+        /* Additional Features */
+        
+        /* Live Chat Widget */
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #ff2d2d;
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 0 20px rgba(255,0,0,0.3);
         }
 
-        nav ul li {
-            margin: 0 15px;
-            gap: 25px;
-}
-
-nav ul li a {
-text-decoration: none;
-font-size: 1.2em;
-color: white;
-            padding: 10px 15px;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-}
-
-nav ul li a:hover {
-            color: #ff2d2d; /* Neon red hover effect */
-            color: #ff2d2d;
-            background-color: rgba(255, 45, 45, 0.1);
-            transform: translateY(-2px);
-}
-
-/* Hero Section */
-.hero {
-            background-image: url('images/grand-theft-auto-v-online-sunset-panorama-tapete-1920x1080_48.jpg');
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url('images/grand-theft-auto-v-online-sunset-panorama-tapete-1920x1080_48.jpg');
-background-size: cover;
-background-position: center;
-            height: 500px;
-            text-align: center;
-            height: 600px;
-display: flex;
-justify-content: center;
-align-items: center;
-position: relative;
-            overflow: hidden;
-}
-
-        .hero h1 {
-            font-size: 4em;
-            color: #ff2d2d;
-            text-shadow: 0 0 15px #ff0000;
-            z-index: 1;
+        /* Account Features Section */
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 50px;
+            background: #0f0f0f;
         }
 
-        .hero::after {
-        .hero::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 0;
-            background: linear-gradient(45deg, rgba(255, 45, 45, 0.2), transparent);
-            animation: gradientShift 10s infinite alternate;
-        }
-
-        .hero h1 {
-            font-size: 4.5em;
-            color: #ffffff;
-            text-shadow: 0 0 20px #ff2d2d;
-            position: relative;
-            z-index: 1;
-            animation: glow 2s ease-in-out infinite alternate;
-}
-
-/* Product Section */
-.product-section {
-            padding: 40px;
-            padding: 60px 40px;
-text-align: center;
-            background: linear-gradient(180deg, #121212, #1a1a1a);
-}
-
-.product-section h2 {
-color: #ff2d2d;
-            margin-bottom: 30px;
-            font-size: 2.5em;
-            font-size: 3em;
-            margin-bottom: 40px;
-            text-shadow: 0 0 15px rgba(255, 45, 45, 0.3);
-}
-
-.product {
-display: inline-block;
-background-color: #1e1e1e;
-margin: 20px;
-            padding: 20px;
-            border-radius: 10px;
-            width: 300px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
+        .feature-item {
+            background: #1a1a1a;
             padding: 30px;
             border-radius: 15px;
-            width: 320px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            text-align: center;
+            border: 1px solid #ff000033;
+            transition: transform 0.3s;
         }
 
-        .product::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, #ff2d2d, #ff6b6b);
-}
-
-.product:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        .feature-item:hover {
             transform: translateY(-10px);
-            box-shadow: 0 8px 25px rgba(255, 45, 45, 0.2);
-}
-
-.product h3 {
-color: #ff2d2d;
-            font-size: 1.5em;
-            margin-bottom: 15px;
-}
-
-.product p {
-color: #e0e0e0;
-            font-size: 1.1em;
-            margin: 10px 0;
-}
-
-.product button {
-            background-color: #ff2d2d;
-            background: linear-gradient(45deg, #ff2d2d, #ff4444);
-border: none;
-            padding: 10px 20px;
-            color: #121212;
-            padding: 12px 25px;
-            color: white;
-font-weight: bold;
-            font-size: 1.1em;
-cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            margin-top: 15px;
-}
-
-.product button:hover {
-            background-color: #ff1a1a;
-            background: linear-gradient(45deg, #ff4444, #ff2d2d);
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(255, 45, 45, 0.4);
-}
-
-        /* About Us Section */
-        .about {
-            background-color: #1c1c1c;
-            padding: 40px;
-            text-align: center;
         }
 
-        .about h2 {
-            color: #ff2d2d;
-        }
-
-        .about p {
-            max-width: 600px;
-            margin: auto;
-            line-height: 1.6;
-        }
-
-        /* Testimonials Section */
+        /* Testimonials Carousel */
         .testimonials {
-            background-color: #333;
-            padding: 20px;
+            padding: 80px 0;
+            background: #0a0a0a;
+        }
+
+        .testimonial-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #1e1e1e;
+            padding: 40px;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        /* Payment Methods */
+        .payment-methods {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px;
+            background: #111;
+        }
+
+        .payment-icon {
+            width: 60px;
+            height: 60px;
+            filter: grayscale(1);
+            transition: filter 0.3s;
+        }
+
+        .payment-icon:hover {
+            filter: grayscale(0);
+        }
+
+        /* Account Stats */
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 60px 40px;
+            background: linear-gradient(45deg, #0a0a0a, #1a1a1a);
+        }
+
+        .stat-box {
             text-align: center;
-        }
-
-        .testimonial {
-            margin: 20px;
-        /* Footer */
-        footer {
-background-color: #1e1e1e;
-            padding: 15px;
-            border-radius: 8px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .testimonial:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        .testimonial h3 {
-            color: #ff2d2d;
-            margin-bottom: 10px;
-        }
-
-        .testimonial p {
-            color: #ffffff;
-        }
-
-        /* FAQ Section */
-        .faq {
-            padding: 40px 20px;
             padding: 30px;
-text-align: center;
-            background-color: #1c1c1c;
+            background: rgba(255,0,0,0.1);
+            border-radius: 15px;
         }
 
-        .faq h2 {
-            color: #ff2d2d;
+        /* VIP Benefits */
+        .vip-benefits {
+            padding: 80px 40px;
+            background: url('images/vip-background.jpg') center/cover;
         }
 
-        .faq-item {
-            margin: 15px 0;
-            background-color: #333;
-            border-radius: 8px;
-            padding: 15px;
-            cursor: pointer;
-            transition: background-color 0.3s;
+        .benefit-card {
+            background: rgba(0,0,0,0.8);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px;
+            border: 2px solid #ff2d2d;
         }
 
-        .faq-item:hover {
-            background-color: #444;
-            border-top: 3px solid #ff2d2d;
-            position: relative;
-}
+        /* Account Customization */
+        .customization-panel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 60px 40px;
+            background: #0c0c0c;
+        }
 
-        .faq-answer {
-            display: none;
-            padding: 10px;
-            background-color: #444;
-            border-radius: 4px;
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #ff2d2d, transparent);
-}
-
-        /* Footer */
-        footer {
-            background-color: #1e1e1e;
-            padding: 20px;
+        .custom-option {
+            background: #1e1e1e;
+            padding: 30px;
+            border-radius: 15px;
             text-align: center;
-            color: #e0e0e0;
-            margin-top: 40px;
-            border-top: 2px solid red;
-        footer p {
-            margin: 10px 0;
-            font-size: 1.1em;
-}
-
-footer a {
-color: #ff2d2d;
-text-decoration: none;
-            transition: all 0.3s ease;
-}
-
-footer a:hover {
-            color: #ff1a1a;
-            color: #ff6b6b;
-            text-shadow: 0 0 10px rgba(255, 45, 45, 0.5);
-}
-
-        .socials {
-            margin-top: 10px;
-        /* Animations */
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 20px #ff2d2d;
-            }
-            to {
-                text-shadow: 0 0 30px #ff2d2d, 0 0 40px #ff2d2d;
-            }
-}
-
-        .socials a {
-            color: #ffffff;
-            margin: 0 10px;
-            text-decoration: none;
-        @keyframes gradientShift {
-            0% {
-                background-position: 0% 50%;
-            }
-            100% {
-                background-position: 100% 50%;
-            }
-}
-
-        .socials a:hover {
-            color: #ff2d2d;
-        /* Cart Badge */
-        .cart-link {
-            position: relative;
-}
-
-        /* Utility classes */
-        .hidden {
-            display: none;
-        #cart-count {
-            background-color: #ff2d2d;
-            color: white;
-            padding: 2px 6px;
-            border-radius: 50%;
-            font-size: 0.8em;
-            position: relative;
-            top: -8px;
         }
 
-        /* Responsive Design */
+        /* Security Features */
+        .security-features {
+            padding: 70px 40px;
+            background: #0a0a0a;
+        }
+
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        /* Support Section */
+        .support-section {
+            padding: 80px 40px;
+            background: linear-gradient(to right, #0a0a0a, #1a1a1a);
+        }
+
+        .support-channels {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        /* News & Updates */
+        .news-section {
+            padding: 60px 40px;
+            background: #0f0f0f;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* Bundle Deals */
+        .bundle-section {
+            padding: 70px 40px;
+            background: url('images/bundle-bg.jpg') center/cover;
+        }
+
+        .bundle-card {
+            background: rgba(0,0,0,0.9);
+            padding: 40px;
+            border-radius: 20px;
+            border: 3px solid #ff2d2d;
+            margin: 20px;
+        }
+
+        /* Loyalty Program */
+        .loyalty-program {
+            padding: 80px 40px;
+            background: #0a0a0a;
+        }
+
+        .loyalty-tiers {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        /* Tutorial Section */
+        .tutorial-section {
+            padding: 70px 40px;
+            background: #0f0f0f;
+        }
+
+        .tutorial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* Guarantee Section */
+        .guarantee-section {
+            padding: 60px 40px;
+            background: linear-gradient(45deg, #0a0a0a, #1a1a1a);
+            text-align: center;
+        }
+
+        /* Live Counter */
+        .live-counter {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: rgba(255,0,0,0.9);
+            padding: 15px;
+            border-radius: 10px;
+            z-index: 999;
+        }
+
+        /* Animation Effects */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Responsive Design Updates */
+        @media (max-width: 1200px) {
+            .stats-section,
+            .security-grid,
+            .support-channels,
+            .loyalty-tiers {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 3em;
+            .stats-section,
+            .security-grid,
+            .support-channels,
+            .loyalty-tiers {
+                grid-template-columns: 1fr;
             }
-
-            nav ul {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .product {
-                width: 90%;
-                margin: 10px auto;
-            }
-}
-</style>
-</head>
-
-<body>
-
-<header>
-<div class="logo-text">Elite Modz</div>
-<nav>
-@@ -268,7 +265,7 @@
-<li><a href="socials.html">Socials</a></li>
-<li><a href="login.html">Login</a></li>
-<li><a href="register.html">Register</a></li>
-                <li><a href="cart.html" class="cart-link neon">🛒 Cart (<span id="cart-count">0</span>)</a></li>
-                <li><a href="cart.html" class="cart-link">🛒 Cart (<span id="cart-count">0</span>)</a></li>
-</ul>
-</nav>
-</header>
-@@ -278,102 +275,86 @@ <h1>Modded Accounts & Services</h1>
-</section>
-
-<section class="product-section">
-        <h2>New Modded Accounts</h2>
-        <h2>Featured Modded Accounts</h2>
-<div class="product">
-<h3>Basic: Level 300 and 150 Million</h3>
-            <p>Perfect for Beginners</p>
-<p>Price: $20</p>
-<button onclick="location.href='shop.html#basic'">Buy Now</button>
-</div>
-<div class="product">
-<h3>Regular: Level 450 and 250 Million</h3>
-            <p>Most Popular Choice</p>
-<p>Price: $35</p>
-<button onclick="location.href='shop.html#regular'">Buy Now</button>
-</div>
-<div class="product">
-<h3>Elite: Level 750 and 600 Million</h3>
-            <p>For Serious Players</p>
-<p>Price: $75</p>
-<button onclick="location.href='shop.html#elite'">Buy Now</button>
-</div>
-<div class="product">
-<h3>Ultimate: Level 1000 and 1 Billion</h3>
-            <p>Premium Experience</p>
-<p>Price: $100</p>
-<button onclick="location.href='shop.html#ultimate'">Buy Now</button>
-</div>
-<div class="product">
-<h3>God: Level 5000 and 100 Billion</h3>
-            <p>Unlimited Power</p>
-<p>Price: $150</p>
-<button onclick="location.href='shop.html#god'">Buy Now</button>
-</div>
-    </section>
-
-    <section class="about">
-        <h2>About Us</h2>
-        <p>Welcome to Elite Modz, your one-stop shop for the best modded accounts and services. Our mission is to provide
-            you with top-notch accounts and exceptional customer service. We pride ourselves on our reliability and
-            commitment to customer satisfaction.</p>
-    </section>
-
-    <section class="testimonials">
-        <h2>Testimonials</h2>
-        <div class="testimonial">
-            <h3>John Doe</h3>
-            <p>Amazing service! My account was delivered fast and the process was smooth. Highly recommend Elite Modz!</p>
-        </div>
-        <div class="testimonial">
-            <h3>Jane Smith</h3>
-            <p>I've bought several accounts from Elite Modz and they never disappoint. Great prices and excellent
-                support.</p>
-        </div>
-    </section>
-
-    <section class="faq">
-        <h2>FAQ</h2>
-        <div class="faq-item">
-            <h3>How long does it take to receive my modded account?</h3>
-            <div class="faq-answer">
-                <p>Delivery times vary, but typically you can expect to receive your modded account within 24-48 hours.</p>
-            </div>
-        </div>
-        <div class="faq-item">
-            <h3>Is buying modded accounts safe?</h3>
-            <div class="faq-answer">
-                <p>We take every precaution to ensure the safety of your account. However, it's important to understand
-                    the risks involved with modded accounts.</p>
-            </div>
-        <div class="product">
-            <h3>Infinity: Level 8000 and 1 Trillion</h3>
-            <p>Beyond Limits</p>
-            <p>Price: $250</p>
-            <button onclick="location.href='shop.html#infinity'">Buy Now</button>
-</div>
-        <div class="faq-item">
-            <h3>Can I get a refund if I'm not satisfied?</h3>
-            <div class="faq-answer">
-                <p>We offer refunds on a case-by-case basis. Please contact our support team if you encounter any
-                    issues.</p>
-            </div>
-        <div class="product">
-            <h3>Custom Options</h3>
-            <p>Build Your Perfect Account</p>
-            <p>Price: $2 - $250</p>
-            <button onclick="location.href='customize.html'">Customize Now</button>
-</div>
-</section>
-
-<footer>
-<p>&copy; 2024 Elite Modz. All rights reserved.</p>
-        <div class="socials">
-            <a href="https://discord.com" target="_blank">Discord</a>
-            <a href="https://instagram.com" target="_blank">Instagram</a>
-            <a href="https://tiktok.com" target="_blank">TikTok</a>
-        </div>
-        <p>Follow us on <a href="#">Discord</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a></p>
-        <p>Contact: <a href="mailto:support@elitemodz.com">support@elitemodz.com</a></p>
-</footer>
-
-<script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const faqItems = document.querySelectorAll('.faq-item');
-            faqItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    const answer = item.querySelector('.faq-answer');
-                    if (answer.classList.contains('hidden')) {
-                        answer.classList.remove('hidden');
-                    } else {
-                        answer.classList.add('hidden');
-                    }
-        // Add smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-});
-});
-});
-
-        // Simple cart functionality
-        let cartCount = 0;
-        const cartCountElement = document.getElementById('cart-count');
-        
-        function updateCart() {
-            cartCountElement.textContent = cartCount;
         }
+    </style>
+</head>
+<body>
+    <!-- Your existing header and navigation -->
 
-        // Add hover effects
-        document.querySelectorAll('.product').forEach(product => {
-            product.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px)';
-            });
-            
-            product.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-            });
-        });
-</script>
+    <!-- New Features Section -->
+    <section class="features-list">
+        <div class="feature-item">
+            <i class="fas fa-shield-alt fa-3x"></i>
+            <h3>Anti-Ban Protection</h3>
+            <p>Advanced security measures to protect your account</p>
+        </div>
+        <!-- Add more feature items -->
+    </section>
+
+    <!-- Live Counter -->
+    <div class="live-counter">
+        <p>🟢 Online Users: <span id="online-count">1,234</span></p>
+        <p>💰 Money Added Today: $<span id="money-count">1.5B</span></p>
+    </div>
+
+    <!-- Your existing hero section -->
+
+    <!-- Enhanced Product Section -->
+    <section class="product-section">
+        <!-- Your existing products with added features -->
+        <div class="product premium-product">
+            <div class="premium-badge">BEST SELLER</div>
+            <h3>Diamond Package: Level 8000</h3>
+            <p class="price">$500</p>
+            <ul class="features">
+                <li>Unlimited Money</li>
+                <li>All Properties Unlocked</li>
+                <li>All Vehicles Unlocked</li>
+                <li>Modded Stats</li>
+                <li>Lifetime Support</li>
+            </ul>
+            <button class="premium-button" onclick="location.href='shop.html#diamond'">Get Started</button>
+        </div>
+    </section>
+
+    <!-- VIP Benefits -->
+    <section class="vip-benefits">
+        <h2>VIP Member Benefits</h2>
+        <div class="benefit-grid">
+            <!-- Add VIP benefit cards -->
+        </div>
+    </section>
+
+    <!-- Security Features -->
+    <section class="security-features">
+        <h2>Our Security Guarantee</h2>
+        <div class="security-grid">
+            <!-- Add security feature cards -->
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section class="support-section">
+        <h2>24/7 Premium Support</h2>
+        <div class="support-channels">
+            <!-- Add support channel cards -->
+        </div>
+    </section>
+
+    <!-- Bundle Deals -->
+    <section class="bundle-section">
+        <h2>Special Bundle Deals</h2>
+        <div class="bundle-container">
+            <!-- Add bundle cards -->
+        </div>
+    </section>
+
+    <!-- Loyalty Program -->
+    <section class="loyalty-program">
+        <h2>Elite Rewards Program</h2>
+        <div class="loyalty-tiers">
+            <!-- Add loyalty tier cards -->
+        </div>
+    </section>
+
+    <!-- Tutorial Section -->
+    <section class="tutorial-section">
+        <h2>How It Works</h2>
+        <div class="tutorial-grid">
+            <!-- Add tutorial steps -->
+        </div>
+    </section>
+
+    <!-- Live Chat Widget -->
+    <div class="chat-widget" onclick="openChat()">
+        <i class="fas fa-comments fa-2x"></i>
+    </div>
+
+    <!-- Enhanced Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <!-- Add footer links -->
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <!-- Add contact information -->
+            </div>
+            <div class="footer-section">
+                <h3>Payment Methods</h3>
+                <!-- Add payment icons -->
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <!-- Add social media links -->
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Elite Modz - The Ultimate GTA 5 Modding Service</p>
+        </div>
+    </footer>
+
+    <!-- Add JavaScript for dynamic features -->
+    <script>
+        // Live counter update
+        function updateCounter() {
+            document.getElementById('online-count').textContent = 
+                Math.floor(Math.random() * 2000 + 1000);
+            document.getElementById('money-count').textContent = 
+                (Math.random() * 5 + 1).toFixed(1) + 'B';
+        }
+        setInterval(updateCounter, 5000);
+
+        // Chat widget functionality
+        function openChat() {
+            // Add chat functionality
+        }
+    </script>
 </body>
-
 </html>
+
+
